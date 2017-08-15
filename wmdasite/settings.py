@@ -25,12 +25,13 @@ SECRET_KEY = 'ptm+78p#s9^s@q47^077g2bxok#bm-)nj7)v@5ow3_9yq%9nh7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'antmont.pythonanywhere.com']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'wmdadict.apps.WmdadictConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -105,7 +106,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Australia/Sydney'
 
 USE_I18N = True
 
