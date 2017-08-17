@@ -1,0 +1,9 @@
+{% if dict_fields %}
+    <ul>
+    {% for dfield in dict_fields %}
+        <li><a href="/dict/{{ dfield.id }}/">{{ dfield.label }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No dictionary fields are available.</p>
+{% endif %}

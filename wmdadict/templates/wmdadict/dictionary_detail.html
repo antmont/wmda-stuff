@@ -1,0 +1,30 @@
+<h1>{{ dfield.label }}</h1>
+<ul>
+    <li>Description: {{ dfield.description_short }}</li>
+    <li>Description (long): {{ dfield.description_long }}</li>
+    <li>Field type: {{ dfield.get_field_type_display }}</li>
+    {% if dfield.field_type == 'N' %}
+        <li>Units: {{ dfield.units }}</li>
+    {% endif %}
+    {% if dfield.field_type == 'N' or dfield.field_type == 'D' %}
+        <li>Range: {{ dfield.range }}</li>
+    {% endif %}
+    {% if dfield.field_type == 'S' or dfield.field_type == 'M' %}
+        <li>Values: {{ dfield.values }}</li>
+    {% endif %}
+    <li>Data family owner: {{ dfield.owner_family }}</li>
+    <li>Data family users:
+        <ul>
+            {% for family in dfield.user_families.all %}
+                <li>{{ family.name }}</li>
+            {% endfor %}
+        </ul>
+    </li>
+    <li>EMDIS fields:
+        <ul>
+            {% for efield in dfield.emdisfield_set.all %}
+                <li><a href="/emdis/{{ efield.id }}/">{{ efield.field_code }}</a></li>
+            {% endfor %}
+        </ul>
+    </li>
+</ul>
