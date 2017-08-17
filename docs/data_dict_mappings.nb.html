@@ -183,18 +183,18 @@ library(stringr)</code></pre>
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxud21kYV9lbWRpc19sb25nIDwtXG4gIHJlYWRfZXhjZWwoXG4gICAgXCJ+L2RldmVsb3AvcHl0aG9uLXByb2plY3RzL3dtZGFzaXRlL2RvY3MvV01EQS1EYXRhLURpY3Rpb25hcnktSlMtQUdNLTIwMTctMDgtMTcueGxzeFwiLFxuICAgIHNoZWV0ID0gXCJXLUUgTWFwcGluZ1wiXG4gIClcbm5fdmFycyA8LSB3bWRhX2VtZGlzX2xvbmckJ0VNRElTIEZpZWxkIENvZGVzJyAlPiUgXG4gIHN0cl9zcGxpdChcIixcIikgJT4lXG4gIGxhcHBseShmdW5jdGlvbih6KSBsZW5ndGgoeikpICU+JSBcbiAgdW5saXN0KCkgJT4lIFxuICBtYXgoKVxud21kYV9lbWRpcyA8LSB3bWRhX2VtZGlzX2xvbmcgJT4lXG4gIHJlbmFtZShcbiAgICBpZCA9IGlkLFxuICAgIGxhYmVsID0gTGFiZWwsXG4gICAgZW1kaXMgPSAnRU1ESVMgRmllbGQgQ29kZXMnKSAlPiVcbiAgc2VwYXJhdGUoZW1kaXMsIGludG8gPSBwYXN0ZTAoXCJlbWRpc19cIiwgMTpuX3ZhcnMpLCBzZXAgPSBcIixcIiwgZXh0cmEgPSBcIm1lcmdlXCIsIGZpbGwgPSBcInJpZ2h0XCIpICU+JVxuICBnYXRoZXIoZW1kaXNfa2V5LCBlbWRpc19maWVsZCwgc3RhcnRzX3dpdGgoXCJlbWRpc19cIiksIG5hLnJtID0gVFJVRSkgJT4lXG4gIG11dGF0ZShlbWRpc19maWVsZCA9IHRyaW13cyhlbWRpc19maWVsZCkpICU+JVxuICBzZWxlY3QoZW1kaXNfZmllbGQsIGlkLCBsYWJlbCkgJT4lXG4gIGFycmFuZ2UoZW1kaXNfZmllbGQpXG53cml0ZV9jc3Yod21kYV9lbWRpcywgXCJ+L2RldmVsb3AvcHl0aG9uLXByb2plY3RzL3dtZGFzaXRlL2RvY3Mvd21kYS1lbWRpcy5jc3ZcIilcbmBgYCJ9 -->
-<pre class="r"><code>wmda_emdis_long &lt;-
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxud21kYV9lbWRpc193aWRlIDwtXG4gIHJlYWRfZXhjZWwoXG4gICAgXCJ+L2RldmVsb3AvcHl0aG9uLXByb2plY3RzL3dtZGFzaXRlL2RvY3MvV01EQS1EYXRhLURpY3Rpb25hcnktSlMtQUdNLTIwMTctMDgtMTctdjMueGxzeFwiLFxuICAgIHNoZWV0ID0gXCJXLUUtTWFwLVdpZGVcIlxuICApXG5uX3ZhcnMgPC0gd21kYV9lbWRpc193aWRlJCdFTURJUyBGaWVsZCBDb2RlcycgJT4lIFxuICBzdHJfc3BsaXQoXCIsXCIpICU+JVxuICBsYXBwbHkoZnVuY3Rpb24oeikgbGVuZ3RoKHopKSAlPiUgXG4gIHVubGlzdCgpICU+JSBcbiAgbWF4KClcbndtZGFfZW1kaXMgPC0gd21kYV9lbWRpc193aWRlICU+JVxuICByZW5hbWUoXG4gICAgaWQgPSBpZCxcbiAgICBsYWJlbCA9IExhYmVsLFxuICAgIGVtZGlzID0gJ0VNRElTIEZpZWxkIENvZGVzJykgJT4lXG4gIHNlcGFyYXRlKGVtZGlzLCBpbnRvID0gcGFzdGUwKFwiZW1kaXNfXCIsIDE6bl92YXJzKSwgc2VwID0gXCIsXCIsIGV4dHJhID0gXCJtZXJnZVwiLCBmaWxsID0gXCJyaWdodFwiKSAlPiVcbiAgZ2F0aGVyKGVtZGlzX2tleSwgZW1kaXNfZmllbGQsIHN0YXJ0c193aXRoKFwiZW1kaXNfXCIpLCBuYS5ybSA9IFRSVUUpICU+JVxuICBtdXRhdGUoZW1kaXNfZmllbGQgPSB0cmltd3MoZW1kaXNfZmllbGQpKSAlPiVcbiAgc2VsZWN0KGVtZGlzX2ZpZWxkLCBpZCwgbGFiZWwpICU+JVxuICBhcnJhbmdlKGVtZGlzX2ZpZWxkKVxud3JpdGVfY3N2KHdtZGFfZW1kaXMsIFwifi9kZXZlbG9wL3B5dGhvbi1wcm9qZWN0cy93bWRhc2l0ZS9kb2NzL3dtZGEtZW1kaXMuY3N2XCIpXG5gYGAifQ== -->
+<pre class="r"><code>wmda_emdis_wide &lt;-
   read_excel(
-    &quot;~/develop/python-projects/wmdasite/docs/WMDA-Data-Dictionary-JS-AGM-2017-08-17.xlsx&quot;,
-    sheet = &quot;W-E Mapping&quot;
+    &quot;~/develop/python-projects/wmdasite/docs/WMDA-Data-Dictionary-JS-AGM-2017-08-17-v3.xlsx&quot;,
+    sheet = &quot;W-E-Map-Wide&quot;
   )
-n_vars &lt;- wmda_emdis_long$'EMDIS Field Codes' %&gt;% 
+n_vars &lt;- wmda_emdis_wide$'EMDIS Field Codes' %&gt;% 
   str_split(&quot;,&quot;) %&gt;%
   lapply(function(z) length(z)) %&gt;% 
   unlist() %&gt;% 
   max()
-wmda_emdis &lt;- wmda_emdis_long %&gt;%
+wmda_emdis &lt;- wmda_emdis_wide %&gt;%
   rename(
     id = id,
     label = Label,
@@ -207,8 +207,69 @@ wmda_emdis &lt;- wmda_emdis_long %&gt;%
 write_csv(wmda_emdis, &quot;~/develop/python-projects/wmdasite/docs/wmda-emdis.csv&quot;)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudXNlcl93aWRlIDwtIFxuICByZWFkX2V4Y2VsKFxuICAgIFwifi9kZXZlbG9wL3B5dGhvbi1wcm9qZWN0cy93bWRhc2l0ZS9kb2NzL1dNREEtRGF0YS1EaWN0aW9uYXJ5LUpTLUFHTS0yMDE3LTA4LTE3LXYzLnhsc3hcIixcbiAgICBzaGVldCA9IFwiVXNlci1NYXAtV2lkZVwiXG4gIClcbm5fdXNlcl92YXJzIDwtIHVzZXJfd2lkZSR1c2VyICU+JSBcbiAgc3RyX3NwbGl0KFwiLFwiKSAlPiVcbiAgbGFwcGx5KGZ1bmN0aW9uKHopIGxlbmd0aCh6KSkgJT4lIFxuICB1bmxpc3QoKSAlPiUgXG4gIG1heCgpXG51c2VyX2ZhbWlsaWVzIDwtIHVzZXJfd2lkZSAlPiVcbiAgc2VwYXJhdGUodXNlciwgaW50byA9IHBhc3RlMChcInVzcl9cIiwgMTpuX3VzZXJfdmFycyksIHNlcCA9IFwiLFwiLCBleHRyYSA9IFwibWVyZ2VcIiwgZmlsbCA9IFwicmlnaHRcIikgJT4lXG4gIGdhdGhlcih1c2VyX2tleSwgdXNlciwgc3RhcnRzX3dpdGgoXCJ1c3JfXCIpLCBuYS5ybSA9IFRSVUUpICU+JVxuICBtdXRhdGUodXNlciA9IHRyaW13cyh1c2VyKSkgJT4lXG4gIHNlbGVjdCh1c2VyLCBpZCwgbGFiZWwpICU+JVxuICBhcnJhbmdlKHVzZXIpXG53cml0ZV9jc3YodXNlcl9mYW1pbGllcywgXCJ+L2RldmVsb3AvcHl0aG9uLXByb2plY3RzL3dtZGFzaXRlL2RvY3MvdXNlcl9mYW1pbGllcy5jc3ZcIilcbmBgYCJ9 -->
+<pre class="r"><code>user_wide &lt;- 
+  read_excel(
+    &quot;~/develop/python-projects/wmdasite/docs/WMDA-Data-Dictionary-JS-AGM-2017-08-17-v3.xlsx&quot;,
+    sheet = &quot;User-Map-Wide&quot;
+  )
+n_user_vars &lt;- user_wide$user %&gt;% 
+  str_split(&quot;,&quot;) %&gt;%
+  lapply(function(z) length(z)) %&gt;% 
+  unlist() %&gt;% 
+  max()
+user_families &lt;- user_wide %&gt;%
+  separate(user, into = paste0(&quot;usr_&quot;, 1:n_user_vars), sep = &quot;,&quot;, extra = &quot;merge&quot;, fill = &quot;right&quot;) %&gt;%
+  gather(user_key, user, starts_with(&quot;usr_&quot;), na.rm = TRUE) %&gt;%
+  mutate(user = trimws(user)) %&gt;%
+  select(user, id, label) %&gt;%
+  arrange(user)
+write_csv(user_families, &quot;~/develop/python-projects/wmdasite/docs/user_families.csv&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZW1kaXNfbXNnX3dpZGUgPC0gXG4gIHJlYWRfZXhjZWwoXG4gICAgXCJ+L2RldmVsb3AvcHl0aG9uLXByb2plY3RzL3dtZGFzaXRlL2RvY3MvV01EQS1EYXRhLURpY3Rpb25hcnktSlMtQUdNLTIwMTctMDgtMTctdjMueGxzeFwiLFxuICAgIHNoZWV0ID0gXCJFRk0tTWFwLVdpZGVcIlxuICApXG5uX21zZ192YXJzIDwtIGVtZGlzX21zZ193aWRlJG1lc3NhZ2VzICU+JSBcbiAgc3RyX3NwbGl0KFwiLFwiKSAlPiVcbiAgbGFwcGx5KGZ1bmN0aW9uKHopIGxlbmd0aCh6KSkgJT4lIFxuICB1bmxpc3QoKSAlPiUgXG4gIG1heCgpXG5maWVsZF9tZXNzYWdlcyA8LSBlbWRpc19tc2dfd2lkZSAlPiVcbiAgc2VwYXJhdGUobWVzc2FnZXMsIGludG8gPSBwYXN0ZTAoXCJtc2dfXCIsIDE6bl9tc2dfdmFycyksIHNlcCA9IFwiLFwiLCBleHRyYSA9IFwibWVyZ2VcIiwgZmlsbCA9IFwicmlnaHRcIikgJT4lXG4gIGdhdGhlcihtc2dfa2V5LCBtZXNzYWdlLCBzdGFydHNfd2l0aChcIm1zZ19cIiksIG5hLnJtID0gVFJVRSkgJT4lXG4gIG11dGF0ZShtZXNzYWdlID0gdHJpbXdzKG1lc3NhZ2UpKSAlPiVcbiAgc2VsZWN0KG1lc3NhZ2UsIGlkLCBmaWVsZF9jb2RlKSAlPiVcbiAgYXJyYW5nZShtZXNzYWdlKVxud3JpdGVfY3N2KGZpZWxkX21lc3NhZ2VzLCBcIn4vZGV2ZWxvcC9weXRob24tcHJvamVjdHMvd21kYXNpdGUvZG9jcy9maWVsZF9tZXNzYWdlcy5jc3ZcIilcbmBgYCJ9 -->
+<pre class="r"><code>emdis_msg_wide &lt;- 
+  read_excel(
+    &quot;~/develop/python-projects/wmdasite/docs/WMDA-Data-Dictionary-JS-AGM-2017-08-17-v3.xlsx&quot;,
+    sheet = &quot;EFM-Map-Wide&quot;
+  )
+n_msg_vars &lt;- emdis_msg_wide$messages %&gt;% 
+  str_split(&quot;,&quot;) %&gt;%
+  lapply(function(z) length(z)) %&gt;% 
+  unlist() %&gt;% 
+  max()
+field_messages &lt;- emdis_msg_wide %&gt;%
+  separate(messages, into = paste0(&quot;msg_&quot;, 1:n_msg_vars), sep = &quot;,&quot;, extra = &quot;merge&quot;, fill = &quot;right&quot;) %&gt;%
+  gather(msg_key, message, starts_with(&quot;msg_&quot;), na.rm = TRUE) %&gt;%
+  mutate(message = trimws(message)) %&gt;%
+  select(message, id, field_code) %&gt;%
+  arrange(message)
+write_csv(field_messages, &quot;~/develop/python-projects/wmdasite/docs/field_messages.csv&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGlzdGluY3RfbXNnIDwtIGZpZWxkX21lc3NhZ2VzICU+JVxuICBkaXN0aW5jdChtZXNzYWdlKVxud3JpdGVfY3N2KGRpc3RpbmN0X21zZywgXCJ+L2RldmVsb3AvcHl0aG9uLXByb2plY3RzL3dtZGFzaXRlL2RvY3MvbWVzc2FnZXMuY3N2XCIpXG5kaXN0aW5jdF9tc2cgJT4lXG4gIHB1bGwobWVzc2FnZSkgJT4lXG4gIHBhc3RlMChjb2xsYXBzZSA9IFwiLCBcIilcbmBgYCJ9 -->
+<pre class="r"><code>distinct_msg &lt;- field_messages %&gt;%
+  distinct(message)
+write_csv(distinct_msg, &quot;~/develop/python-projects/wmdasite/docs/messages.csv&quot;)
+distinct_msg %&gt;%
+  pull(message) %&gt;%
+  paste0(collapse = &quot;, &quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiQURNSU4sIEFMTV9SRVEsIEFMTV9SRVMsIENCUl9SRVEsIENCVV9ESUZGLCBDQlVfRlVMTCwgRE9OT1JfQ0IsIElETV9SRVEsIElETV9SRVMsIE1BUlJfU1RBVCwgTUFUQ0hfU1VNLCBNU0dfQUNLLCBNU0dfREVOLCBORVdfQURELCBOT19SRVMsIFBBVF9TVEFULCBQQVRfVVBELCBQSEVOX0xJU1QsIFJFUV9DQU4sIFJFU19SRU0sIFJTVl9OT1QsIFJTVl9SRVEsIFJTVl9SRVMsIFNNUF9BUlIsIFNNUF9JTkZPLCBTTVBfUkVRLCBTTVBfUkVTLCBUWFRfTVNHLCBUWVBfUkVRLCBUWVBfUkVTLCBXQVJOSU5HLCBXT1JfUkVRXCJcbiJ9 -->
+<pre><code>[1] &quot;ADMIN, ALM_REQ, ALM_RES, CBR_REQ, CBU_DIFF, CBU_FULL, DONOR_CB, IDM_REQ, IDM_RES, MARR_STAT, MATCH_SUM, MSG_ACK, MSG_DEN, NEW_ADD, NO_RES, PAT_STAT, PAT_UPD, PHEN_LIST, REQ_CAN, RES_REM, RSV_NOT, RSV_REQ, RSV_RES, SMP_ARR, SMP_INFO, SMP_REQ, SMP_RES, TXT_MSG, TYP_REQ, TYP_RES, WARNING, WOR_REQ&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiV01EQSBFTURJUyBNYXBwaW5nIgpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sKLS0tCgoKYGBge3Igc2V0dXB9CmxpYnJhcnkodGlkeXZlcnNlKQpsaWJyYXJ5KHJlYWR4bCkKbGlicmFyeShzdHJpbmdyKQoKYGBgCgoKYGBge3IgcmVhZC1wcm9jZXNzfQp3bWRhX2VtZGlzX2xvbmcgPC0KICByZWFkX2V4Y2VsKAogICAgIn4vZGV2ZWxvcC9weXRob24tcHJvamVjdHMvd21kYXNpdGUvZG9jcy9XTURBLURhdGEtRGljdGlvbmFyeS1KUy1BR00tMjAxNy0wOC0xNy54bHN4IiwKICAgIHNoZWV0ID0gIlctRSBNYXBwaW5nIgogICkKCm5fdmFycyA8LSB3bWRhX2VtZGlzX2xvbmckJ0VNRElTIEZpZWxkIENvZGVzJyAlPiUgCiAgc3RyX3NwbGl0KCIsIikgJT4lCiAgbGFwcGx5KGZ1bmN0aW9uKHopIGxlbmd0aCh6KSkgJT4lIAogIHVubGlzdCgpICU+JSAKICBtYXgoKQoKCndtZGFfZW1kaXMgPC0gd21kYV9lbWRpc19sb25nICU+JQogIHJlbmFtZSgKICAgIGlkID0gaWQsCiAgICBsYWJlbCA9IExhYmVsLAogICAgZW1kaXMgPSAnRU1ESVMgRmllbGQgQ29kZXMnKSAlPiUKICBzZXBhcmF0ZShlbWRpcywgaW50byA9IHBhc3RlMCgiZW1kaXNfIiwgMTpuX3ZhcnMpLCBzZXAgPSAiLCIsIGV4dHJhID0gIm1lcmdlIiwgZmlsbCA9ICJyaWdodCIpICU+JQogIGdhdGhlcihlbWRpc19rZXksIGVtZGlzX2ZpZWxkLCBzdGFydHNfd2l0aCgiZW1kaXNfIiksIG5hLnJtID0gVFJVRSkgJT4lCiAgbXV0YXRlKGVtZGlzX2ZpZWxkID0gdHJpbXdzKGVtZGlzX2ZpZWxkKSkgJT4lCiAgc2VsZWN0KGVtZGlzX2ZpZWxkLCBpZCwgbGFiZWwpICU+JQogIGFycmFuZ2UoZW1kaXNfZmllbGQpCgp3cml0ZV9jc3Yod21kYV9lbWRpcywgIn4vZGV2ZWxvcC9weXRob24tcHJvamVjdHMvd21kYXNpdGUvZG9jcy93bWRhLWVtZGlzLmNzdiIpCgpgYGA=</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiV01EQSBFTURJUyBNYXBwaW5nIgpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sKLS0tCgoKYGBge3Igc2V0dXB9CmxpYnJhcnkodGlkeXZlcnNlKQpsaWJyYXJ5KHJlYWR4bCkKbGlicmFyeShzdHJpbmdyKQoKYGBgCgoKYGBge3Igd21kYV8yX2VtZGlzfQp3bWRhX2VtZGlzX3dpZGUgPC0KICByZWFkX2V4Y2VsKAogICAgIn4vZGV2ZWxvcC9weXRob24tcHJvamVjdHMvd21kYXNpdGUvZG9jcy9XTURBLURhdGEtRGljdGlvbmFyeS1KUy1BR00tMjAxNy0wOC0xNy12My54bHN4IiwKICAgIHNoZWV0ID0gIlctRS1NYXAtV2lkZSIKICApCgpuX3ZhcnMgPC0gd21kYV9lbWRpc193aWRlJCdFTURJUyBGaWVsZCBDb2RlcycgJT4lIAogIHN0cl9zcGxpdCgiLCIpICU+JQogIGxhcHBseShmdW5jdGlvbih6KSBsZW5ndGgoeikpICU+JSAKICB1bmxpc3QoKSAlPiUgCiAgbWF4KCkKCgp3bWRhX2VtZGlzIDwtIHdtZGFfZW1kaXNfd2lkZSAlPiUKICByZW5hbWUoCiAgICBpZCA9IGlkLAogICAgbGFiZWwgPSBMYWJlbCwKICAgIGVtZGlzID0gJ0VNRElTIEZpZWxkIENvZGVzJykgJT4lCiAgc2VwYXJhdGUoZW1kaXMsIGludG8gPSBwYXN0ZTAoImVtZGlzXyIsIDE6bl92YXJzKSwgc2VwID0gIiwiLCBleHRyYSA9ICJtZXJnZSIsIGZpbGwgPSAicmlnaHQiKSAlPiUKICBnYXRoZXIoZW1kaXNfa2V5LCBlbWRpc19maWVsZCwgc3RhcnRzX3dpdGgoImVtZGlzXyIpLCBuYS5ybSA9IFRSVUUpICU+JQogIG11dGF0ZShlbWRpc19maWVsZCA9IHRyaW13cyhlbWRpc19maWVsZCkpICU+JQogIHNlbGVjdChlbWRpc19maWVsZCwgaWQsIGxhYmVsKSAlPiUKICBhcnJhbmdlKGVtZGlzX2ZpZWxkKQoKd3JpdGVfY3N2KHdtZGFfZW1kaXMsICJ+L2RldmVsb3AvcHl0aG9uLXByb2plY3RzL3dtZGFzaXRlL2RvY3Mvd21kYS1lbWRpcy5jc3YiKQoKYGBgCgpgYGB7ciB1c2VyX21hcH0KdXNlcl93aWRlIDwtIAogIHJlYWRfZXhjZWwoCiAgICAifi9kZXZlbG9wL3B5dGhvbi1wcm9qZWN0cy93bWRhc2l0ZS9kb2NzL1dNREEtRGF0YS1EaWN0aW9uYXJ5LUpTLUFHTS0yMDE3LTA4LTE3LXYzLnhsc3giLAogICAgc2hlZXQgPSAiVXNlci1NYXAtV2lkZSIKICApCgpuX3VzZXJfdmFycyA8LSB1c2VyX3dpZGUkdXNlciAlPiUgCiAgc3RyX3NwbGl0KCIsIikgJT4lCiAgbGFwcGx5KGZ1bmN0aW9uKHopIGxlbmd0aCh6KSkgJT4lIAogIHVubGlzdCgpICU+JSAKICBtYXgoKQoKdXNlcl9mYW1pbGllcyA8LSB1c2VyX3dpZGUgJT4lCiAgc2VwYXJhdGUodXNlciwgaW50byA9IHBhc3RlMCgidXNyXyIsIDE6bl91c2VyX3ZhcnMpLCBzZXAgPSAiLCIsIGV4dHJhID0gIm1lcmdlIiwgZmlsbCA9ICJyaWdodCIpICU+JQogIGdhdGhlcih1c2VyX2tleSwgdXNlciwgc3RhcnRzX3dpdGgoInVzcl8iKSwgbmEucm0gPSBUUlVFKSAlPiUKICBtdXRhdGUodXNlciA9IHRyaW13cyh1c2VyKSkgJT4lCiAgc2VsZWN0KHVzZXIsIGlkLCBsYWJlbCkgJT4lCiAgYXJyYW5nZSh1c2VyKQoKd3JpdGVfY3N2KHVzZXJfZmFtaWxpZXMsICJ+L2RldmVsb3AvcHl0aG9uLXByb2plY3RzL3dtZGFzaXRlL2RvY3MvdXNlcl9mYW1pbGllcy5jc3YiKQoKYGBgCgoKCmBgYHtyIGVtZGlzX2ZpZWxkXzJfbXNnfQplbWRpc19tc2dfd2lkZSA8LSAKICByZWFkX2V4Y2VsKAogICAgIn4vZGV2ZWxvcC9weXRob24tcHJvamVjdHMvd21kYXNpdGUvZG9jcy9XTURBLURhdGEtRGljdGlvbmFyeS1KUy1BR00tMjAxNy0wOC0xNy12My54bHN4IiwKICAgIHNoZWV0ID0gIkVGTS1NYXAtV2lkZSIKICApCgpuX21zZ192YXJzIDwtIGVtZGlzX21zZ193aWRlJG1lc3NhZ2VzICU+JSAKICBzdHJfc3BsaXQoIiwiKSAlPiUKICBsYXBwbHkoZnVuY3Rpb24oeikgbGVuZ3RoKHopKSAlPiUgCiAgdW5saXN0KCkgJT4lIAogIG1heCgpCgpmaWVsZF9tZXNzYWdlcyA8LSBlbWRpc19tc2dfd2lkZSAlPiUKICBzZXBhcmF0ZShtZXNzYWdlcywgaW50byA9IHBhc3RlMCgibXNnXyIsIDE6bl9tc2dfdmFycyksIHNlcCA9ICIsIiwgZXh0cmEgPSAibWVyZ2UiLCBmaWxsID0gInJpZ2h0IikgJT4lCiAgZ2F0aGVyKG1zZ19rZXksIG1lc3NhZ2UsIHN0YXJ0c193aXRoKCJtc2dfIiksIG5hLnJtID0gVFJVRSkgJT4lCiAgbXV0YXRlKG1lc3NhZ2UgPSB0cmltd3MobWVzc2FnZSkpICU+JQogIHNlbGVjdChtZXNzYWdlLCBpZCwgZmllbGRfY29kZSkgJT4lCiAgYXJyYW5nZShtZXNzYWdlKQoKd3JpdGVfY3N2KGZpZWxkX21lc3NhZ2VzLCAifi9kZXZlbG9wL3B5dGhvbi1wcm9qZWN0cy93bWRhc2l0ZS9kb2NzL2ZpZWxkX21lc3NhZ2VzLmNzdiIpCgpgYGAKCmBgYHtyIGRpc3RpbnRfbXNnc30KCmRpc3RpbmN0X21zZyA8LSBmaWVsZF9tZXNzYWdlcyAlPiUKICBkaXN0aW5jdChtZXNzYWdlKQoKd3JpdGVfY3N2KGRpc3RpbmN0X21zZywgIn4vZGV2ZWxvcC9weXRob24tcHJvamVjdHMvd21kYXNpdGUvZG9jcy9tZXNzYWdlcy5jc3YiKQoKZGlzdGluY3RfbXNnICU+JQogIHB1bGwobWVzc2FnZSkgJT4lCiAgcGFzdGUwKGNvbGxhcHNlID0gIiwgIikKCgpgYGAK</div>
 
 
 

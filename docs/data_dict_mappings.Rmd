@@ -12,21 +12,21 @@ library(stringr)
 ```
 
 
-```{r read-process}
-wmda_emdis_long <-
+```{r wmda_2_emdis}
+wmda_emdis_wide <-
   read_excel(
-    "~/develop/python-projects/wmdasite/docs/WMDA-Data-Dictionary-JS-AGM-2017-08-17.xlsx",
-    sheet = "W-E Mapping"
+    "~/develop/python-projects/wmdasite/docs/WMDA-Data-Dictionary-JS-AGM-2017-08-17-v3.xlsx",
+    sheet = "W-E-Map-Wide"
   )
 
-n_vars <- wmda_emdis_long$'EMDIS Field Codes' %>% 
+n_vars <- wmda_emdis_wide$'EMDIS Field Codes' %>% 
   str_split(",") %>%
   lapply(function(z) length(z)) %>% 
   unlist() %>% 
   max()
 
 
-wmda_emdis <- wmda_emdis_long %>%
+wmda_emdis <- wmda_emdis_wide %>%
   rename(
     id = id,
     label = Label,
@@ -38,5 +38,69 @@ wmda_emdis <- wmda_emdis_long %>%
   arrange(emdis_field)
 
 write_csv(wmda_emdis, "~/develop/python-projects/wmdasite/docs/wmda-emdis.csv")
+
+```
+
+```{r user_map}
+user_wide <- 
+  read_excel(
+    "~/develop/python-projects/wmdasite/docs/WMDA-Data-Dictionary-JS-AGM-2017-08-17-v3.xlsx",
+    sheet = "User-Map-Wide"
+  )
+
+n_user_vars <- user_wide$user %>% 
+  str_split(",") %>%
+  lapply(function(z) length(z)) %>% 
+  unlist() %>% 
+  max()
+
+user_families <- user_wide %>%
+  separate(user, into = paste0("usr_", 1:n_user_vars), sep = ",", extra = "merge", fill = "right") %>%
+  gather(user_key, user, starts_with("usr_"), na.rm = TRUE) %>%
+  mutate(user = trimws(user)) %>%
+  select(user, id, label) %>%
+  arrange(user)
+
+write_csv(user_families, "~/develop/python-projects/wmdasite/docs/user_families.csv")
+
+```
+
+
+
+```{r emdis_field_2_msg}
+emdis_msg_wide <- 
+  read_excel(
+    "~/develop/python-projects/wmdasite/docs/WMDA-Data-Dictionary-JS-AGM-2017-08-17-v3.xlsx",
+    sheet = "EFM-Map-Wide"
+  )
+
+n_msg_vars <- emdis_msg_wide$messages %>% 
+  str_split(",") %>%
+  lapply(function(z) length(z)) %>% 
+  unlist() %>% 
+  max()
+
+field_messages <- emdis_msg_wide %>%
+  separate(messages, into = paste0("msg_", 1:n_msg_vars), sep = ",", extra = "merge", fill = "right") %>%
+  gather(msg_key, message, starts_with("msg_"), na.rm = TRUE) %>%
+  mutate(message = trimws(message)) %>%
+  select(message, id, field_code) %>%
+  arrange(message)
+
+write_csv(field_messages, "~/develop/python-projects/wmdasite/docs/field_messages.csv")
+
+```
+
+```{r distint_msgs}
+
+distinct_msg <- field_messages %>%
+  distinct(message)
+
+write_csv(distinct_msg, "~/develop/python-projects/wmdasite/docs/messages.csv")
+
+distinct_msg %>%
+  pull(message) %>%
+  paste0(collapse = ", ")
+
 
 ```
