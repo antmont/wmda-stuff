@@ -1,30 +1,65 @@
-<h1>{{ dfield.label }}</h1>
-<ul>
-    <li>Description: {{ dfield.description_short }}</li>
-    <li>Description (long): {{ dfield.description_long }}</li>
-    <li>Field type: {{ dfield.get_field_type_display }}</li>
-    {% if dfield.field_type == 'N' %}
-        <li>Units: {{ dfield.units }}</li>
-    {% endif %}
-    {% if dfield.field_type == 'N' or dfield.field_type == 'D' %}
-        <li>Range: {{ dfield.range }}</li>
-    {% endif %}
-    {% if dfield.field_type == 'S' or dfield.field_type == 'M' %}
-        <li>Values: {{ dfield.values }}</li>
-    {% endif %}
-    <li>Data family owner: {{ dfield.owner_family }}</li>
-    <li>Data family users:
-        <ul>
-            {% for family in dfield.user_families.all %}
-                <li>{{ family.name }}</li>
-            {% endfor %}
-        </ul>
-    </li>
-    <li>EMDIS fields:
-        <ul>
-            {% for efield in dfield.emdisfield_set.all %}
-                <li><a href="/emdis/{{ efield.id }}/">{{ efield.field_code }}</a></li>
-            {% endfor %}
-        </ul>
-    </li>
-</ul>
+{% extends 'wmdadict/base.html' %}
+
+{% block content %}
+    <h1 class="text-center">WMDA Dictionary field: {{ dfield }}</h1>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover table-striped tablesorter">
+                <tbody>
+                        <tr>
+                            <td>Description</td>
+                            <td>{{ dfield.description_short }}</td>
+                        </tr>
+                        <tr>
+                            <td>Description (long)</td>
+                            <td>{{ dfield.description_long }}</td>
+                        </tr>
+                        <tr>
+                            <td>Field type</td>
+                            <td>{{ dfield.get_field_type_display }}</td>
+                        </tr>
+                        {% if dfield.field_type == 'N' %}
+                            <tr>
+                                <td>Units</td>
+                                <td>{{ dfield.units }}</td>
+                            </tr>
+                        {% endif %}
+                        {% if dfield.field_type == 'N' or dfield.field_type == 'D' %}
+                            <tr>
+                                <td>Range</td>
+                                <td>{{ dfield.range }}</td>
+                            </tr>
+                        {% endif %}
+                        {% if dfield.field_type == 'S' or dfield.field_type == 'M' %}
+                            <tr>
+                                <td>Values</td>
+                                <td>{{ dfield.values }}</td>
+                            </tr>
+                        {% endif %}
+                        <tr>
+                            <td>Data family owner</td>
+                            <td>{{ dfield.owner_family }}</td>
+                        </tr>
+                        {% if dfield.user_families.all %}
+                            <tr>
+                                <td>Data family users</td>
+                                <td>
+                                    {% for family in dfield.user_families.all %}
+                                        {{ family.name }}<br />
+                                    {% endfor %}
+                                </td>
+                            </tr>
+                        {% endif %}
+                        {% if dfield.emdisfield_set.all %}
+                            <tr>
+                                <td>EMDIS fields</td>
+                                <td>
+                                    {% for efield in dfield.emdisfield_set.all %}
+                                        <a href="/emdis/field/{{ efield.id }}/">{{ efield.field_code }}<br />
+                                    {% endfor %}
+                                </td>
+                            </tr>
+                        {% endif %}
+                </tbody>
+            </table>
+        </div>
+{% endblock %}

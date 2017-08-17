@@ -1,0 +1,35 @@
+{% extends 'wmdadict/base.html' %}
+
+{% block content %}
+    <h1 class="text-center"> EMDIS Data Dictionary </h1>
+    {% if emdis_fields %}
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover table-striped tablesorter">
+                <thead>
+                    <tr>
+                        <th class="header"> EMDIS field code <i class="icon-sort"></i></th>
+                        <th class="header"> Field description <i class="icon-sort"></i></th>
+                        <th class="header"> WMDA dictionary field <i class="icon-sort"></i></th>
+                        <th class="header"> EMDIS messages <i class="icon-sort"></i></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for efield in emdis_fields %}
+                        <tr>
+                            <td><a href="/emdis/field/{{ efield.pk }}/">{{ efield.field_code }}</td>
+                            <td>{{ efield.field_description }}</td>
+                            <td><a href="/dict/{{ efield.dict_field.pk }}/">{{ efield.dict_field }}</td>
+                            <td>
+                                {% for message in efield.emdis_messages.all %}
+                                    <a href="/emdis/message/{{ message.pk }}/">{{ message }}</a><br />
+                                {% endfor %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+        <p>No EMDIS fields are available.</p>
+    {% endif %}
+{% endblock %}

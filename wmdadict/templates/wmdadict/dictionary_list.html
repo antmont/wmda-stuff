@@ -1,9 +1,29 @@
-{% if dict_fields %}
-    <ul>
-    {% for dfield in dict_fields %}
-        <li><a href="/dict/{{ dfield.id }}/">{{ dfield.label }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No dictionary fields are available.</p>
-{% endif %}
+{% extends 'wmdadict/base.html' %}
+
+{% block content %}
+    <h1 class="text-center"> WMDA Data Dictionary </h1>
+    {% if dict_fields %}
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover table-striped tablesorter">
+                <thead>
+                    <tr>
+                        <th class="header"> Label <i class="icon-sort"></i></th>
+                        <th class="header"> Description <i class="icon-sort"></i></th>
+                        <th class="header"> Data family owner <i class="icon-sort"></i></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for dfield in dict_fields %}
+                        <tr>
+                            <td><a href="/dict/{{ dfield.id }}/">{{ dfield.label }}</td>
+                            <td>{{ dfield.description_short }}</td>
+                            <td>{{ dfield.owner_family }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+        <p>No dictionary fields are available.</p>
+    {% endif %}
+{% endblock %}

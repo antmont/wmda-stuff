@@ -16,8 +16,17 @@ def dictionary_detail(request, field_id):
     return render(request, 'wmdadict/dictionary_detail.html', {'dfield': dfield})
 
 def emdis_list(request):
-    return HttpResponse("You're at the EMDIS field list.")
+    emdis_fields = EmdisField.objects.all()
+    return render(request, 'wmdadict/emdis_list.html', {'emdis_fields': emdis_fields})
 
 def emdis_detail(request, field_id):
-    response = "You're looking at the details of EMDIS field %s."
-    return HttpResponse(response % field_id)
+    efield = get_object_or_404(EmdisField, pk=field_id)
+    return render(request, 'wmdadict/emdis_detail.html', {'efield': efield})
+
+def emdis_msg_list(request):
+    response = "You're looking at the EMDIS messages"
+    return HttpResponse(response)
+
+def emdis_msg_detail(request, msg_id):
+    response = "You're looking at the details of EMDIS message %s."
+    return HttpResponse(response % msg_id)

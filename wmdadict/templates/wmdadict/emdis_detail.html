@@ -1,0 +1,41 @@
+{% extends 'wmdadict/base.html' %}
+
+{% block content %}
+    <h1 class="text-center">EMDIS field: {{ efield }}</h1>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover table-striped tablesorter">
+                <tbody>
+                        <tr>
+                            <td>Field code</td>
+                            <td>{{ efield.field_code }}</td>
+                        </tr>
+                        <tr>
+                            <td>Field description</td>
+                            <td>{{ efield.field_description }}</td>
+                        </tr>
+                        <tr>
+                            <td>Field type</td>
+                            <td>{{ efield.field_type }}</td>
+                        </tr>
+                        <tr>
+                            <td>Field rule</td>
+                            <td>{{ efield.field_rule }}</td>
+                        </tr>
+                        <tr>
+                            <td>Dictionary field</td>
+                            <td><a href="/dict/{{ efield.dict_field.pk }}/">{{ efield.dict_field }}</a><br />
+                                {{ efield.dict_field.description_short }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>EMDIS messages</td>
+                            <td>
+                                {% for message in efield.emdis_messages.all %}
+                                    <a href="/emdis/message/{{ message.pk }}/">{{ message }}</a><br />
+                                {% endfor %}
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+        </div>
+{% endblock %}
