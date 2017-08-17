@@ -1,0 +1,42 @@
+---
+title: "WMDA EMDIS Mapping"
+output: html_notebook
+---
+
+
+```{r setup}
+library(tidyverse)
+library(readxl)
+library(stringr)
+
+```
+
+
+```{r read-process}
+wmda_emdis_long <-
+  read_excel(
+    "~/develop/python-projects/wmdasite/docs/WMDA-Data-Dictionary-JS-AGM-2017-08-17.xlsx",
+    sheet = "W-E Mapping"
+  )
+
+n_vars <- wmda_emdis_long$'EMDIS Field Codes' %>% 
+  str_split(",") %>%
+  lapply(function(z) length(z)) %>% 
+  unlist() %>% 
+  max()
+
+
+wmda_emdis <- wmda_emdis_long %>%
+  rename(
+    id = id,
+    label = Label,
+    emdis = 'EMDIS Field Codes') %>%
+  separate(emdis, into = paste0("emdis_", 1:n_vars), sep = ",", extra = "merge", fill = "right") %>%
+  gather(emdis_key, emdis_field, starts_with("emdis_"), na.rm = TRUE) %>%
+  mutate(emdis_field = trimws(emdis_field)) %>%
+  select(emdis_field, id, label) %>%
+  arrange(emdis_field)
+
+write_csv(wmda_emdis, "~/develop/python-projects/wmdasite/docs/wmda-emdis.csv")
+
+```

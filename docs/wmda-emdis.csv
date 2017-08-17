@@ -1,0 +1,448 @@
+emdis_field,id,label
+ACC_DAYS,7,Acceptable sample reception days
+ACCREDITATION,9,CBB Accreditation
+ACK_DATE,10,Receipt acknowledgement
+ACK_ID,11,ACK_ID
+ACTION,12,ACTION
+ADDR_1,13,First line of address
+ADDR_2,14,Second line of address
+ADDR_3,15,Third line address
+ALTER_DATE1,20,Preferred date (collection/shipment) 2
+ALTER_DATE2,21,Preferred date (collection/shipment) 3
+ALTER_REQ_TYPE,22,ALTER_REQ_TYPE
+ANTI_COAG,23,Required Anticoagulant
+ARRV_DATE,29,Scheduled delivery date
+AUTO_DATE,32,Donor Autologous Unit
+CB_34PC,1,Collected CD34+
+CB_34PC_FRZN,2,Processed CD34+
+CB_A1,3,HLA A (1st antigen)
+CB_A2,4,HLA A (2nd antigen)
+CB_ABO,5,Blood Group (ABO)
+CB_ABO,6,Blood Group (Rhesus)
+CB_AL_PLA,16,CBU plasma aliquots
+CB_AL_RED_BC,17,CBU red cell aliquots
+CB_AL_SER,18,CBU serum aliquots
+CB_ANTI_HBC,24,Anti-HBc
+CB_ANTI_HCV,26,Anti HCV
+CB_ANTI_HIV_12,27,Anti-HIV 1 and Anti-HIV 2
+CB_ATT_SEG,30,Contigous/attached segments
+CB_B1,33,HLA-B (1st antigen)
+CB_B2,34,HLA-B (2nd antigen)
+CB_BACT_CULT,35,Microbial Screen(bacteria)
+CB_BAG_ID,36,CBU Bag ID
+CB_BAGS,37,Number of CBU bags
+CB_BANK_DISTRIB_ID,38,Cord Blood Bank
+CB_BANK_MANUF_ID,39,Cord Blood Bank Manufacturing ID
+CB_BANK_MAT_ID,40,Maternal ID
+CB_BIRTH_DATE,41,CBU birth date
+CB_C1,43,HLA-C (1st antigen)
+CB_C2,44,HLA-C (2nd antigen)
+CB_CCR5,45,CCR5
+CB_CFU,48,Total colony forming units (CFU)
+CB_CHAGAS,49,Chagas Screen
+CB_CMV,53,Cytomegalovirus (CMV)
+CB_CMV_NAT,55,CMV DNA PCR
+CB_COLL_DATE,56,CBU Collection Date
+CB_CT_COMPLETE_ DATE,66,CBU verification typing date
+CB_DNA_A1,71,HLA A (1st allele)
+CB_DNA_A2,72,HLA A (2nd allele)
+CB_DNA_B1,74,HLA B (1st allele)
+CB_DNA_B2,75,HLA B (2nd allele)
+CB_DNA_C1,76,HLAC (1st allele)
+CB_DNA_C2,77,HLAC (2nd allele)
+CB_DNA_SMPL,73,Cord Blood Unit DNA sample
+CB_DPA11,78,HLA DPA1 (1st allele)
+CB_DPA12,79,HLA DPA1 (2nd allele)
+CB_DPB11,80,HLA DPB1 (1st allele)
+CB_DPB12,81,HLA DPB1 (2nd allele)
+CB_DQ1,82,HLA-DQB1 (1st antigen)
+CB_DQ2,83,HLA-DQB1 (2nd antigen)
+CB_DQA11,84,HLA DQA1 (1st allele)
+CB_DQA12,85,HLA DQA1 (2nd allele)
+CB_DQB11,86,HLA-DQB1 (1st allele)
+CB_DQB12,87,HLA-DQB1 (2nd allele)
+CB_DR1,88,HLA-DRB1 (1st antigen)
+CB_DR2,89,HLA-DRB1 (2nd antigen)
+CB_DRB11,90,HLA-DRB1 (1st allele)
+CB_DRB12,91,HLA-DRB1 (2nd allele)
+CB_DRB31,92,HLA-DRB3 (1st allele)
+CB_DRB32,93,HLA-DRB3 (2nd allele)
+CB_DRB41,94,HLA-DRB4 (1st allele)
+CB_DRB42,95,HLA-DRB4 (2nd allele)
+CB_DRB51,96,HLA-DRB5 (1st allele)
+CB_DRB52,97,HLA-DRB5 (2nd allele)
+CB_EBV,98,Epstein Barr Virus (EBV) Status
+CB_ETHN,100,Ethnicity
+CB_FREEZE_DATE,107,CBU cyropreservation date
+CB_FREEZE_METH,108,CBU cyropreservation method
+CB_FUNG_CULT,109,CBU microbial fungal screen
+CB_HBS_AG,113,Hepatitis B sufrace antigen
+CB_HBV_NAT,114,HBV NAT
+CB_HCV_NAT,115,HCV NAT
+CB_HEMO_STATUS,117,Hemoglobinopathy screen
+CB_HIV_1_NAT,119,HIV-1 NAT
+CB_HIV_P24,120,HIV p24
+CB_HTLV,28,Anti-HTLV I/II
+CB_ID,126,Cord Blood Unit Identification
+CB_KIR_GL,135,Killer immunoglobulin- like receptor (KIR) GL string
+CB_KIR2DL1,136,KIR gene 2DL1
+CB_KIR2DL2,137,KIR gene 2DL2
+CB_KIR2DL3,138,KIR gene 2DL3
+CB_KIR2DL4,139,KIR gene 2DL4
+CB_KIR2DL5A,140,KIR gene 2DL5A
+CB_KIR2DL5B,141,KIR gene 2DL5B
+CB_KIR2DP1,142,CBU KIR gene 2DP1
+CB_KIR2DS1,143,CBU KIR gene 2DS1
+CB_KIR2DS2,144,CBU KIR gene 2DS2
+CB_KIR2DS3,145,CBU KIR gene 2DS3
+CB_KIR2DS4,146,CBU KIR gene 2DS4
+CB_KIR2DS5,147,CBU KIR gene 2DS5
+CB_KIR3DL1,148,CBU KIR gene 3DL1
+CB_KIR3DL2,149,CBU KIR gene 3DL2
+CB_KIR3DL3,150,CBU KIR gene 3DL3
+CB_KIR3DP1,151,CBU KIR gene 3DP1
+CB_KIR3DS1,152,CBU KIR gene 3DS1
+CB_LOCAL_ID,155,Local ID of a cord blood unit
+CB_MAT_A1,159,Maternal HLA A (1st antigen)
+CB_MAT_A2,160,Maternal HLA A (2nd antigen)
+CB_MAT_AL_PLA,161,Maternal plasma aliquots
+CB_MAT_AL_SER,162,Maternal serum aliquots
+CB_MAT_ANTI_HBC,24,Anti-HBc
+CB_MAT_ANTI_HBS,163,Hepatitis B antibodies
+CB_MAT_ANTI_HBS,25,HBs Ag
+CB_MAT_ANTI_HCV,26,Anti HCV
+CB_MAT_ANTI_HIV_12,27,Anti-HIV 1 and Anti-HIV 2
+CB_MAT_B1,164,Maternal HLA B(1st antigen)
+CB_MAT_B2,165,Maternal HLA B(2nd antigen)
+CB_MAT_C1,166,Maternal HLA C(1st antigen)
+CB_MAT_C2,167,Maternal HLA C(2nd antigen)
+CB_MAT_CHAGAS,49,Chagas Screen
+CB_MAT_CMV,53,Cytomegalovirus (CMV)
+CB_MAT_CMV_NAT,55,CMV DNA PCR
+CB_MAT_DNA_A1,168,Maternal HLA A (1st alelle)
+CB_MAT_DNA_A2,169,Maternal HLA A( 2nd allele)
+CB_MAT_DNA_B1,170,Maternal HLA B(1st allele)
+CB_MAT_DNA_B2,171,Maternal HLA B(2nd allele)
+CB_MAT_DNA_C1,172,Maternal HLA C(1st allele)
+CB_MAT_DNA_C2,173,Maternal HLA C(2nd allele)
+CB_MAT_DPA11,174,Maternal HLA DPA1(1st allele)
+CB_MAT_DPA12,175,Maternal HLA DPA1 (2nd allele)
+CB_MAT_DPB11,176,Maternal HLA DPB1(1st allele)
+CB_MAT_DPB12,177,Maternal HLA DPB1(2nd allele)
+CB_MAT_DQ1,178,Maternal HLA DQB1(1st antigen)
+CB_MAT_DQ2,179,Maternal HLA DQB1(2nd antigen)
+CB_MAT_DQA11,180,Maternal HLA DQA1(1st allele)
+CB_MAT_DQA12,181,Maternal HLA DQA1(2nd allele)
+CB_MAT_DQB11,182,Maternal HLA DQB1(1st allele)
+CB_MAT_DQB12,183,Maternal HLA DQB1(2nd allele)
+CB_MAT_DR1,184,Maternal HLA DRB1(1st antigen)
+CB_MAT_DR2,185,Maternal HLA DRB1(2nd antigen)
+CB_MAT_DRB11,186,Maternal HLA DRB1 (1st allele)
+CB_MAT_DRB12,187,Maternal HLA DRB1 (2nd allele)
+CB_MAT_DRB31,188,Maternal HLA DRB3(1st allele)
+CB_MAT_DRB32,189,Maternal HLA DRB3(2nd allele)
+CB_MAT_DRB41,190,Maternal HLA DRB4(1st allele)
+CB_MAT_DRB42,191,Maternal HLA DRB4(2nd allele)
+CB_MAT_DRB51,192,Maternal HLA DRB5(1st allele)
+CB_MAT_DRB52,193,Maternal HLA DRB5(2nd allele)
+CB_MAT_EBV,98,Epstein Barr Virus (EBV) Status
+CB_MAT_HBS_AG,113,Hepatitis B sufrace antigen
+CB_MAT_HBV_NAT,114,HBV NAT
+CB_MAT_HCV_NAT,115,HCV NAT
+CB_MAT_HIV_1_NAT,119,HIV-1 NAT
+CB_MAT_HIV_P24,120,HIV p24
+CB_MAT_HTLV,28,Anti-HTLV I/II
+CB_MAT_ID,40,Maternal ID
+CB_MAT_PB19_NAT,195,Parvo-B19 PCR
+CB_MAT_PLA_QUANT,196,Maternal Plasma available
+CB_MAT_SER_QUANT,198,Quantity of maternal serum
+CB_MAT_SYPHILIS,199,Syphilis Status
+CB_MAT_TOXO,200,Toxoplasmosis Status
+CB_MAT_WNV,201,West Nile Virus Status
+CB_MONO_NC,212,Collected number of CBU mononuclear cells
+CB_NC,218,Collected Total nucleated Cells (TNC)
+CB_NC_FRZN,219,Total nucleated Cells (TNC) in CBU
+CB_OTH_SMPL,228,Other viable cell aliquots
+CB_PB19_NAT,195,Parvo-B19 PCR
+CB_PLA_QUANT,234,CBU Plasma
+CB_PROC_DATE,237,Cord Blood Unit processing Date
+CB_PROC_METH,238,Cord Blood Unit processing system
+CB_PROC_METH_TYPE,239,Cord Blood Unit processing method
+CB_PROD_MOD,240,CBU product modification
+CB_RED_BC,247,Total Nucleated Red Blood cells
+CB_REDUCTION,248,CBU volume reduction
+CB_SAMPLE_TYPE,258,CBU confirmatory typing sample
+CB_SER_QUANT,261,CBU serum available
+CB_SEX,262,Sex
+CB_STAT_END_DATE,263,CB_STAT_END_DATE
+CB_STAT_REASON,265,Search Status change
+CB_STATUS,266,Search Status
+CB_SYPHILIS,199,Syphilis Status
+CB_TOXO,200,Toxoplasmosis Status
+CB_TYP_BAG,274,CBU Bag
+CB_VIABILITY,277,CBU viability
+CB_VIABILITY_CELLS,278,CBU viability type
+CB_VIABILITY_DATE,279,Viability Date
+CB_VIABILITY_METHOD,280,Viability Method
+CB_VOL,283,CBU volume at collection
+CB_VOL_FRZN,284,CBU volume at cyropreservation
+CB_WNV,201,West Nile Virus Status
+CD34PC_KG,46,Required CD34+/kg
+CD3PC_KG,47,Required CD3+/kg
+CITY,51,City Address
+CLEAR_DATE,52,Donor Clearance date
+COLL_DATE,57,Sample Collection Date
+COLSAM_DATE1,59,Earliest Sample Collection Date
+COLSAM_DATE2,60,Latest Sample Collection Date
+COND_DAYS,61,Total number of days of conditioning regimen
+CONF_DATE,62,Work up request confirmation date
+CONFIRM,63,CONFIRM
+COUNTRY,65,Country
+D_A1,3,HLA A (1st antigen)
+D_A2,4,HLA A (2nd antigen)
+D_ABO,5,Blood Group (ABO)
+D_ABO,6,Blood Group (Rhesus)
+D_ALT,19,Donor ALT status
+D_ANTI_HBC,24,Anti-HBc
+D_ANTI_HBS,25,HBs Ag
+D_ANTI_HCV,26,Anti HCV
+D_ANTI_HTLV,28,Anti-HTLV I/II
+D_B1,33,HLA-B (1st antigen)
+D_B2,34,HLA-B (2nd antigen)
+D_BIRTH_DATE,42,Date of Birth
+D_C1,43,HLA-C (1st antigen)
+D_C2,44,HLA-C (2nd antigen)
+D_CCR5,45,CCR5
+D_CHECKUP_DATE,50,Donor Checkup date
+D_CMV,53,Cytomegalovirus (CMV)
+D_CMV_DATE,54,CMV Test Date
+D_COLL_TYPE,58,Donor product preference
+D_CONTACT_DATE,64,Donor contact date
+D_DNA_A1,71,HLA A (1st allele)
+D_DNA_A2,72,HLA A (2nd allele)
+D_DNA_B1,74,HLA B (1st allele)
+D_DNA_B2,75,HLA B (2nd allele)
+D_DNA_C1,76,HLAC (1st allele)
+D_DNA_C2,77,HLAC (2nd allele)
+D_DPA11,78,HLA DPA1 (1st allele)
+D_DPA12,79,HLA DPA1 (2nd allele)
+D_DPB11,80,HLA DPB1 (1st allele)
+D_DPB12,81,HLA DPB1 (2nd allele)
+D_DQ1,82,HLA-DQB1 (1st antigen)
+D_DQ2,83,HLA-DQB1 (2nd antigen)
+D_DQA11,84,HLA DQA1 (1st allele)
+D_DQA12,85,HLA DQA1 (2nd allele)
+D_DQB11,86,HLA-DQB1 (1st allele)
+D_DQB12,87,HLA-DQB1 (2nd allele)
+D_DR1,88,HLA-DRB1 (1st antigen)
+D_DR2,89,HLA-DRB1 (2nd antigen)
+D_DRB11,90,HLA-DRB1 (1st allele)
+D_DRB12,91,HLA-DRB1 (2nd allele)
+D_DRB31,92,HLA-DRB3 (1st allele)
+D_DRB32,93,HLA-DRB3 (2nd allele)
+D_DRB41,94,HLA-DRB4 (1st allele)
+D_DRB42,95,HLA-DRB4 (2nd allele)
+D_DRB51,96,HLA-DRB5 (1st allele)
+D_DRB52,97,HLA-DRB5 (2nd allele)
+D_EBV,98,Epstein Barr Virus (EBV) Status
+D_ETHN,100,Ethnicity
+D_EXTR_DATE,104,Date of sample collection
+D_HBS_AG,113,Hepatitis B sufrace antigen
+D_HEIGHT,116,Height
+D_HIV,118,Anti-HIV 1/ Anti-HIV 2
+D_HIV_P24,120,HIV p24
+D_ID,127,Donor Identification ( to be replaced by GRID)
+D_KIR_GL,135,Killer immunoglobulin- like receptor (KIR) GL string
+D_KIR2DL1,136,KIR gene 2DL1
+D_KIR2DL2,137,KIR gene 2DL2
+D_KIR2DL3,138,KIR gene 2DL3
+D_KIR2DL4,139,KIR gene 2DL4
+D_KIR2DL5A,140,KIR gene 2DL5A
+D_KIR2DL5B,141,KIR gene 2DL5B
+D_KIR2DP1,142,CBU KIR gene 2DP1
+D_KIR2DS1,143,CBU KIR gene 2DS1
+D_KIR2DS2,144,CBU KIR gene 2DS2
+D_KIR2DS3,145,CBU KIR gene 2DS3
+D_KIR2DS4,146,CBU KIR gene 2DS4
+D_KIR2DS5,147,CBU KIR gene 2DS5
+D_KIR3DL1,148,CBU KIR gene 3DL1
+D_KIR3DL2,149,CBU KIR gene 3DL2
+D_KIR3DL3,150,CBU KIR gene 3DL3
+D_KIR3DP1,151,CBU KIR gene 3DP1
+D_KIR3DS1,152,CBU KIR gene 3DS1
+D_LABEL_ID,153,ID on sample label
+D_NMBR_MARR,223,Previous HPC donation
+D_NMBR_PBSC,223,Previous HPC donation
+D_NMBR_PREG,224,Donor pregnancies
+D_NMBR_TRANS,225,Donor blood transfusions
+D_SEX,262,Sex
+D_STAT_END_DATE,264,D_STAT_END_DATE
+D_STAT_REASON,265,Search Status change
+D_STATUS,266,Search Status
+D_TOXO,200,Toxoplasmosis Status
+D_TPHA,270,Donor Lues status (Treponema pallidum)
+D_TYPE,275,Donor Type
+D_WEIGHT,285,Weight
+DNA_AVA,73,Cord Blood Unit DNA sample
+DON_ACCPT,8,Donor still of interest
+DON_ATTR,31,Donor Attribute
+DON_POOL,235,Donor location identifier
+EMAIL,99,Email
+EXAM_DATE,101,Physical Examination Date
+EXAM_OK,102,Physical Examination Result
+EXPI_DATE,103,Reservation Expiry date
+FAX,105,Fax Number
+GRID,111,GRID
+GVH_REAC,112,GVH_REAC
+HLA_NOM_VER,121,HLA Nomenclature Version
+HUB_COUNT,122,Preliminary Search Results
+HUB_RCV,123,Receiving registry Hub
+HUB_SND,124,Sending registry hub
+HVG_REAC,125,HVG_REAC
+INFO_DATE,129,Donor information session
+INFO_TYPE,130,Donor information
+INST_ID,131,Institution
+INST_MARR_SENT,132,Receiving institution
+INST_PAY,133,Invoice institution
+INST_SMP_SENT,132,Receiving institution
+INST_TYPE,134,Institution type
+MARKER,156,Infectious Disease Marker
+MARR_DATE,157,Collection Date
+MARROW_TU_REQ,158,MARROW_TU_REQ
+MAT_SER_AVA,197,Maternal serum available
+MAT_SER_QUANT,198,Quantity of maternal serum
+MATCH_DATE,204,MATCH_DATE
+MIN_VOL_MARR,209,MIN_VOL_MARR
+MLC_GVH,210,MLC_GVH
+MLC_HVG,211,MLC_HVG
+MONO_NC_KG,213,Mononuclear cells per kilogram
+MSG_CODE,214,MSG_CODE
+NBT1,215,VT Blood Sample Requirments
+NBT1_ATCOL,216,Collection sample requirements
+NBT1_BEFCOL,217,Pre-collection sample requirements
+NBT2,215,VT Blood Sample Requirments
+NBT2_ATCOL,216,Collection sample requirements
+NBT2_BEFCOL,217,Pre-collection sample requirements
+NBT3,215,VT Blood Sample Requirments
+NBT3_ATCOL,216,Collection sample requirements
+NBT3_BEFCOL,217,Pre-collection sample requirements
+NBT4,215,VT Blood Sample Requirments
+NBT4_ATCOL,216,Collection sample requirements
+NBT4_BEFCOL,217,Pre-collection sample requirements
+NC_KG,220,Number of nucleated cells per kilo
+NC_RESEA,221,Requested cells for research purposes research
+ORG_DEN,227,ORG_DEN
+P_A1,3,HLA A (1st antigen)
+P_A2,4,HLA A (2nd antigen)
+P_ABO,5,Blood Group (ABO)
+P_ABO,6,Blood Group (Rhesus)
+P_B1,33,HLA-B (1st antigen)
+P_B2,34,HLA-B (2nd antigen)
+P_BIRTH_DATE,42,Date of Birth
+P_C1,43,HLA-C (1st antigen)
+P_C2,44,HLA-C (2nd antigen)
+P_CMV,53,Cytomegalovirus (CMV)
+P_DIAG,67,Patient Diagnosis
+P_DIAG_DATE,68,Patient Diagnosis date
+P_DIAG_TEXT,69,Diagnosis details
+P_DIS_PHA,70,Disease stage
+P_DNA_A1,71,HLA A (1st allele)
+P_DNA_A2,72,HLA A (2nd allele)
+P_DNA_B1,74,HLA B (1st allele)
+P_DNA_B2,75,HLA B (2nd allele)
+P_DNA_C1,76,HLAC (1st allele)
+P_DNA_C2,77,HLAC (2nd allele)
+P_DPA11,78,HLA DPA1 (1st allele)
+P_DPA12,79,HLA DPA1 (2nd allele)
+P_DPB11,80,HLA DPB1 (1st allele)
+P_DPB12,81,HLA DPB1 (2nd allele)
+P_DQ1,82,HLA-DQB1 (1st antigen)
+P_DQ2,83,HLA-DQB1 (2nd antigen)
+P_DQA11,84,HLA DQA1 (1st allele)
+P_DQA12,85,HLA DQA1 (2nd allele)
+P_DQB11,86,HLA-DQB1 (1st allele)
+P_DQB12,87,HLA-DQB1 (2nd allele)
+P_DR1,88,HLA-DRB1 (1st antigen)
+P_DR2,89,HLA-DRB1 (2nd antigen)
+P_DRB11,90,HLA-DRB1 (1st allele)
+P_DRB12,91,HLA-DRB1 (2nd allele)
+P_DRB31,92,HLA-DRB3 (1st allele)
+P_DRB32,93,HLA-DRB3 (2nd allele)
+P_DRB41,94,HLA-DRB4 (1st allele)
+P_DRB42,95,HLA-DRB4 (2nd allele)
+P_DRB51,96,HLA-DRB5 (1st allele)
+P_DRB52,97,HLA-DRB5 (2nd allele)
+P_ETHN,100,Ethnicity
+P_FNAME,106,First name
+P_GRAF_ID,110,Transplant physician
+P_ID,128,Patient Identification
+P_LNAME,154,Last name
+P_MATCH_AB,202,P_MATCH_AB
+P_MATCH_CB,203,P_MATCH_CB
+P_MATCH_DR,205,P_MATCH_DR
+P_MAX_DON_AB,206,P_MAX_DON_AB
+P_MAX_DON_CB,207,P_MAX_DON_CB
+P_MAX_DON_DR,208,P_MAX_DON_DR
+P_NEW_STAT,222,P_NEW_STAT
+P_OLD_STAT,226,P_OLD_STAT
+P_SEX,262,Sex
+P_WEIGHT,285,Weight
+PARAM,229,PARAM
+PAT_POOL,230,Patient location identifier
+PBSC_COLL_DATE1,157,Collection Date
+PBSC_COLL_DATE2,157,Collection Date
+PBSC_GCSF_DATE,231,G-CSF Start
+PERSON,232,Contact Person
+PHONE,233,Contact phone number
+PRECOLL_DATE,236,Pre-collection sample date
+PROD1,215,VT Blood Sample Requirments
+PROD1_ATCOL,216,Collection sample requirements
+PROD1_BEFCOL,217,Pre-collection sample requirements
+PROD2,215,VT Blood Sample Requirments
+PROD2_ATCOL,216,Collection sample requirements
+PROD2_BEFCOL,217,Pre-collection sample requirements
+PROD3,215,VT Blood Sample Requirments
+PROD3_ATCOL,216,Collection sample requirements
+PROD3_BEFCOL,217,Pre-collection sample requirements
+PROD4,215,VT Blood Sample Requirments
+PROD4_ATCOL,216,Collection sample requirements
+PROD4_BEFCOL,217,Pre-collection sample requirements
+PROP_DATE,241,Preferred date (collection/shipment) 1
+QU1,215,VT Blood Sample Requirments
+QU2,215,VT Blood Sample Requirments
+QU3,215,VT Blood Sample Requirments
+QU4,215,VT Blood Sample Requirments
+QUANT1_ATCOL,216,Collection sample requirements
+QUANT1_BEFCOL,217,Pre-collection sample requirements
+QUANT2_ATCOL,216,Collection sample requirements
+QUANT2_BEFCOL,217,Pre-collection sample requirements
+QUANT3_ATCOL,216,Collection sample requirements
+QUANT3_BEFCOL,217,Pre-collection sample requirements
+QUANT4_ATCOL,216,Collection sample requirements
+QUANT4_BEFCOL,217,Pre-collection sample requirements
+REASON,242,REASON
+REASON_CHNG,243,REASON_CHNG
+REASON_CNCL,244,REASON_CNCL
+REC_DATE1,245,REC_DATE1
+REC_DATE2,246,REC_DATE2
+REF_CODE,249,REF_CODE
+REG_RCV,250,REG_RCV
+REG_SND,251,REG_SND
+REMARK,252,REMARK
+REQ_DATE,254,Request date
+REQ_TYPE,255,REQ_TYPE
+RES_TYPE,256,RES_TYPE
+RESOLUT,257,RESOLUT
+SEND_PREF,259,SEND_PREF
+SENT_DATE,260,SENT_DATE
+TOTAL_AB,267,HLA A-B matched donors
+TOTAL_CB,268,CBU match list
+TOTAL_DR,269,HLA A-B-DRB1 donors
+TRNS_MEDIUM,271,Transport Medium for HPC(M)
+TRX_DATE,272,Transplant Date
+TXT_LINEn,273,TXT_LINEn
+URGENT,276,URGENT
+VIROL_DATE,281,Test date
+VIROL_OK,282,Result date
+WOR_REQ_TYPE,286,Product Request
+ZIP,287,Postal Code
