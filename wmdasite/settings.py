@@ -42,7 +42,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'djangobower',
+    'django_filters',
+    'widget_tweaks',
+    
     'wmdadict.apps.WmdadictConfig',
 ]
 
@@ -61,7 +65,7 @@ ROOT_URLCONF = 'wmdasite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'wmdasite/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

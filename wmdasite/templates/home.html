@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1 class="page-header">WMDA Dictionary - Proof of Concept</h1>
+  <p class="lead">Click on the <a href="{% url 'dictionary_list' %}">Main Dictionary</a> menu to explore the WMDA Dictionary.</p>
+  <p class="lead">Click on the <a href="{% url 'emdis_list' %}">EMDIS</a> menu to explore EMDIS fields and messages.</p>
+  <p class="lead">Click on the <a>BMDW</a> menu to explore the BMDW data submission schema.</p>
+  <p class="lead">Click on the <a>Forms</a> menu to explore the WMDA forms.</p>
+
+{% endblock %}

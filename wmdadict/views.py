@@ -2,14 +2,15 @@ from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render
 
 from .models import DictionaryField, EmdisField
+from .filters import DictionaryFilter, EmdisFieldFilter
 
 def index(request):
     return HttpResponse("Hello, world. You're at the WMDA Dictionary index.")
 
 def dictionary_list(request):
-    dict_fields = DictionaryField.objects.all()
-    context = {'dict_fields': dict_fields}
-    return render(request, 'wmdadict/dictionary_list.html', context)
+    field_list = DictionaryField.objects.all()
+    field_filter = DictionaryFilter(request.GET, queryset=field_list)
+    return render(request, 'wmdadict/dictionary_list.html', {'dict_fields': field_filter})
 
 def dictionary_detail(request, field_id):
     dfield = get_object_or_404(DictionaryField, pk=field_id)
@@ -17,7 +18,8 @@ def dictionary_detail(request, field_id):
 
 def emdis_list(request):
     emdis_fields = EmdisField.objects.all()
-    return render(request, 'wmdadict/emdis_list.html', {'emdis_fields': emdis_fields})
+    field_filter = EmdisFieldFilter(request.GET, queryset=emdis_fields)
+    return render(request, 'wmdadict/emdis_list.html', {'emdis_fields': field_filter})
 
 def emdis_detail(request, field_id):
     efield = get_object_or_404(EmdisField, pk=field_id)

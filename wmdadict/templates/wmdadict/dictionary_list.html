@@ -1,10 +1,34 @@
-{% extends 'wmdadict/base.html' %}
+{% extends 'base.html' %}
+
+{% load widget_tweaks %}
 
 {% block content %}
     <h1 class="text-center"> WMDA Data Dictionary </h1>
+    <form method="get">
+        <div class="well well-sm">
+            <h4 style="margin-top: 0">Filter</h4>
+            <div class="row">
+                <div class="form-group col-sm-4 col-md-3">
+                    {{ dict_fields.form.label.label_tag }}
+                    {% render_field dict_fields.form.label class="form-control" %}
+                </div>
+                <div class="form-group col-sm-4 col-md-3">
+                    {{ dict_fields.form.field_type.label_tag }}
+                    {% render_field dict_fields.form.field_type class="form-control" %}
+                </div>
+                <div class="form-group col-sm-4 col-md-3">
+                    {{ dict_fields.form.owner_family.label_tag }}
+                    {% render_field dict_fields.form.owner_family class="form-control" %}
+                </div>
+                <div class="bottom-align-text col-sm-4 col-md-3">
+                 <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-filter"></span> Filter</button>
+             </div>
+            </div>
+        </div>
+    </form>
     {% if dict_fields %}
         <div class="table-responsive">
-            <table class="table table-bordered table-hover table-striped tablesorter">
+            <table class="table table-hover table-striped tablesorter">
                 <thead>
                     <tr>
                         <th class="header"> Label <i class="icon-sort"></i></th>
@@ -13,7 +37,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% for dfield in dict_fields %}
+                    {% for dfield in dict_fields.qs %}
                         <tr>
                             <td><a href="/dict/{{ dfield.id }}/">{{ dfield.label }}</td>
                             <td>{{ dfield.description_short }}</td>
