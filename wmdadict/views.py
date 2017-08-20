@@ -1,8 +1,8 @@
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render
 
-from .models import DictionaryField, EmdisField
-from .filters import DictionaryFilter, EmdisFieldFilter
+from .models import DictionaryField, EmdisField, EmdisMessage
+from .filters import DictionaryFilter, EmdisFieldFilter, EmdisMessageFilter
 
 def index(request):
     return HttpResponse("Hello, world. You're at the WMDA Dictionary index.")
@@ -26,8 +26,9 @@ def emdis_detail(request, field_id):
     return render(request, 'wmdadict/emdis_detail.html', {'efield': efield})
 
 def emdis_msg_list(request):
-    response = "You're looking at the EMDIS messages"
-    return HttpResponse(response)
+    msg_fields = EmdisMessage.objects.all()
+    msg_filter = EmdisMessageFilter(request.GET, queryset=msg_fields)
+    return render(request, 'wmdadict/emdis_msg_list.html', {'msg_filter': msg_filter})
 
 def emdis_msg_detail(request, msg_id):
     response = "You're looking at the details of EMDIS message %s."
