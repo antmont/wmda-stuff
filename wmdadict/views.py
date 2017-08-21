@@ -31,5 +31,5 @@ def emdis_msg_list(request):
     return render(request, 'wmdadict/emdis_msg_list.html', {'msg_filter': msg_filter})
 
 def emdis_msg_detail(request, msg_id):
-    response = "You're looking at the details of EMDIS message %s."
-    return HttpResponse(response % msg_id)
+    emsg = get_object_or_404(EmdisMessage, pk=msg_id)
+    return render(request, 'wmdadict/emdis_msg_detail.html', {'emsg': emsg})

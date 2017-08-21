@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'djangobower',
     'django_filters',
     'widget_tweaks',
-    
+
     'wmdadict.apps.WmdadictConfig',
 ]
 
@@ -131,6 +131,10 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(PROJECT_ROOT, 'wmdasite/static'),
+]
 
 BOWER_COMPONENTS_ROOT = os.path.join(PROJECT_ROOT, 'components')
 
