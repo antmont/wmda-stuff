@@ -7,23 +7,19 @@
     <form method="get">
         <div class="well well-sm">
             <h4 style="margin-top: 0">Filter</h4>
-            <div class="row">
-                <div class="form-group col-sm-4 col-md-3">
-                    {{ msg_filter.form.name.label_tag }}
-                    {% render_field msg_filter.form.name class="form-control" %}
-                </div>
-                <div class="form-group col-sm-4 col-md-3">
-                    {{ msg_filter.form.description.label_tag }}
-                    {% render_field msg_filter.form.description class="form-control" %}
-                </div>
-                {# <div class="form-group col-sm-4 col-md-3">
-                    {{ msg_filter.form.emdis_fields.label_tag }}
-                    {% render_field msg_filter.form.emdis_fields class="form-control" %}
-                </div> #}
-                <div class="bottom-align-text col-sm-4 col-md-3">
-                 <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-filter"></span> Filter</button>
-             </div>
-            </div>
+                <div class="row">
+                    <div class="form-group col-sm-4 col-md-4">
+                        {{ msg_filter.form.name.label_tag }}
+                        {% render_field msg_filter.form.name class="form-control" %}
+                    </div>
+                    <div class="form-group col-sm-4 col-md-4">
+                        {{ msg_filter.form.description.label_tag }}
+                        {% render_field msg_filter.form.description class="form-control" %}
+                    </div>
+                    <div class="text-right col-sm-4 col-md-4">
+                        <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-filter"></span> Filter</button>
+                    </div>
+              </div>
         </div>
     </form>
     {% if msg_filter %}
@@ -40,12 +36,25 @@
                     {% for emsg in msg_filter.qs %}
                         <tr>
                             <td><a href="/emdis/field/{{ emsg.pk }}/">{{ emsg.name }}</td>
-                            <td>{{ emsg.description }}</td>
+                            <td>{{ emsg.description }} <br />
+                        </td>
                             <td>
-                                <div class="collapse" id="accordion">
-                                        {% for efield in emsg.emdisfield_set.all %}
-                                            <a href="/emdis/field/{{ efield.pk }}/">{{ efield }}</a><br />
-                                        {% endfor %}
+                                <div class="panel-group">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                                <a data-toggle="collapse" href="#collapse_{{ forloop.counter }}">
+                                                {{ emsg.emdisfield_set.count }} EMDIS Fields </a>
+                                        </div>
+                                        <div id="collapse_{{ forloop.counter }}" class="panel-collapse collapse">
+                                            <ul class="list-group">
+                                                {% for efield in emsg.emdisfield_set.all %}
+                                                    <li class="list-group-item">
+                                                        <a href="/emdis/field/{{ efield.pk }}/">{{ efield }}</a>
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                             </td>
                         </tr>
