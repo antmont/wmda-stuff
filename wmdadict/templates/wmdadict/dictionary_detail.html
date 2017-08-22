@@ -54,7 +54,7 @@
                                 <td>EMDIS fields</td>
                                 <td>
                                     {% for efield in dfield.emdisfield_set.all %}
-                                        <a href="/emdis/field/{{ efield.id }}/">{{ efield.field_code }}<br />
+                                        <a href="{% url 'emdis_detail' efield.pk %}">{{ efield.field_code }}<br />
                                     {% endfor %}
                                 </td>
                             </tr>

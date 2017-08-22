@@ -4,8 +4,8 @@ from django.shortcuts import get_object_or_404, render
 from .models import DictionaryField, EmdisField, EmdisMessage
 from .filters import DictionaryFilter, EmdisFieldFilter, EmdisMessageFilter
 
-def index(request):
-    return HttpResponse("Hello, world. You're at the WMDA Dictionary index.")
+# def index(request):
+#     return HttpResponse("Hello, world. You're at the WMDA Dictionary index.")
 
 def dictionary_list(request):
     field_list = DictionaryField.objects.all()

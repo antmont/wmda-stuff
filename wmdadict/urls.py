@@ -3,8 +3,8 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
-    # /
-    url(r'^$', views.index, name='index'),
+    # # /
+    # url(r'^$', views.index, name='index'),
     # /dict/
     url(r'^dict/$', views.dictionary_list, name='dictionary_list'),
     # /dict/5/

@@ -23,7 +23,7 @@
                         </tr>
                         <tr>
                             <td>Dictionary field</td>
-                            <td><a href="/dict/{{ efield.dict_field.pk }}/">{{ efield.dict_field }}</a><br />
+                            <td><a href="{% url 'dictionary_detail' efield.dict_field.pk %}">{{ efield.dict_field }}</a><br />
                                 {{ efield.dict_field.description_short }}
                             </td>
                         </tr>
@@ -31,7 +31,7 @@
                             <td>EMDIS messages</td>
                             <td>
                                 {% for message in efield.emdis_messages.all %}
-                                    <a href="/emdis/message/{{ message.pk }}/">{{ message }}</a><br />
+                                    <a href="{% url 'emdis_msg_detail' message.pk %}">{{ message }}</a><br />
                                 {% endfor %}
                             </td>
                         </tr>

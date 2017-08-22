@@ -30,9 +30,14 @@ pip install -r requirements.txt
     * click blue tick
 * WSGI configuration file:
     * Click link to edit
-    * Delete bolierplate
+    * Delete boilerplate
     * Add text below
     * Save
+* Static files
+    * Ensure `python manange.py collectstatic` has been run
+    * Add line to staic files configuration:
+        * URL: `/static/`
+        * Directory: `/home/antmont/wmda-stuff/static` 
 
 *antmont_pythonanywhere_com_wsgi.py:*
 ``` python
@@ -50,3 +55,5 @@ from django.contrib.staticfiles.handlers import StaticFilesHandler
 application = StaticFilesHandler(get_wsgi_application())
 ```
 * Reload
+
+/home/antmont/wmda-stuff/static

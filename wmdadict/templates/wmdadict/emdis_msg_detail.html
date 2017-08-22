@@ -3,7 +3,7 @@
 {% block content %}
     <h1 class="text-center">EMDIS message: {{ emsg }}</h1>
         <div class="table-responsive">
-            <table class="table table-hover table-striped tablesorter">
+            <table class="table table-bordered table-hover table-striped tablesorter">
                 <tbody>
                         <tr>
                             <td>Name</td>
@@ -19,20 +19,20 @@
             <h4>EMDIS Fields</h4>
             {% if emsg.emdisfield_set %}
                 <div class="table-responsive">
-                    <table class="table table-bordered table-hover table-striped tablesorter">
+                    <table class="table table-hover table-striped tablesorter">
                         <thead>
                             <tr>
+                                <th class="header"> Field description (WMDA dictionary field) <i class="icon-sort"></i></th>
                                 <th class="header"> EMDIS field code <i class="icon-sort"></i></th>
-                                <th class="header"> Field description <i class="icon-sort"></i></th>
-                                <th class="header"> WMDA dictionary field <i class="icon-sort"></i></th>
+                                <th class="header"> Field Type <i class="icon-sort"></i></th>
                             </tr>
                         </thead>
                         <tbody>
                             {% for efield in emsg.emdisfield_set.all %}
                                 <tr>
-                                    <td><a href="/emdis/field/{{ efield.pk }}/">{{ efield.field_code }}</td>
-                                    <td>{{ efield.field_description }}</td>
-                                    <td><a href="/dict/{{ efield.dict_field.pk }}/">{{ efield.dict_field }}</td>
+                                    <td>{{ efield.field_description }} (<a href="{% url 'emdis_detail' efield.pk %}">{{ efield.field_code }})</td>
+                                    <td><a href="{% url 'emdis_detail' efield.pk %}">{{ efield }}</td>
+                                    <td>{{ efield.field_type }}</td>
                                 </tr>
                             {% endfor %}
                         </tbody>

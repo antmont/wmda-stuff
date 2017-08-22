@@ -24,7 +24,7 @@
     </form>
     {% if msg_filter %}
         <div class="table-responsive">
-            <table class="table table-bordered table-hover table-striped tablesorter">
+            <table class="table  table-hover table-striped tablesorter">
                 <thead>
                     <tr>
                         <th class="header"> EMDIS message <i class="icon-sort"></i></th>
@@ -35,7 +35,7 @@
                 <tbody>
                     {% for emsg in msg_filter.qs %}
                         <tr>
-                            <td><a href="/emdis/field/{{ emsg.pk }}/">{{ emsg.name }}</td>
+                            <td><a href="{% url 'emdis_msg_detail' emsg.pk %}">{{ emsg.name }}</td>
                             <td>{{ emsg.description }} <br />
                         </td>
                             <td>
@@ -49,7 +49,7 @@
                                             <ul class="list-group">
                                                 {% for efield in emsg.emdisfield_set.all %}
                                                     <li class="list-group-item">
-                                                        <a href="/emdis/field/{{ efield.pk }}/">{{ efield }}</a>
+                                                        <a href="{% url 'emdis_detail' efield.pk %}">{{ efield }}</a>
                                                     </li>
                                                 {% endfor %}
                                             </ul>

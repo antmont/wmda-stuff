@@ -28,7 +28,7 @@
     </form>
     {% if emdis_fields %}
         <div class="table-responsive">
-            <table class="table table-bordered table-hover table-striped tablesorter">
+            <table class="table table-hover table-striped tablesorter">
                 <thead>
                     <tr>
                         <th class="header"> EMDIS field code <i class="icon-sort"></i></th>
@@ -40,12 +40,12 @@
                 <tbody>
                     {% for efield in emdis_fields.qs %}
                         <tr>
-                            <td><a href="/emdis/field/{{ efield.pk }}/">{{ efield.field_code }}</td>
+                            <td><a href="{% url 'emdis_detail' efield.pk %}">{{ efield.field_code }}</td>
                             <td>{{ efield.field_description }}</td>
-                            <td><a href="/dict/{{ efield.dict_field.pk }}/">{{ efield.dict_field }}</td>
+                            <td><a href="{% url 'dictionary_detail' efield.dict_field.pk %}">{{ efield.dict_field }}</td>
                             <td>
                                 {% for message in efield.emdis_messages.all %}
-                                    <a href="/emdis/message/{{ message.pk }}/">{{ message }}</a><br />
+                                    <a href="{% url 'emdis_msg_detail' message.pk %}">{{ message }}</a><br />
                                 {% endfor %}
                             </td>
                         </tr>
