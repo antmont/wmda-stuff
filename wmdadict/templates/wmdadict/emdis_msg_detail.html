@@ -24,15 +24,17 @@
                             <tr>
                                 <th class="header"> Field description (WMDA dictionary field) <i class="icon-sort"></i></th>
                                 <th class="header"> EMDIS field code <i class="icon-sort"></i></th>
+                                <th class="header"> Required <i class="icon-sort"></i></th>
                                 <th class="header"> Field Type <i class="icon-sort"></i></th>
                             </tr>
                         </thead>
                         <tbody>
-                            {% for efield in emsg.emdisfield_set.all %}
+                            {% for row in emsg.emdissemantics_set.all %}
                                 <tr>
-                                    <td>{{ efield.field_description }} (<a href="{% url 'emdis_detail' efield.pk %}">{{ efield.field_code }})</td>
-                                    <td><a href="{% url 'emdis_detail' efield.pk %}">{{ efield }}</td>
-                                    <td>{{ efield.field_type }}</td>
+                                    <td>{{ row.emdis_field.field_description }} (<a href="{% url 'dictionary_detail' row.emdis_field.dict_field.pk %}">{{ row.emdis_field.field_code }})</a></td>
+                                    <td><a href="{% url 'emdis_detail' row.emdis_field.pk %}">{{ row.emdis_field }}</a></td>
+                                    <td>{{ row.get_required_display }}</td>
+                                    <td>{{ row.emdis_field.field_type }}</td>
                                 </tr>
                             {% endfor %}
                         </tbody>

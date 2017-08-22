@@ -1,445 +1,0 @@
-id,field_code,field_description,field_type,field_rule,dict_field_id
-1,CB_34PC,Collected total number of CD34+ cells,F7,Cells expressed in scientific notation; valid range 0.0E0 to 999.9E6,1
-2,CB_34PC_FRZN,Processed total number of CD34+ cells. Post processing and pre-cryopreservation.,F7,Cells expressed in scientific notation; valid range 0.0E0 to 999.9E6,2
-3,CB_A1,"CBU HLA-A, 1st antigen",A5,Values according to WHO nomenclature _ see note 2 in the appendix,3
-4,D_A1,"Donor HLA-A, 1st antigen",A5,Values according to WHO nomenclature _ see note 3 in the appendix,3
-5,P_A1,"Patient HLA-A, 1st antigen",A5,Values according to WHO nomenclature _ see note 3 in the appendix,3
-6,CB_A2,"CBU HLA-A, 2nd antigen",A5,Values according to WHO nomenclature _ see note 2 in the appendix,4
-7,D_A2,"Donor HLA-A, 2nd antigen",A5,Values according to WHO nomenclature _ see note 3 in the appendix,4
-8,P_A2,"Patient HLA-A, 2nd antigen",A5,Values according to WHO nomenclature _ see note 3 in the appendix,4
-9,CB_ABO,CBU blood group and optional rhesus,A3,"A, B, O (letter O), AB, all optional suffixed with P, +, N or -",5
-11,D_ABO,Donor blood group and optional rhesus,A3,"A,B,O (letter O), AB; optional suffixed with P, +, N or -",5
-12,P_ABO,Patient blood group and rhesus,A3,"A, B, O (letter O), AB, all suffixed with P, +, N or -",5
-13,ACC_DAYS,Weekdays acceptable for sample reception,B7,"Binary fixed length string for the 7 days in the week. Position 1 corresponds with Monday, position 7 corresponds with Sunday. Default: 1111100Example: 1110000 means acceptable days for reception are Monday, Tuesday and Wednesday, not acceptable days are Thursday, Friday, Saturday or Sunday.",7
-14,DON_ACCPT,Donor still of interest,A1,"Y = Yes N = No",8
-15,ACCREDITATION,Accreditations obtained,B5,"Binary fixed length string, in which each position represents an accreditation status a cord blood bank has obtained. This field is currently only allowed, if the INST_TYPE field in the NEW_ADD message is ÒCBBÓ.Position 1: NetCord-FACTPosition 2: AABB Position 3: to be defined Position 4: to be defined Position 5: to be defined",9
-16,ACK_DATE,Date of acknowledgement,D8,Date format YYYYMMDD,10
-17,ACK_ID,Acknowledgement ID,A17,Free form; see note 1 in the appendix,11
-18,ACTION,Administrative action,A10,ÒCBU_FULLÓ = request full inventory,12
-19,ADDR_1,Address Line 1,A40,Free form; see note 1 in the appendix,13
-20,ADDR_2,Address Line 2,A40,Free form; see note 1 in the appendix,14
-21,ADDR_3,Address Line 3,A40,Free form; see note 1 in the appendix,15
-22,CB_AL_PLA,The total number of CBU plasma aliquots available for testing. These samples may be used for infectious disease testing,N2,,16
-23,CB_AL_RED_BC,The total number of CBU red cell fraction aliquots available for testing. These samples may be used for infectious disease testing,N2,,17
-24,CB_AL_SER,Number of CBU serum aliquots available,N2,,18
-25,D_ALT,Donor ALT status,N3,in Units per litre (u/l),19
-26,ALTER_DATE1,First alternative date for marrow collection / CBU shipment,D8,Date format YYYYMMDD,20
-27,ALTER_DATE2,Second alternative date for marrow collection / CBU shipment,D8,Date format YYYYMMDD,21
-28,ALTER_REQ_TYPE,Workup request type - alternative,A4,"PBSC = Request a PBSC collectionSCD = Request the workup of a stem cell donor CBU = Request a cord blood unit",22
-29,ANTI_COAG,Type of anticoagulant,A10,"ACD, CPD, HEPARIN",23
-30,CB_ANTI_HBC,CBU Hepatitis B status (antibody to hepatitis B core antigen),A1,"P = Positive N = Negative",24
-31,D_ANTI_HBC,Donor Hepatitis B status (antibody to hepatitis B core antigen),A1,"P = Positive N = NegativeQ = Questionable/Uncertain",24
-32,D_ANTI_HBS,Donor Hepatitis B status (antibody to hepatitis B surface antigen),A1,"P = Positive N = NegativeQ = Questionable/Uncertain",25
-33,CB_ANTI_HCV,CBU Hepatitis C status (antibody to hepatitis C virus),A1,"P = Positive N = Negative",26
-34,D_ANTI_HCV,Donor Hepatitis C status (antibody to hepatitis C virus),A1,"P = Positive N = NegativeQ = Questionable/Uncertain",26
-35,CB_ANTI_HIV_12,CBU Anti-HIV 1/2 status,A1,"P = Positive N = Negative",27
-36,D_ANTI_HTLV,Donor Antibody to HTLV1.V2,A1,"P = Positive N = NegativeQ = Questionable/Uncertain",28
-37,ARRV_DATE,Date arrival of requested sample,D8,Date format YYYYMMDD,29
-38,CB_ATT_SEG,Number of attached segments available,N2,,30
-39,DON_ATTR,Donor attribute,A3,Free form; see note 1 in the appendix,31
-40,AUTO_DATE,Date autologous units,D8,Date format YYYYMMDD,32
-41,CB_B1,"CBU HLA-B, 1st antigen",A5,Values according to WHO nomenclature _ see note 2 in the appendix,33
-42,D_B1,"Donor HLA-B, 1st antigen",A5,Values according to WHO nomenclature _ see note 3 in the appendix,33
-43,P_B1,"Patient HLA-B, 1st antigen",A5,Values according to WHO nomenclature _ see note 3 in the appendix,33
-44,CB_B2,"CBU HLA-B, 2nd antigen",A5,Values according to WHO nomenclature _ see note 2 in the appendix,34
-45,D_B2,"Donor HLA-B, 2nd antigen",A5,Values according to WHO nomenclature _ see note 3 in the appendix,34
-46,P_B2,"Patient HLA-B, 2nd antigen",A5,Values according to WHO nomenclature _ see note 3 in the appendix,34
-47,CB_BACT_CULT,Bacterial culture,A1,"P = Positive N = Negative D = Not done",35
-48,CB_BAG_ID,"The identification as it appears on the bag. If more than one bag is available, do not fill in this field.",A17,Free form; see note 1 in the appendix,36
-49,CB_BAGS,Number of bags for the cord blood sub units,N2,,37
-50,CB_BANK_DISTRIB_ID,The ID of the bank distributing the unit.  This may be different to  the manufacturer,A10,EMDIS hub code + Local Id,38
-51,CB_BANK_MANUF_ID,The ID of the bank that manufactured the unit,A10,EMDIS hub code + Local Id,39
-52,CB_BANK_MAT_ID,The identification used to identify the maternal donor,A15,Local ID,40
-53,CB_BIRTH_DATE,CBU Date of birth (date the infant was born),D8,Date format: YYYYMMDD,41
-54,D_BIRTH_DATE,Donor date of birth,D8,"Date format YYYYMMDDSince this field is a required field as of IP5, YYYY0101 should be given if the exact date of birth is unknown",42
-55,P_BIRTH_DATE,Patient date of birth,D8,Date format YYYYMMDD,42
-56,CB_C1,"CBU HLA-C, 1st antigen",A5,Values according to WHO nomenclature _ see note 2 in the appendix,43
-57,D_C1,"Donor HLA-C, 1st antigen",A5,Values according to WHO nomenclature _ see note 3 in the appendix,43
-58,P_C1,"Patient HLA-C, 1st antigen",A5,Values according to WHO nomenclature _ see note 3 in the appendix,43
-59,CB_C2,"CBU HLA-C, 2nd antigen",A5,Values according to WHO nomenclature _ see note 2 in the appendix,44
-60,D_C2,"Donor HLA-C, 2nd antigen",A5,Values according to WHO nomenclature _ see note 3 in the appendix,44
-61,P_C2,"Patient HLA-C, 2nd antigen",A5,Values according to WHO nomenclature _ see note 3 in the appendix,44
-62,CB_CCR5,CBU CCR5 status,A2,"DD = Deletion (delta 32) - homozygousDW = Deletion (delta 32) / wildtype - heterozygousWW = Wildtype - homozygous",45
-63,D_CCR5,Donor CCR5 status,A2,"DD = Deletion (delta 32) - homozygousDW = Deletion (delta 32) / wildtype - heterozygousWW = Wildtype - homozygous",45
-64,CD34PC_KG,Number of CD34+ cells per kilo for recipient,F7,Cells expressed in scientific notation,46
-65,CD3PC_KG,Number of CD3+ cells per kilo for recipient,F7,Cells expressed in scientific notation,47
-66,CB_CFU,Total CFU post processing count (post processing and pre-cryopreservation). GM method,F7,Cells expressed in scientific notation; valid range 0.0E5 to 999.9E5,48
-67,CB_CHAGAS,CBU Chagas status,A1,"P = Positive N = Negative",49
-68,D_CHECKUP_DATE,Date of last medical checkup of the donor,D8,Date format YYYYMMDD,50
-69,CITY,City,A40,Free form; see note 1 in the appendix,51
-70,CLEAR_DATE,Date of final clearance before transplantation,D8,Date format YYYYMMDD,52
-71,CB_CMV,CBU CMV status,A1,"N = Both IgG and IgM negative Q = Questionable / UnclearG = IgG positive, IgM negative M = IgG negative, IgM positive B = Both IgG and IgM positiveP = IgG or IgM positive, test did not differentiate H = IgG positive, IgM not testedO = IgG negative, IgM not tested",53
-72,D_CMV,Donor CMV status,A1,"N = Both IgG and IgM negative Q = Questionable / UnclearG = IgG positive, IgM negative M = IgG negative, IgM positive B = Both IgG and IgM positiveP = IgG or IgM positive, test did not differentiate H = IgG positive, IgM not testedO = IgG negative, IgM not tested",53
-73,P_CMV,Patient CMV status,A1,"P = Positive N = Negative",53
-74,D_CMV_DATE,Date of CMV test,D8,Date format YYYYMMDD,54
-75,CB_CMV_NAT,CBU CMV NAT status,A1,"P = Positive N = Negative",55
-76,CB_COLL_DATE,CBU Collection date,D8,Date format: YYYYMMDD,56
-77,COLL_DATE,Donor blood collection date,D8,Date format YYYYMMDD,57
-78,D_COLL_TYPE,Donor collection type _ what is the donor willing to donate?,A1,"M = Marrow P = PBSCB = Both",58
-79,COLSAM_DATE1,"Date sample collection, range start",D8,Date format YYYYMMDD,59
-80,COLSAM_DATE2,"Date sample collection, range end",D8,Date format YYYYMMDD,60
-81,COND_DAYS,"Number of days before the agreed upon transplantation date, when the conditioning of the patient will start",N2,Number of days,61
-82,CONF_DATE,Date of the confirmation of the workup request,D8,Date format YYYYMMDD,62
-83,CONFIRM,Result of donor reservation,A1,"Y = SuccessfulN = Not successful",63
-84,D_CONTACT_DATE,Date of last confirmed contact with the donor,D8,Date format YYYYMMDD,64
-85,COUNTRY,Country,A2,ISO-3166 2 character country code,65
-86,CB_CT_COMPLETE_ DATE,"Verification typing (CT) date of the cord blood unit. Definition: CT (Confirmatory Typing) is repeat DNA typing after registration. For the CT to be completed, loci A, B, and DRB1 must all be retested and confirmed consistent with registration typing. The CT completion date is the latest date when A, B, and DRB1 are all complete. If the loci are not all tested at the same time, this date will be the date the last locus was tested.",  D8,  Date format YYYYMMDD,66
-87,P_DIAG,Patient diagnosis,A3,"AML = Acute Myelogenous Leukaemia ALL = Acute Lymphoblastic Leukaemia CML = Chronic Myelogenous Leukaemia OL  = Other LeukaemiaHL  = Hodgkin's LymphomaMDS = Myelodysplastic DisordersNHL = Non-Hodgkin's Lymphoma PCD = Plasma Cell DisorderOM = Other Malignancy HIS = Histiocytic DisordersIEA = Inherited Erythrocyte Abnormality IIS = Inherited Immune System Disorder IMD = Inherited Metabolic DisorderIPA = Inherited Platelet Abnormality SAA = Severe Aplastic Anaemia OND = Other Non-malignant Disease",67
-88,P_DIAG_DATE,Date of patient diagnosis,D8,Date format YYYYMMDD,68
-89,P_DIAG_TEXT,"Additional explanatory text describing the diagnosis of the patient for P_DIAG codes OL, OM and OND",A50,Free form; see note 1 in the appendix,69
-90,P_DIS_PHA,Patient disease phase,A2,"PI = Primary Induction Therapy PF = Primary Induction Failure Cn = n-th Complete Remission Nn = n-th Chronic PhasePn = n-th Partial Remission Rn = n-th RelapseAP = Accelerated Phase BC = Blast CrisisAD = Advanced Disease SD = Stable DiseaseRD = Refractory Disease NA = Not Applicable(n is a 1-digit numeric value; n=0 means unknown)",70
-91,CB_DNA_A1,"CBU DNA-A, 1st allele",A20,Values according to WHO nomenclature _ see note 2 in the appendix,71
-92,D_DNA_A1,"Donor DNA-A, 1st allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix,71
-93,P_DNA_A1,"Patient DNA-A, 1st allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix,71
-94,CB_DNA_A2,"CBU DNA-A, 2nd allele",A20,Values according to WHO nomenclature _ see note 2 in the appendix,72
-95,D_DNA_A2,"Donor DNA-A, 2nd allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix,72
-96,P_DNA_A2,"Patient DNA-A, 2nd allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix,72
-97,DNA_AVA,CBU DNA available?,A1,"Y = YesN = No",73
-98,CB_DNA_B1,"CBU DNA-B, 1st allele",A20,Values according to WHO nomenclature _ see note 2 in the appendix,74
-99,D_DNA_B1,"Donor DNA-B, 1st allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix,74
-100,P_DNA_B1,"Patient DNA-B, 1st allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix,74
-101,CB_DNA_B2,"CBU DNA-B, 2nd allele",A20,Values according to WHO nomenclature _ see note 2 in the appendix,75
-102,D_DNA_B2,"Donor DNA-B, 2nd allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix,75
-103,P_DNA_B2,"Patient DNA-B, 2nd allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix,75
-104,CB_DNA_C1,"CBU DNA-C, 1st allele",A20,Values according to WHO nomenclature _ see note 2 in the appendix,76
-105,D_DNA_C1,"Donor DNA-C, 1st allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix,76
-106,P_DNA_C1,"Patient DNA-C, 1st allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix,76
-107,CB_DNA_C2,"CBU DNA-C, 2nd allele",A20,Values according to WHO nomenclature _ see note 2 in the appendix,77
-108,D_DNA_C2,"Donor DNA-C, 2nd allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix,77
-109,P_DNA_C2,"Patient DNA-C, 2nd allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix,77
-110,CB_DNA_SMPL,CBU DNA samples available,A1,"Y = Yes N = No",73
-111,CB_DPA11,"CBU DNA-DPA1, 1st allele",A20,Values according to WHO nomenclature _ see note 2 in the appendix,78
-112,D_DPA11,"Donor DNA-DPA1, 1st allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix,78
-113,P_DPA11,"Patient DNA-DPA1, 1st allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix,78
-114,CB_DPA12,"CBU DNA-DPA1, 2nd allele",A20,Values according to WHO nomenclature _ see note 2 in the appendix,79
-115,D_DPA12,"Donor DNA-DPA1, 2nd allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix,79
-116,P_DPA12,"Patient DNA-DPA1, 2nd allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix,79
-117,CB_DPB11,"CBU DNA-DPB1, 1st allele",A20,Values according to WHO nomenclature _ see note 2 in the appendix,80
-118,D_DPB11,"Donor DNA-DPB1, 1st allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix,80
-119,P_DPB11,"Patient DNA-DPB1, 1st allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix,80
-120,CB_DPB12,"CBU DNA-DPB1, 2nd allele",A20,Values according to WHO nomenclature _ see note 2 in the appendix,81
-121,D_DPB12,"Donor DNA-DPB1, 2nd allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix,81
-122,P_DPB12,"Patient DNA-DPB1, 2nd allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix,81
-123,CB_DQ1,"CBU HLA-DQ, 1st antigen",A5,Values according to WHO nomenclature _ see note 2 in the appendix,82
-124,D_DQ1,"Donor HLA-DQ, 1st antigen",A5,Values according to WHO nomenclature _ see note 3 in the appendix,82
-125,P_DQ1,"Patient HLA-DQ, 1st antigen",A5,Values according to WHO nomenclature _ see note 3 in the appendix,82
-126,CB_DQ2,"CBU HLA-DQ, 2nd antigen",A5,Values according to WHO nomenclature _ see note 2 in the appendix,83
-127,D_DQ2,"Donor HLA-DQ, 2nd antigen",A5,Values according to WHO nomenclature _ see note 3 in the appendix,83
-128,P_DQ2,"Patient HLA-DQ, 2nd antigen",A5,Values according to WHO nomenclature _ see note 3 in the appendix,83
-129,CB_DQA11,"CBU DNA-DQA1, 1st allele",A20,Values according to WHO nomenclature _ see note 2 in the appendix,84
-130,D_DQA11,"Donor DNA-DQA1, 1st allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix,84
-131,P_DQA11,"Patient DNA-DQA1, 1st allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix,84
-132,CB_DQA12,"CBU DNA-DQA1, 2nd allele",A20,Values according to WHO nomenclature _ see note 2 in the appendix,85
-133,D_DQA12,"Donor DNA-DQA1, 2nd allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix,85
-134,P_DQA12,"Patient DNA-DQA1, 2nd allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix,85
-135,CB_DQB11,"CBU DNA-DQB1, 1st allele",A20,Values according to WHO nomenclature _ see note 2 in the appendix,86
-136,D_DQB11,"Donor DNA-DQB1, 1st allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix,86
-137,P_DQB11,"Patient DNA-DQB1, 1st allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix,86
-138,CB_DQB12,"CBU DNA-DQB1, 2nd allele",A20,Values according to WHO nomenclature _ see note 2 in the appendix,87
-139,D_DQB12,"Donor DNA-DQB1, 2nd allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix,87
-140,P_DQB12,"Patient DNA-DQB1, 2nd allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix,87
-141,CB_DR1,"CBU HLA-DR, 1st antigen",A5,Values according to WHO nomenclature _ see note 2 in the appendix,88
-142,D_DR1,"Donor HLA-DR, 1st antigen",A5,Values according to WHO nomenclature _ see note 3 in the appendix,88
-143,P_DR1,"Patient HLA-DR, 1st antigen",A5,Values according to WHO nomenclature _ see note 3 in the appendix,88
-144,CB_DR2,"CBU HLA-DR, 2nd antigen",A5,Values according to WHO nomenclature _ see note 2 in the appendix,89
-145,D_DR2,"Donor HLA-DR, 2nd antigen",A5,Values according to WHO nomenclature _ see note 3 in the appendix,89
-146,P_DR2,"Patient HLA-DR, 2nd antigen",A5,Values according to WHO nomenclature _ see note 3 in the appendix,89
-147,CB_DRB11,"CBU DNA-DRB1, 1st allele",A20,Values according to WHO nomenclature _ see note 2 in the appendix,90
-148,D_DRB11,"Donor DNA-DRB1, 1st allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix,90
-149,P_DRB11,"Patient DNA-DRB1, 1st allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix,90
-150,CB_DRB12,"CBU DNA-DRB1, 2nd allele",A20,Values according to WHO nomenclature _ see note 2 in the appendix,91
-151,D_DRB12,"Donor DNA-DRB1, 2nd allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix,91
-152,P_DRB12,"Patient DNA-DRB1, 2nd allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix,91
-153,CB_DRB31,"CBU DNA-DRB3, 1st allele",A20,Values according to WHO nomenclature _ see note 2 in the appendix,92
-154,D_DRB31,"Donor DNA-DRB3, 1st allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix,92
-155,P_DRB31,"Patient DNA-DRB3, 1st allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix,92
-156,CB_DRB32,"CBU DNA-DRB3, 2nd allele",A20,Values according to WHO nomenclature _ see note 2 in the appendix,93
-157,D_DRB32,"Donor DNA-DRB3, 2nd allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix,93
-158,P_DRB32,"Patient DNA-DRB3, 2nd allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix,93
-159,CB_DRB41,"CBU DNA-DRB4, 1st allele",A20,Values according to WHO nomenclature _ see note 2 in the appendix,94
-160,D_DRB41,"Donor DNA-DRB4, 1st allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix,94
-161,P_DRB41,"Patient DNA-DRB4, 1st allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix,94
-162,CB_DRB42,"CBU DNA-DRB4, 2nd allele",A20,Values according to WHO nomenclature _ see note 2 in the appendix,95
-163,D_DRB42,"Donor DNA-DRB4, 2nd allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix,95
-164,P_DRB42,"Patient DNA-DRB4, 2nd allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix,95
-165,CB_DRB51,"CBU DNA-DRB5, 1st allele",A20,Values according to WHO nomenclature _ see note 2 in the appendix,96
-166,D_DRB51,"Donor DNA-DRB5, 1st allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix,96
-167,P_DRB51,"Patient DNA-DRB5, 1st allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix,96
-168,CB_DRB52,"CBU DNA-DRB5, 2nd allele",A20,Values according to WHO nomenclature _ see note 2 in the appendix,97
-169,D_DRB52,"Donor DNA-DRB5, 2nd allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix,97
-170,P_DRB52,"Patient DNA-DRB5, 2nd allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix,97
-171,CB_EBV,CBU EBV status,A1,"N = Both IgG and IgM negative Q = Questionable / UnclearG = IgG positive, IgM negative M = IgG negative, IgM positive B = Both IgG and IgM positiveP = IgG or IgM positive, test did not differentiate H = IgG positive, IgM not testedO = IgG negative, IgM not tested",98
-172,D_EBV,Donor EBV status,A1,"N = Both IgG and IgM negative Q = Questionable / UnclearG = IgG positive, IgM negative M = IgG negative, IgM positive B = Both IgG and IgM positiveP = IgG or IgM positive, test did not differentiateH = IgG positive, IgM not testedO = IgG negative, IgM not tested",98
-173,EMAIL,Email,A60,In the format Username@Domainname (i.e. Joe@Company.nl),99
-174,CB_ETHN,CBU ethnic group,A4,"AFNA = African: North Africa AFSS = African: Sub-Saharan AfricaASSW = Asian: Southwest Asia (Middle East, Turkey)ASSO = Asian: Southern Asia (India, Pakistan, Bangladesh, Sri Lanka, Bhutan, Nepal)ASCE = Asian: Central Asia (Eastern Russia, Kazakhstan, Uzbekistan, Kyrgyzstan, Tajikistan)ASSE = Asian: Southeast Asia (China, Mongolia, Burma, Laos, Cambodia, Thailand, Vietnam, Taiwan)ASNE = Asian: North and Northeast Asia (Japan, North Korea, South Korea)ASOC = Asian: Oceania (Pacific Islands excluding Japan, Australia, Taiwan, Sakhalin, Aleutian Islands) CAEU = Caucasian: Mainland Europe, Greenland, Iceland,   Western RussiaCAER = Caucasian: Eastern RussiaCANA = Caucasian: North America (USA, Canada, Mexico) CAAU = Caucasian: Australia (Australia, New Zealand)HICA = Hispanic: Central America, Caribbean HISA =  Hispanic: South AmericaMX = Mixed / multipleOT = Other (e.g. Australian Aborigine) UK = UnknownNOTE: all four character codes may be abbreviated to the first two characters",100
-175,D_ETHN,Donor ethnic group,A4,"AFNA = African: North Africa AFSS = African: Sub-Sahara AfricaASSW = Asian: Southwest Asia (Middle East, Turkey)ASSO = Asian: Southern Asia (India, Pakistan, Bangladesh, Sri Lanka, Bhutan, Nepal)ASCE = Asian: Central Asia (Eastern Russia, Kazakhstan, Uzbekistan, Kyrgyzstan, Tajikistan)ASSE = Asian: Southeast Asia (China, Mongolia, Burma, Laos, Cambodia, Thailand, Vietnam, Taiwan)ASNE = Asian: North and Northeast Asia (Japan, North Korea, South Korea)ASOC = Asian: Oceania (Pacific Islands, excluding Japan, Australia, Taiwan, Sakhalin, Aleutian Islands)CAEU = Caucasian: Mainland Europe, Greenland, Iceland, Western RussiaCAER = Caucasian: Eastern RussiaCANA = Caucasian: North America (USA, Canada, Mexico) CAAU = Caucasian: Australia (Australia, New Zealand) HICA = Hispanic: Central America, CaribbeanHISA =  Hispanic: South America MX = Mixed / multipleOT = Other (e.g. Australian Aborigine) UK = UnknownNOTE: all four character codes may be abbreviated to the first two characters (i.e. AF = African, etc.)",100
-176,P_ETHN,Patient ethnic group,A4,"AFNA = African: North Africa AFSS = African: Sub-Saharan AfricaASSW = Asian: Southwest Asia (Middle East, Turkey)ASSO = Asian: Southern Asia (India, Pakistan, Bangladesh, Sri Lanka, Bhutan, Nepal)ASCE = Asian: Central Asia (Eastern Russia, Kazakhstan, Uzbekistan, Kyrgyzstan, Tajikistan)ASSE = Asian: Southeast Asia (China, Mongolia, Burma, Laos, Cambodia, Thailand, Vietnam, Taiwan)ASNE = Asian: North and Northeast Asia (Japan, North Korea, South Korea)ASOC = Asian: Oceania (Pacific Islands excluding Japan, Australia, Taiwan, Sakhalin, Aleutian Islands)CAEU = Caucasian: Mainland Europe, Greenland, Iceland, Western RussiaCAER = Caucasian: Eastern RussiaCANA = Caucasian: North America (USA, Canada, Mexico) CAAU = Caucasian: Australia (Australia, New Zealand) HICA = Hispanic: Central America, CaribbeanHISA =  Hispanic: South America MX = Mixed / multipleOT = Other (e.g. Australian Aborigine) UK = UnknownNOTE: all four character codes may be abbreviated to the first two characters (i.e. AF = African, etc.)",100
-177,EXAM_DATE,Date physical examination,D8,Date format YYYYMMDD,101
-178,EXAM_OK,Result physical examination,A1,"Y = Yes N = No",102
-179,EXPI_DATE,Date expiration of reservation,D8,Date format YYYYMMDD,103
-180,D_EXTR_DATE,Date of sample extraction,D8,Date format YYYYMMDD,104
-181,FAX,Fax number,A20,"Ò+Ó followed by: International Access Code + Area Code + Subscriber number, separated by hyphens (i.e. Ò+21-72- 5124504Ó).",105
-182,P_FNAME,Patient first name,A30,See note 1 in the appendix,106
-183,CB_FREEZE_DATE,CBU freezing date,D8,Date format: YYYYMMDD,107
-184,CB_FREEZE_METH,CBU freezing method,A1,"C = Controlled Rate M = Manual",108
-185,CB_FUNG_CULT,Fungal culture,A1,"P = Positive N = Negative D = Not done",109
-186,P_GRAF_ID,Grafting physician identification,A10,Unique value that represents the Transplant Centre physician of the patient,110
-187,GRID,Global registration identifier for donors,A19,"Nineteen character identifier. The donor identifier element must follow the following rules:Only numeric and upper case alpha characters permitted (A-Z, 0-9).  Space and punctuation characters are not permitted. (It is recommended to avoid the letters O and I in the identifier to avoid confusion with the digits 0 and 1)Fixed length, 15 characters.  If the donor identifier used by the registry is less than 15 characters then it must be padded with leading zeros.Further details can be found on: https://collaboration.wmda.info/display/ITWG/GRID+Concept",111
-188,GVH_REAC,Graft vs. Host reactivity,N3,Percentage as a round number (i.e. 30 for 30%),112
-189,CB_HBS_AG,CBU Hepatitis B status (hepatitis B surface antigen),A1,"P = Positive N = Negative",113
-190,D_HBS_AG,Donor Hepatitis B status (hepatitis B surface antigen),A1,"P = Positive N = NegativeQ = Questionable/Uncertain",113
-191,CB_HBV_NAT,CBU HBV NAT status,A1,"P = Positive N = Negative",114
-192,CB_HCV_NAT,CBU HCV NAT status,A1,"P = Positive N = Negative",115
-193,D_HEIGHT,Donor height,N3,In centimetres,116
-194,CB_HEMO_STATUS,Hemoglobinopathy screening status,A2,"DN = Screening done, normal results DU = Screening done, unusual  findings NS = No screening doneCD = Can be done at time of release NC = Cannot be doneDT = Thalassemia DD =  Drepanocytosis",117
-195,D_HIV,Donor HIV status,A1,"P = Positive N = NegativeQ = Questionable/Uncertain",118
-196,CB_HIV_1_NAT,CBU HIV-1 NAT status,A1,"P = Positive N = Negative",119
-197,CB_HIV_P24,CBU HIV p24 status,A1,"P = Positive N = Negative",120
-198,D_HIV_P24,Donor HIV p24 status,A1,"P = Positive N = NegativeQ = Questionable/Uncertain",120
-199,HLA_NOM_VER,Major version of the HLA Nomenclature in use[1],A7,"2 = Version 2.x 3 = Version 3.x",121
-200,CB_HTLV,CBU HTLV status,A1,"P = Positive N = Negative",28
-201,HUB_COUNT,Number of donors of the registry with the given HLA phenotype,N5,,122
-202,HUB_RCV,Registry receiving the message.,A3,EMDIS hub codes _ see [2] for assigned codes,123
-203,HUB_SND,Registry sending the message.,A3,EMDIS hub codes _ see [2] for assigned codes,124
-204,HVG_REAC,Host vs. Graft reactivity,N3,Percentage as a round number (i.e. 30 for 30%),125
-205,CB_ID,The unit identification assigned by the hub. It may be the same as the local ID (CB_LOCAL_ID),A17,EMDIS hub code + National donor identification,126
-206,D_ID,Donor identification,A17,EMDIS hub code + National donor identification,127
-207,P_ID,Patient identification,A17,EMDIS hub code + National patient identification,128
-208,INFO_DATE,Date information session,D8,Date format YYYYMMDD,129
-209,INFO_TYPE,Information type,A3,"BMP = Donor only available for bone marrow donation for  personal reasonsBMM = donor only available for bone marrow donation for  medical reasonsSCP = donor only available for PBSC donation for personal  reasonsSCM = donor only available for PBSC donation for medical  reasonsABS = (absent) donor not available for a certain period of  timeMUL = MultidonationUBC = donor unavailable after blood collectionRPE = increased risk that donor is declined during physical  examinationCMV = additional information regarding CMV statusROI = donor was in a region with a higher risk of infectionMED = other medical informationOTH = other non-medical information",130
-210,INST_ID,Institution identification,A10,EMDIS hub code + Local Id.,131
-211,INST_MARR_SENT,Institution receiving the bone marrow or cord blood unit,A10,EMDIS hub code + Local Id.,132
-212,INST_PAY,Institution paying,A10,EMDIS hub code + Local Id.,133
-213,INST_SMP_SENT,Institution receiving sample (Òship-toÓ address),A10,EMDIS hub code + Local Id.,132
-214,INST_TYPE,Institution type,A3,"HUB = EMDIS HubDON = Donor centre TRA = Transplant centre HAR = Harvesting centre LAB = Typing laboratory FIN = Financial institution CBB = Cord Blood Bank",134
-215,CB_KIR_GL,URI to a GL-String or GL-string for absence/presence for KIR typing results.,A255,URI that refers to a GL-string registered with a GL-service or direct GL-string for absence / presence. Field is not used at the moment and should therefore always be empty. ,135
-216,D_KIR_GL,URI to a GL-String or GL-string for absence/presence for KIR typing results.,A255,URI that refers to a GL-string registered with a GL-service or direct GL-string for absence / presence. Field is not used at the moment and should therefore always be empty. ,135
-217,CB_KIR2DL1,CBU KIR gene 2DL1,A255,"POS = Presence of KIR geneNEG = Absence of KIR gene",136
-218,D_KIR2DL1,Donor KIR gene 2DL1,A255,"POS = Presence of KIR geneNEG = Absence of KIR gene",136
-219,CB_KIR2DL2,CBU KIR gene 2DL2,A255,"POS = Presence of KIR geneNEG = Absence of KIR gene",137
-220,D_KIR2DL2,Donor KIR gene 2DL2,A255,"POS = Presence of KIR geneNEG = Absence of KIR gene",137
-221,CB_KIR2DL3,CBU KIR gene 2DL3,A255,"POS = Presence of KIR geneNEG = Absence of KIR gene",138
-222,D_KIR2DL3,Donor KIR gene 2DL3,A255,"POS = Presence of KIR geneNEG = Absence of KIR gene",138
-223,CB_KIR2DL4,CBU KIR gene 2DL4,A255,"POS = Presence of KIR geneNEG = Absence of KIR gene",139
-224,D_KIR2DL4,Donor KIR gene 2DL4,A255,"POS = Presence of KIR geneNEG = Absence of KIR gene",139
-225,CB_KIR2DL5A,CBU KIR gene 2DL5A,A255,"POS = Presence of KIR geneNEG = Absence of KIR gene",140
-226,D_KIR2DL5A,Donor KIR gene 2DL5A,A255,"POS = Presence of KIR geneNEG = Absence of KIR gene",140
-227,CB_KIR2DL5B,CBU KIR gene 2DL5B,A255,"POS = Presence of KIR geneNEG = Absence of KIR gene",141
-228,D_KIR2DL5B,Donor KIR gene 2DL5B,A255,"POS = Presence of KIR geneNEG = Absence of KIR gene",141
-229,CB_KIR2DP1,CBU KIR gene 2DP1,A255,"POS = Presence of KIR geneNEG = Absence of KIR gene",142
-230,D_KIR2DP1,Donor KIR gene 2DP1,A255,"POS = Presence of KIR geneNEG = Absence of KIR gene",142
-231,CB_KIR2DS1,CBU KIR gene 2DS1,A255,"POS = Presence of KIR geneNEG = Absence of KIR gene",143
-232,D_KIR2DS1,Donor KIR gene 2DS1,A255,"POS = Presence of KIR geneNEG = Absence of KIR gene",143
-233,CB_KIR2DS2,CBU KIR gene 2DS2,A255,"POS = Presence of KIR geneNEG = Absence of KIR gene",144
-234,D_KIR2DS2,Donor KIR gene 2DS2,A255,"POS = Presence of KIR geneNEG = Absence of KIR gene",144
-235,CB_KIR2DS3,CBU KIR gene 2DS3,A255,"POS = Presence of KIR geneNEG = Absence of KIR gene",145
-236,D_KIR2DS3,Donor KIR gene 2DS3,A255,"POS = Presence of KIR geneNEG = Absence of KIR gene",145
-237,CB_KIR2DS4,CBU KIR gene 2DS4,A255,"POS = Presence of KIR geneNEG = Absence of KIR gene",146
-238,D_KIR2DS4,Donor KIR gene 2DS4,A255,"POS = Presence of KIR geneNEG = Absence of KIR gene",146
-239,CB_KIR2DS5,CBU KIR gene 2DS5,A255,"POS = Presence of KIR geneNEG = Absence of KIR gene",147
-240,D_KIR2DS5,Donor KIR gene 2DS5,A255,"POS = Presence of KIR geneNEG = Absence of KIR gene",147
-241,CB_KIR3DL1,CBU KIR gene 3DL1,A255,"POS = Presence of KIR geneNEG = Absence of KIR gene",148
-242,D_KIR3DL1,Donor KIR gene 3DL1,A255,"POS = Presence of KIR geneNEG = Absence of KIR gene",148
-243,CB_KIR3DL2,CBU KIR gene 3DL2,A255,"POS = Presence of KIR geneNEG = Absence of KIR gene",149
-244,D_KIR3DL2,Donor KIR gene 3DL2,A255,"POS = Presence of KIR geneNEG = Absence of KIR gene",149
-245,CB_KIR3DL3,CBU KIR gene 3DL3,A255,"POS = Presence of KIR geneNEG = Absence of KIR gene",150
-246,D_KIR3DL3,Donor KIR gene 3DL3,A255,"POS = Presence of KIR geneNEG = Absence of KIR gene",150
-247,CB_KIR3DP1,CBU KIR gene 3DP1,A255,"POS = Presence of KIR geneNEG = Absence of KIR gene",151
-248,D_KIR3DP1,Donor KIR gene 3DP1,A255,"POS = Presence of KIR geneNEG = Absence of KIR gene",151
-249,CB_KIR3DS1,CBU KIR gene 3DS1,A255,"POS = Presence of KIR geneNEG = Absence of KIR gene",152
-250,D_KIR3DS1,Donor KIR gene 3DS1,A255,"POS = Presence of KIR geneNEG = Absence of KIR gene",152
-251,D_LABEL_ID,Verbatim CT sample label ID,A19,Free form; see note 1 in the appendix,153
-252,P_LNAME,Patient last name,A30,See note 1 in the appendix,154
-253,CB_LOCAL_ID,The identification of the CBU locally at the cord blood bank,A17,,155
-254,MARKER,In the IDM_REQ message the values in this field indicates the infectious disease markers to be tested. In the IDM_RES message the values in this field reflects the infectious disease markers that were tested.,B13,"Binary fixed length string in which each position represents a test to be requested:Position 1: Blood group and rhesus Position 2: CMV statusPosition 3: ToxoplasmosisPosition 4: EBV Position 5: HIV status Position 6: HIV P24Position 7: Hepatitis B surface antigenPosition 8: Antibody to Hepatitis B surface antigen Position 9: Antibody to Hepatitis B core antigen Position 10: Antibody to Hepatitis C virusPosition 11: Lues status (Treponema pallidum) Position 12: ALT statusPosition 13: Antibody to HTLV1.V2",156
-255,MARR_DATE,Date marrow collection,D8,Date format YYYYMMDD,157
-256,MARROW_TU_REQ,Number of marrow tubes requested,N2,,158
-257,CB_MAT_A1,"Maternal HLA-A, 1st antigen",A5,Values according to WHO nomenclature _ see note 3 in the appendix.,159
-258,CB_MAT_A2,"Maternal HLA-A, 2nd antigen",A5,Values according to WHO nomenclature _ see note 3 in the appendix.,160
-259,CB_MAT_AL_PLA,Number of plasma maternal aliquots,N2,,161
-260,CB_MAT_AL_SER,Number of serum maternal aliquots,N2,,162
-261,CB_MAT_ANTI_HBC,Maternal Hepatitis B status (antibody to hepatitis B core antigen),A1,"P = Positive N = Negative",24
-262,CB_MAT_ANTI_HBS,Maternal Hepatitis B status (maternal Anti HBs),A1,"P = Positive N = Negative",163
-263,CB_MAT_ANTI_HCV,Maternal Hepatitis C status (antibody to hepatitis C virus),A1,"P = Positive N = Negative",26
-264,CB_MAT_ANTI_HIV_12,Maternal Anti-HIV 1/2 status,A1,"P = Positive N = Negative",27
-265,CB_MAT_B1,"Maternal HLA-B, 1st antigen",A5,Values according to WHO nomenclature _ see note 3 in the appendix.,164
-266,CB_MAT_B2,"Maternal HLA-B, 2nd antigen",A5,Values according to WHO nomenclature _ see note 3 in the appendix.,165
-267,CB_MAT_C1,"Maternal HLA-C, 1st antigen",A5,Values according to WHO nomenclature _ see note 3 in the appendix.,166
-268,CB_MAT_C2,"Maternal HLA-C, 2nd antigen",A5,Values according to WHO nomenclature _ see note 3 in the appendix.,167
-269,CB_MAT_CHAGAS,Maternal Chagas status,A1,"P = Positive N = Negative",49
-270,CB_MAT_CMV,Maternal CMV status,A1,"N = Both IgG and IgM negative Q = Questionable / UnclearG = IgG positive, IgM negative M = IgG negative, IgM positive B = Both IgG and IgM positiveP = IgG or IgM positive, test did not differentiate H = IgG positive, IgM not testedO = IgG negative, IgM not tested",53
-271,CB_MAT_CMV_NAT,Maternal CMV NAT status,A1,"P = Positive N = Negative",55
-272,CB_MAT_DNA_A1,"Maternal DNA-A, 1st allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix.,168
-273,CB_MAT_DNA_A2,"Maternal DNA-A, 2nd allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix.,169
-274,CB_MAT_DNA_B1,"Maternal DNA-B, 1st allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix.,170
-275,CB_MAT_DNA_B2,"Maternal DNA-B, 2nd allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix.,171
-276,CB_MAT_DNA_C1,"Maternal DNA-C, 1st allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix.,172
-277,CB_MAT_DNA_C2,"Maternal DNA-C, 2nd allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix.,173
-278,CB_MAT_DPA11,"Maternal DNA-DPA1, 1st allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix.,174
-279,CB_MAT_DPA12,"Maternal DNA-DPA1, 2nd allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix.,175
-280,CB_MAT_DPB11,"Maternal DNA-DRB1, 1st allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix.,176
-281,CB_MAT_DPB12,"Maternal DNA-DRB1, 2nd allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix.,177
-282,CB_MAT_DQ1,"Maternal HLA-DQ, 1st antigen",A5,Values according to WHO nomenclature _ see note 3 in the appendix.,178
-283,CB_MAT_DQ2,"Maternal HLA-DQ, 2nd antigen",A5,Values according to WHO nomenclature _ see note 3 in the appendix.,179
-284,CB_MAT_DQA11,"Maternal DNA-DQA1, 1st allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix.,180
-285,CB_MAT_DQA12,"Maternal DNA-DQA1, 2nd allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix.,181
-286,CB_MAT_DQB11,"Maternal DNA-DQB1, 1st allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix.,182
-287,CB_MAT_DQB12,"Maternal DNA-DQB1, 2nd allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix.,183
-288,CB_MAT_DR1,"Maternal HLA-DR, 1st antigen",A5,Values according to WHO nomenclature _ see note 3 in the appendix.,184
-289,CB_MAT_DR2,"Maternal HLA-DR, 2nd antigen",A5,Values according to WHO nomenclature _ see note 3 in the appendix.,185
-290,CB_MAT_DRB11,"Maternal DNA-DRB1, 1st allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix.,186
-291,CB_MAT_DRB12,"Maternal DNA-DRB1, 2nd allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix.,187
-292,CB_MAT_DRB31,"Maternal DNA-DRB3, 1st allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix.,188
-293,CB_MAT_DRB32,"Maternal DNA-DRB3, 2st allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix.,189
-294,CB_MAT_DRB41,"Maternal DNA-DRB4, 1st allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix.,190
-295,CB_MAT_DRB42,"Maternal DNA-DRB4, 2nd allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix.,191
-296,CB_MAT_DRB51,"Maternal DNA-DRB5, 1st allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix.,192
-297,CB_MAT_DRB52,"Maternal DNA-DRB5, 2nd allele",A20,Values according to WHO nomenclature _ see note 3 in the appendix.,193
-298,CB_MAT_EBV,Maternal EBV status,A1,"N = Both IgG and IgM negative Q = Questionable / UnclearG = IgG positive, IgM negative M = IgG negative, IgM positive B = Both IgG and IgM positiveP = IgG or IgM positive, test did not differentiate H = IgG positive, IgM not testedO = IgG negative, IgM not tested",98
-299,CB_MAT_HBS_AG,Maternal Hepatitis B status (hepatitis B surface antigen),A1,"P = Positive N = Negative",113
-300,CB_MAT_HBV_NAT,Maternal HBV NAT status,A1,"P = Positive N = Negative",114
-301,CB_MAT_HCV_NAT,Maternal HCV NAT status,A1,"P = Positive N = Negative",115
-302,CB_MAT_HIV_1_NAT,Maternal HIV-1 NAT status,A1,"P = Positive N = Negative",119
-303,CB_MAT_HIV_P24,Maternal HIV p24 status,A1,"P = Positive N = Negative",120
-304,CB_MAT_HTLV,Maternal HTLV status,A1,"P = Positive N = Negative",28
-305,CB_MAT_ID,The identification of the maternal donor as assigned by the hub. It may be the same as the local ID (CB_BANK_MAT_ID),A15,Local ID,40
-306,CB_MAT_PB19_NAT,Maternal ParvoB19 NAT status,A1,"P = Positive N = Negative",195
-307,CB_MAT_PLA_QUANT,Total quantity of maternal plasma available,R4,In millilitres; valid range 0.0 to 99.9 ml,196
-308,MAT_SER_AVA,Maternal serum available for CBU?,A1,"Y = Yes N = No",197
-309,CB_MAT_SER_QUANT,Total quantity of maternal serum available,R4,In millilitres; valid range 0.0 to 99.9 ml,198
-310,MAT_SER_QUANT,Quantity of maternal serum for CBU,N2,In millilitres,198
-311,CB_MAT_SYPHILIS,Maternal Syphilis status,A1,"P = Positive N = Negative",199
-312,CB_MAT_TOXO,Maternal Toxoplasmosis status,A1,"N = Both IgG and IgM negative Q = Questionable / UnclearG = IgG positive, IgM negative M = IgG negative, IgM positive B = Both IgG and IgM positiveP = IgG or IgM positive, test did not differentiate H = IgG positive, IgM not testedO = IgG negative, IgM not tested",200
-313,CB_MAT_WNV,Maternal West Nile Virus (WNV) status,A1,"P = Positive N = Negative",201
-314,P_MATCH_AB,"Matching preference for HLA-A, and -B typed adult donors",A30,See section 4.1.1 of the EMDIS Semantics,202
-315,P_MATCH_CB,Matching preference for cord blood units,A30,See section 4.1.1 of the EMDIS Semantics,203
-316,MATCH_DATE,Date phenotype list was generated,D8,Date format YYYYMMDD,204
-317,P_MATCH_DR,"Matching preference for HLA-A, -B and -DR typed adult donors",A30,See section 4.1.1 of the EMDIS Semantics,205
-318,P_MAX_DON_AB,"Maximum number of HLA-A, and -B typed donors",N4,Default value is 0,206
-319,P_MAX_DON_CB,Maximum number of cord blood units,N4,Default value is 0,207
-320,P_MAX_DON_DR,"Maximum number of HLA-A, -B and -DR typed donors",N4,Default value is 0,208
-321,MIN_VOL_MARR,Estimated minimal volume of marrow,N4,In millilitres,209
-322,MLC_GVH,"Result MLC, Graft vs. Host",A1,"P = Positive N = Negative",210
-323,MLC_HVG,"Result MLC, Host vs. Graft",A1,"P = Positive N = Negative",211
-324,CB_MONO_NC,Collected total number of mononucleated cells,F7,Cells expressed in scientific notation; valid range 0.0E0 to 999.9E7,212
-325,MONO_NC_KG,Number of mononucleated cells per kg for recipient,F7,Cells expressed in scientific notation,213
-326,MSG_CODE,Code operation of erroneous message,A10,,214
-327,NBT1,Number of tubes for the first product,N2,See note 2 in the appendix,215
-328,NBT1_ATCOL,Number of tubes for the first product at collection,N2,See note 2 in the appendix,216
-329,NBT1_BEFCOL,Number of tubes for the first product before collection,N2,See note 2 in the appendix,217
-330,NBT2,Number of tubes for the second product,N2,See note 2 in the appendix,215
-331,NBT2_ATCOL,Number of tubes for the second product at collection,N2,See note 2 in the appendix,216
-332,NBT2_BEFCOL,Number of tubes for the second product before collection,N2,See note 2 in the appendix,217
-333,NBT3,Number of tubes for the third product,N2,See note 2 in the appendix,215
-334,NBT3_ATCOL,Number of tubes for the third product at collection,N2,See note 2 in the appendix,216
-335,NBT3_BEFCOL,Number of tubes for the third product before collection,N2,See note 2 in the appendix,217
-336,NBT4,Number of tubes for the fourth product,N2,See note 2 in the appendix,215
-337,NBT4_ATCOL,Number of tubes for the fourth product at collection,N2,See note 2 in the appendix,216
-338,NBT4_BEFCOL,Number of tubes for the fourth product before collection,N2,See note 2 in the appendix,217
-339,CB_NC,Collected total number of nucleated cells,F7,Cells expressed in scientific notation; valid range 0.0E0 to 999.9E7,218
-340,CB_NC_FRZN,Processed total number of nucleated cells (post processing and pre-cryopreservation),F7,Cells expressed in scientific notation; valid range 0.0E0 to 999.9E7,219
-341,NC_KG,Number of nucleated cells per kilo for recipient,F7,Cells expressed in scientific notation,220
-342,NC_RESEA,Number of nucleated cells for research,F7,Cells expressed in scientific notation,221
-343,P_NEW_STAT,New patient state,A3,"PRE = Preliminary Search ACT = ActiveSUS = Suspended STP = Stopped",222
-344,D_NMBR_MARR,Number of marrow donations,N1,,223
-345,D_NMBR_PBSC,Number of PBSC donations,N1,,223
-346,D_NMBR_PREG,Donor number of pregnancies,N1,,224
-347,D_NMBR_TRANS,Donor number of blood transfusions,N1,,225
-348,P_OLD_STAT,Old patient state,A3,"PRE = Preliminary Search ACT = ActiveSUS = Suspended STP = Stopped",226
-349,ORG_DEN,Origin of denial,A20,Where the message was rejected,227
-350,CB_OTH_SMPL,Other type samples available (other than DNA),A1,"Y = Yes N = No",228
-351,PARAM,Parameter for ACTION,A50,"There are currently no valid values defined; if this (optional) field is included in the ADMIN message, its value should be left blank (ÒÓ or Ò?Ó)",229
-352,PAT_POOL,Physical location of the patient,A2,"Two character ISO country code (i.e. US, DE, IT)",230
-353,CB_PB19_NAT,CBU ParvoB19 NAT status,A1,"P = Positive N = Negative",195
-354,PBSC_COLL_DATE1,First PBSC collection date,D8,YYYYMMDD,157
-355,PBSC_COLL_DATE2,Second PBSC collection date,D8,YYYYMMDD,157
-356,PBSC_GCSF_DATE,Start G-CSF date,D8,YYYYMMDD,231
-357,PERSON,Contact person,A40,Free form; see note 1 in the appendix,232
-358,PHONE,Phone number,A20,"Ò+Ó followed by: International Access Code + Area Code + Subscriber number, separated by hyphens (i.e. Ò+21-72- 5124504Ó)",233
-359,CB_PLA_QUANT,Total quantity of CBU plasma available,R4,In millilitres; valid range 0.0 to 99.9 ml,234
-360,DON_POOL,Physical location of the donor,N4,"ION, i.e. 6939. See [3]",235
-361,PRECOLL_DATE,Date arrival pre-collection,D8,Date format YYYYMMDD,236
-362,CB_PROC_DATE,CBU Processing start date,D8,Date format: YYYYMMDD,237
-363,CB_PROC_METH,Processing methods,A3,"HES = Hydroxy-Ethyl-StarchDGS = Density Gradient Separation CEN = CentrifugeFIL = Filtration FIC = FICOL PER = PERCOLOTH = Other",238
-364,CB_PROC_METH_TYPE,Processing method type,A3,"MAN = Manual SPX = SepaxOTP = Optipress II AXP = AXPOTH = Other",239
-365,CB_PROD_MOD,Product modifications,A3,"BCE = Buffy Coat Enriched DNE = Density EnrichedPLR = Plasma Reduced (Volume reduction only)PRR = Plasma and RBC ReducedRBR = RBC Reduced (depletion) NOT = Not reducedOTH = Other",240
-366,PROD1,First product required,A10,"EDTA, ACD, CPD, HEPARIN, CLOTTED, DNA[2], MAT_SERUM1",215
-367,PROD1_ATCOL,First product at collection,A10,"EDTA, ACD, CPD, HEPARIN, CLOTTED",216
-368,PROD1_BEFCOL,First pre-collection product,A10,"EDTA, ACD, CPD, HEPARIN, CLOTTED, MAT_SERUM1",217
-369,PROD2,Second product required,A10,"EDTA, ACD, CPD, HEPARIN, CLOTTED, DNA1, MAT_SERUM1",215
-370,PROD2_ATCOL,Second product at collection,A10,"EDTA, ACD, CPD, HEPARIN, CLOTTED",216
-371,PROD2_BEFCOL,Second pre-collection product,A10,"EDTA, ACD, CPD, HEPARIN, CLOTTED, MAT_SERUM1",217
-372,PROD3,Third product required,A10,"EDTA, ACD, CPD, HEPARIN, CLOTTED, DNA1, MAT_SERUM1",215
-373,PROD3_ATCOL,Third product at collection,A10,"EDTA, ACD, CPD, HEPARIN, CLOTTED",216
-374,PROD3_BEFCOL,Third pre-collection product,A10,"EDTA, ACD, CPD, HEPARIN, CLOTTED, MAT_SERUM1",217
-375,PROD4,Fourth product required,A10,"EDTA, ACD, CPD, HEPARIN, CLOTTED, DNA[3], MAT_SERUM1",215
-376,PROD4_ATCOL,Fourth product at collection,A10,"EDTA, ACD, CPD, HEPARIN, CLOTTED",216
-377,PROD4_BEFCOL,Fourth pre-collection product,A10,"EDTA, ACD, CPD, HEPARIN, CLOTTED, MAT_SERUM1",217
-378,PROP_DATE,Proposed date for marrow collection / CBU shipment,D8,Date format YYYYMMDD,241
-379,QU1,First product quantity per tube (see also NBTx),N4,In millilitres,215
-380,QU2,Second product quantity per tube (see also NBTx),N4,In millilitres,215
-381,QU3,Third product quantity per tube (see also NBTx),N4,In millilitres,215
-382,QU4,Fourth product quantity per tube (see also NBTx),N4,In millilitres,215
-383,QUANT1_ATCOL,Quantity of first product at collection per tube (see also NBTx_ATCOL),N4,In millilitres,216
-384,QUANT1_BEFCOL,Quantity of first pre-collection product per tube (see also NBTx_BEFCOL),N4,In millilitres,217
-385,QUANT2_ATCOL,Quantity of second product at collection per tube (see also NBTx_ATCOL),N4,In millilitres,216
-386,QUANT2_BEFCOL,Quantity of second pre-collection product per tube (see also NBTx_BEFCOL),N4,In millilitres,217
-387,QUANT3_ATCOL,Quantity of third product at collection per tube (see also NBTx_ATCOL),N4,In millilitres,216
-388,QUANT3_BEFCOL,Quantity of third pre-collection product per tube (see also NBTx_BEFCOL),N4,In millilitres,217
-389,QUANT4_ATCOL,Quantity of fourth product at collection per tube (see also NBTx_ATCOL),N4,In millilitres,216
-390,QUANT4_BEFCOL,Quantity of fourth pre-collection product per tube (see also NBTx_BEFCOL),N4,In millilitres,217
-391,REASON,Reason why a service cannot be performed,A3,"For transplant centre (TC) to donor centre (DC):BCC = Clinical condition of patient deteriorated (i.e. Relapse) FND = Other / better donor foundLAB = Laboratory problem / Typing failed / Not enough sample NSP = No sample receivedOLD = Sample too oldPDC = Patient deceased before request was completed STP = Search stoppedTRX = Patient already transplantedOTH = Other reasonFor donor centre (DC) to transplant centre (TC):DO = Donor is too old DD = Donor diedMR = Medical reasons PR = Personal reasons TX = After transplantation MO = Donor has movedUC = Unable to contact donorNS = No sample available (for CBU«s only) OT = Other reasonsUK = Unknown EX = ExpiredMM = HLA mismatch",242
-392,REASON_CHNG,Reason for patient status change,A3,"ATX = Autologous TransplantationRMT = BMSC Transplantation with related donor[4]UMT = BMSC Transplantation with unrelated donor[1]RCT = CBSC Transplantation with related CBU[1]UCT = CBSC Transplantation with unrelated CBU[1]RPT = PBSC Transplantation with related donor[1]UPT = PBSC Transplantation with unrelated donor[1]GCC = Good clinical condition of patient (i.e. remission)BCC = Clinical condition of patient deteriorated (i.e. relapse) PDC = Patient deceased before transplantationPAT = Patient responds to alternative therapyPPR = Patient withdrawal (non medical, personal reasons)ICH = Transplantation indication changed (i.e. wrong diagnosis) FND = Other / better donor foundNDF = No suitable donor found NPH = Send new phenotype list NML = Send new match listRCM = Send new phenotype list and new match list (complete match list)OTH = Other reason UNK = Unknown reason",243
-393,REASON_CNCL,Reason for request cancellation,A3,"ATX = Autologous TransplantationRMT = BMSC Transplantation with related donor[1]UMT = BMSC Transplantation with unrelated donor[1] RCT = CBSC Transplantation with related CBU[1]UCT = CBSC Transplantation with unrelated CBU[1]RPT = PBSC Transplantation with related donor[1]UPT = PBSC Transplantation with unrelated donor[1]GCC = Good clinical condition of patient (i.e. remission) BCC = Clinical condition of patient deteriorated (i.e. relapse) PDC = Patient deceased before transplantationPAT = Patient responds to alternative therapyPPR = Patient withdrawal (non medical, personal reasons)ICH = Transplantation indication changed (i.e. wrong diagnosis) FND = Other / better donor foundNDF = No suitable donor found COR = Correction of request HMM = HLA mismatchDRR = Donor related reason OTH = Other reasonUNK = Unknown reason",244
-394,REC_DATE1,Earliest date of sample reception,D8,Date format YYYYMMDD,245
-395,REC_DATE2,Latest date of sample reception,D8,Date format YYYYMMDD,246
-396,CB_RED_BC,Total nucleated red blood cell count (post processing and pre-cryopreservation) reflecting the content of the final product that is frozen,F7,Expressed in scientific notation; valid range 0.0E0 to 999.9E7,247
-397,CB_REDUCTION,Method of volume reduction,A3,"HES = Hydroxy-Ethyl-StarchDGS = Density Gradient Separation CEN = CentrifugeFIL = Filtration FIC = FICOL PER = PERCOLNOT = Not reduced OTH = OtherUNK = Unknown",248
-398,REF_CODE,Reference code,A15,,249
-399,REG_RCV,Receiving EMDIS registry,N4,ION (i.e. 6939) of receiving EMDIS registry. See [3].,250
-400,REG_SND,Sending EMDIS registry,N4,ION (i.e. 6939) of sending EMDIS registry. See [3].,251
-401,REMARK,Remark,A120,Free form; see note 1 in the appendix,252
-402,REMARK (SMP_INFO),Remark,A255,"Free form, see note1 in the appendix",252
-403,REQ_DATE,Request date,D8,Date format YYYYMMDD,254
-404,REQ_TYPE,Type of request,A3,"ALM = Alternative Match List (ALM) request BLS = Blood sample requestCBR = Cord Blood Unit ReportIDM = Infectious disease marker request RSV = Donor reservation requestTYP = Typing requestWOR = Workup request (stem cell donor, PBSC, DLI, or CBU)",255
-405,RES_TYPE,Type of result reminded,A9,"ALM_RES = Alternative match list request result CBR_RES = Cord Blood Unit Report request result IDM_RES = Infectious disease marker request result MARR_STAT = Workup request resultRSV_RES = Donor reservation request result SMP_ARR = Sample request arrival notification SMP_RES = Sample request resultTYP_RES = Typing request result",256
-406,RESOLUT,Resolution required,A11,"Character string with fixed length in which each position represents a HLA locus. The coding of the resolution required for every position is:ÒSÓ = serologicalÒLÓ = DNA low resolutionÒMÓ = DNA medium resolution ÒHÓ = DNA high resolutionÒ-Ò (hyphen) = not requestedThe character string is interpreted from left to right, with position 1 as the leftmost position. The positions for the HLA loci are defined as:Position 1: HLA-APosition 2: HLA-BPosition 3: HLA-CPosition 4: HLA-DRB1Position 5: HLA-DRB3Position 6: HLA-DRB4Position 7: HLA-DRB5Position 8: HLA-DQA1Position 9: HLA-DQB1Position 10: HLA-DPA1Position 11: HLA-DPB1",257
-407,CB_SAMPLE_TYPE,CT Sample type,A2,"AS = CBU Contiguous Attached Segment WB = Whole Blood SampleRC = Red Cell Fraction (pellet) FP = Blood Spotted Filter Paper ED = Extracted DNA",258
-408,SEND_PREF,Preferred sending method of CBU report,A1,"E = E-mail F = Fax",259
-409,SENT_DATE,Date text message was sent,D8,Date format YYYYMMDD,260
-410,CB_SER_QUANT,Total volume of CBU serum available,R4,In millilitres; valid range 0.0 to 99.9 ml,261
-411,CB_SEX,CBU sex,A1,"M = MaleF = Female",262
-412,D_SEX,Donor sex,A1,"M = MaleF = Female",262
-413,P_SEX,Patient sex,A1,"M = MaleF = Female",262
-414,CB_STAT_END_DATE,Status valid until specified date (e.g. assigned if the unit is temporarily unavailable),D8,Date format YYYYMMDD,263
-415,D_STAT_END_DATE,Donor status valid until specified date,D8,Date format YYYYMMDD,264
-416,CB_STAT_REASON,Reason for status change,A2,"Proposed reasons for Status TU: QR = Quarantined;AD = AdministrativeProposed reasons for Status DE: CD = Cord Destroyed or Damaged; MR = Medical reasonsDS = Distributed for infusion;OT = Unavailable for other reasons; XP = ExpiredProposed additional information for AV:NS = No sample available (can't do additional testing, but could ship)",265
-417,D_STAT_REASON,Reason of donor status change,A2,"DO = Donor is too old DD = Donor diedMR = Medical reasons PR = Personal reasons TX = After transplantation MO = Donor has movedUC = Unable to contact donorNS = no sample available (for CBUÕs only) OT = Other reasonsTQ = Typing questionable UK = Unknown",265
-418,CB_STATUS,Status (used to determine unit availability),A2,"AV = Available for transplantation purposes TU = Temporarily unavailableRE = ReservedDE = Deleted, permanently unavailable",266
-419,D_STATUS,Donor status,A2,"AV = Available for transplantation purposesTU = Temporarily unavailable, specified in D_STAT_REASON OP = Donor is reserved for another patientDE = Donor deleted, specified in D_STAT_REASONRS = Donor is reserved for the patient the donor was reported for",266
-420,CB_SYPHILIS,CBU Syphilis status,A1,"P = Positive N = Negative",199
-421,TOTAL_AB,Total number of matching AB typed stem cell donors,N5,,267
-422,TOTAL_CB,Total number of matching cord blood units,N5,,268
-423,TOTAL_DR,Total number of matching ABDR typed stem cell donors,N5,,269
-424,CB_TOXO,CBU Toxoplasmosis status,A1,"N = Both IgG and IgM negative Q = Questionable / UnclearG = IgG positive, IgM negativeM = IgG negative, IgM positive B = Both IgG and IgM positiveP = IgG or IgM positive, test did not differentiate H = IgG positive, IgM not testedO = IgG negative, IgM not tested",200
-425,D_TOXO,Donor Toxoplasmosis,A1,"N = Both IgG and IgM negative Q = Questionable / UnclearG = IgG positive, IgM negative M = IgG negative, IgM positive B = Both IgG and IgM positiveP = IgG or IgM positive, test did not differentiate H = IgG positive, IgM not testedO = IgG negative, IgM not tested",200
-426,D_TPHA,Donor Lues status (Treponema pallidum),A1,"P = Positive N = NegativeQ = Questionable/Uncertain",270
-427,TRNS_MEDIUM,Transport medium for marrow,A10,"RPMI, HANKS, OTH, NOPREF",271
-428,TRX_DATE,Date of the transplantation,D8,Date format YYYYMMDD,272
-429,TXT_LINEn,Line of text,A60,Free form; n = 1..20; see note 1 in the appendix,273
-430,CB_TYP_BAG,Type of bag used (CBU bag fractions / split unit),A5,"80/2050/5040/60NS = No split",274
-431,D_TYPE,ÓStem cell donorÓ or ÓCord blood unitÓ,A1,"C = Cord Blood Unit D = Stem Cell Donor",275
-432,URGENT,Urgent request,A1,"Y = YesN = No (default)",276
-433,CB_VIABILITY,"Viability for collected total nucleated cells countViability of CB_VIABILITY_CELLS",N3,Percentage,277
-434,CB_VIABILITY_CELLS,Type of cells tested for viability,A4,"TNCCD34CD45",278
-435,CB_VIABILITY_DATE,Date viability was tested,D8,Date format YYYYMMDD,279
-436,CB_VIABILITY_METHOD,Method used to calculate the viability,A2,"7A = 7AADPI = Propidium IodideTB = Trypan BlueOT = Other",280
-437,VIROL_DATE,Date virology,D8,Date format YYYYMMDD,281
-438,VIROL_OK,Result virology,A1,"P = Positive N = NegativeQ = Questionable / Uncertain",282
-439,CB_VOL,"CBU collected volume before processing (without additives)",R5,In millilitres; format: ###.#; valid range 10.0 to 999.9 ml; Either CB_VOL or CB_VOL_FRZN is required,283
-440,CB_VOL_FRZN,"Total CBU volume frozen (post processing and pre-cryopreservation)",R5,In millilitres; format: ###.#; valid range 10.0 to 999.9 ml; Either CB_VOL or CB_VOL_FRZN is required,284
-441,D_WEIGHT,Donor weight,N3,In kilos,285
-442,P_WEIGHT,Patient weight,N3,In kilos,285
-443,CB_WNV,CBU West Nile Virus (WNV) status,A1,"P = Positive N = Negative",201
-444,WOR_REQ_TYPE,Workup request type - preferred,A4,"PBSC = Request a PBSC collectionSCD = Request the workup of a stem cell donor CBU = Request a cord blood unitDLI = Donor Leukocyte Infusion",286
-445,ZIP,ZIP Code,A10,Free form; see note 1 in the appendix,287

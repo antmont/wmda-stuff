@@ -1,5 +1,7 @@
 from django.contrib import admin
 
+from ordered_model.admin import OrderedTabularInline
+
 from .models import *
 
 
@@ -17,8 +19,25 @@ class EmdisFieldAdmin(admin.ModelAdmin):
     filter_horizontal = ('emdis_messages', )
 
 
+class EmdisSemanticsInline(OrderedTabularInline):
+    model = EmdisSemantics
+    fields = ('emdis_message', 'emdis_field', 'required', 'move_up_down_links',)
+    readonly_fields = ('order', 'move_up_down_links',)
+    extra = 1
+    ordering = ('order',)
+
+
 class EmdisMessageAdmin(admin.ModelAdmin):
     list_display = ('name', 'description',)
+    inlines = (EmdisSemanticsInline, )
+
+    def get_urls(self):
+        urls = super(EmdisMessageAdmin, self).get_urls()
+        for inline in self.inlines:
+            if hasattr(inline, 'get_urls'):
+                urls = inline.get_urls(self) + urls
+        return urls
+
 
 admin.site.register(DataFamily)
 admin.site.register(DictionaryField, DictionaryFieldAdmin)

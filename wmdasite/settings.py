@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'djangobower',
     'django_filters',
     'widget_tweaks',
+    'ordered_model',
 
     'wmdadict.apps.WmdadictConfig',
 ]

@@ -1,286 +1,0 @@
-id,label,description_short,field_type,units,range,values,owner_family_id,description_long
-1,Collected CD34+,Collected total number of CD34+ cells,N,10^6,0 to 999.9 x 10^6,,1,
-2,Processed CD34+,Processed total number of CD34+ cells. Post processing and pre-cryopreservation.,N,10^6,0 to 999.9 x 10^6,,1,
-3,HLA A (1st antigen),"""mesured by serology - serology must have been tested, must not be a computed value",A,,,,2,
-4,HLA A (2nd antigen),"""mesured by serology - serology must have been tested, must not be a computed value",A,,,,2,
-5,Blood Group (ABO),Blood Group (ABO),S,,,"A, B, AB, O",3,
-6,Blood Group (Rhesus),Blood Group (Rhesus),S,,,"Positive, Negative",3,
-7,Acceptable sample reception days,A list of (multiple) weekdays on which sample can be received. Used for sample requests.,M,,,"Monday, Tuesday etc.(At least 1 up to all allowed)",4,
-8,Donor still of interest,"At VT, when reporting the HLA results to the DC the TC indicates whether they are still interested in the donor",S,,,"Yes, No",4,
-9,CBB Accreditation,The current accreditation status of the Cord Blood Bank,M,,,"NetCord-FACTAABB(Zero, One or Mulitple allowed) ",1,
-10,Receipt acknowledgement,Acknowledgment sent to the sender of a request  usually Hub to Hub,U,,,,4,
-11,ACK_ID,"EMDIS message only, not in WMDA data dictionary",U,,,,7,
-12,ACTION,"EMDIS message only, not in WMDA data dictionary",U,,,,7,
-13,First line of address,"The first line of an address, generally for an organisation, can be any format",A,,,,4,
-14,Second line of address,"The second line of an address, generally for an organisation, can be any format",A,,,,4,
-15,Third line address,"The third line of an address, generally for an organisation, can be any format",A,,,,4,
-16,CBU plasma aliquots,Number of plasma aliquots available for testing,N,(Count),0 to 99,,1,
-17,CBU red cell aliquots,Number of red cell aliquots available for testing,N,(Count),0 to 99,,1,
-18,CBU serum aliquots,Number of serum aliquots available for testing,N,(Count),0 to 99,,1,
-19,Donor ALT status,Result of donor alanine aminotransferase test,N,Units per litre (u/L),,,5,
-20,Preferred date (collection/shipment) 2,Transplant centre collection/shipment date preference,D,,,,4,
-21,Preferred date (collection/shipment) 3,Transplant centre collection/shipment date preference,D,,,,4,
-22,ALTER_REQ_TYPE,Not used see Product request,U,,,,7,
-23,Required Anticoagulant,Type of anticoagulant,M,,,"ACD, Heparin, EDTA",4,
-24, Anti-HBc,Antibody to Hepatitis B core antigen,S,,,"Postive, Negative",5,
-25,HBs Ag,Antibody to Hepatitis B surface antigen,S,,,"Postive, Negative, Questionable",5,
-26,Anti HCV,Antibody to Hepatitis C virus,S,,,"Positive, Negative",5,
-27,Anti-HIV 1 and Anti-HIV 2,Anti HIV 1/2 Status,S,,,"Positive, Negative",5,
-28,Anti-HTLV I/II,Anti HTLV Status,S,,,"Postive, Negative, Questionable",5,
-29,Scheduled delivery date,Sample Arrival date,D,,Must be in the future,,4,
-30,Contigous/attached segments,Number of attached segments available for a CBU,N,,0 to 99,,1,
-31,Donor Attribute,The individual donor attribute assignment as determined by the registry's national rules (for GRID implementation),A,,,,3,
-32, Donor Autologous Unit,Refers to an autologous blood donation made by a donor prior to HPC(M) collection. Used any more?,U,,,,4,
-33,HLA-B (1st antigen),"""mesured by serology - serology must have been tested, must not be a computed value",A,,,,2,
-34,HLA-B (2nd antigen),"""mesured by serology - serology must have been tested, must not be a computed value",A,,,,2,
-35,Microbial Screen(bacteria),Bacterial culture,S,,,"Positive, Negative, not done",1,
-36,CBU Bag ID,The identification as it appears on the bag. ,F,,,,1,
-37,Number of CBU bags,Number of bags for the cord blood sub units,N,,0 to 99,,1,
-38,Cord Blood Bank,Identifying information of the CBB,A,,,,1,
-39,Cord Blood Bank Manufacturing ID,The ID of the bank that manufactured the unit,U,,,,4,
-40,Maternal ID,The identification used to identify the maternal donor,A,,,,1,
-41,CBU birth date,Birth date of infant ( see CBU Collection date). EMDIS message only,D,,Must be in the past,,1,
-42,Date of Birth,Birth date,D,,Must be in the past,,3,
-43,HLA-C (1st antigen),"""mesured by serology - serology must have been tested, must not be a computed value",A,,,,2,
-44,HLA-C (2nd antigen),"""mesured by serology - serology must have been tested, must not be a computed value",A,,,,2,
-45,CCR5 ,C-C chemokine receptor type 5 status,S,,,"DD = Deletion (delta 32) - homozygousDW = Deletion (delta 32) / wildtype - heterozygousWW = Wildtype - homozygous",2,
-46,Required CD34+/kg,Requested number of CD34+ cells per kilo for recipient,N,10^6,0 to 999.9 x 10^6/kg,,3,
-47,Required CD3+/kg,Requested number of CD3+ cells per kilo for recipient,N,10^6,0 to 999.9 x 10^6/kg,,3,
-48,Total colony forming units (CFU),Total CFU post processing count (post processing and pre-cryopreservation). GM method,N,10^4,0 to 999.9 x 10^4,,1,
-49,Chagas Screen,Chagas status,S,,,"Postive, Negative",5,
-50,Donor Checkup date,Date of last medical checkup,D,,Must be in past,,4,
-51,City Address,"The city of an address, generally for an organisation, can be any format",A,,,,4,
-52,Donor Clearance date,Date donor clearance is confirmed,D,,Must be in past,,3,
-53,Cytomegalovirus (CMV),CMV status,S,,,"N = Both IgG and IgM negative Q = Questionable / UnclearG = IgG positive, IgM negative M = IgG negative, IgM positive B = Both IgG and IgM positiveP = IgG or IgM positive, test did not differentiate H = IgG positive, IgM not testedO = IgG negative, IgM not tested",5,
-54,CMV Test Date,Date CMV tested,D,,Must be in past,,5,
-55,CMV DNA PCR,CMV DNA PCR status,S,,,"P = Positive N = Negative",5,
-56,CBU Collection Date,Date CBU was collected,D,,Must be in past,,1,
-57,Sample Collection Date,Date of donor sample collection,D,,,,3,
-58,Donor product preference,"Donor's preferred donation method ( not on any WMDA forms, only Emdis but should it be included?)",S,,,"M = Marrow P = PBSCB = Both",3,
-59,Earliest Sample Collection Date,Earliest ,D,,,,3,
-60,Latest Sample Collection Date,"EMDIS message only, not in WMDA data dictionary. Workup request for future implementation",D,,,,3,
-61,Total number of days of conditioning regimen,The number of condititioning days the patient will have prior to transplantation,N,,,,4,
-62,Work up request confirmation date,"EMDIS message only, not in WMDA data dictionary.",D,,,,4,
-63,CONFIRM,"EMDIS message only, not in WMDA data dictionary.",A,,,"Y = SuccessfulN = Not successful",7,
-64,Donor contact date,Date of last confirmed contact with the donor.,D,,Must be in past,,4,
-65,Country,"The country of an address, generally for an organisation, can be any format",A,,,,4,
-66,CBU verification typing date,Need to define what constitutes VT ( current FACT standards?) Date verification typing was completed,D,,,,1,
-67,Patient Diagnosis,Diagnosis of the patient,A,,,,4,
-68,Patient Diagnosis date,Date of patient diagnosis,D,,Must be in past,,4,
-69,Diagnosis details,Additional explanatory text describing diagnosis of the patient,A,,,,4,
-70,Disease stage,"Patient disease stage ( not on WMDA forms, should be?)",A,,,,4,
-71,HLA A (1st allele),"DNA-A, 1st allele. Values according to WHO nomenclature ",N,,,,2,
-72,HLA A (2nd allele),"DNA-A, 2nd allele. Values according to WHO nomenclature ",N,,,,2,
-73, Cord Blood Unit DNA sample,Cord blood unit DNA sample that may be available for shipment,S,,,"Y =yesN = No",1,
-74,HLA B (1st allele),"DNA-B, 1st allele .Values according to WHO nomenclature ",N,,,,2,
-75,HLA B (2nd allele),"DNA-B, 2nd allele. Values according to WHO nomenclature ",N,,,,2,
-76,HLAC (1st allele),"DNA-C, 1st allele. Values according to WHO nomenclature ",N,,,,2,
-77,HLAC (2nd allele),"DNA-C, 2nd allele. Values according to WHO nomenclature ",N,,,,2,
-78,HLA DPA1 (1st allele),"DNA-DPA1, 1st allele. Values according to WHO nomenclature ",N,,,,2,
-79,HLA DPA1 (2nd allele),"DNA-DPA1, 2nd allele. Values according to WHO nomenclature ",N,,,,2,
-80,HLA DPB1 (1st allele),"DNA-DPB1, 1st allele. Values according to WHO nomenclature ",N,,,,2,
-81,HLA DPB1 (2nd allele),"DNA-DPB1, 2nd allele. Values according to WHO nomenclature ",N,,,,2,
-82,HLA-DQB1 (1st antigen),"""mesured by serology - serology must have been tested, must not be a computed value",A,,,,2,
-83,HLA-DQB1 (2nd antigen),"""mesured by serology - serology must have been tested, must not be a computed value",A,,,,2,
-84,HLA DQA1 (1st allele),"DNA-DQA1, 1st allele. Values according to WHO nomenclature ",N,,,,2,
-85,HLA DQA1 (2nd allele),"DNA-DQA1, 2nd allele. Values according to WHO nomenclature ",N,,,,2,
-86,HLA-DQB1 (1st allele),"DNA-DQB1, 1st allele. Values according to WHO nomenclature ",A,,,,2,
-87,HLA-DQB1 (2nd allele),"DNA-DQB1, 2nd allele. Values according to WHO nomenclature ",A,,,,2,
-88,HLA-DRB1 (1st antigen),"""mesured by serology - serology must have been tested, must not be a computed value",A,,,,2,
-89,HLA-DRB1 (2nd antigen),"""mesured by serology - serology must have been tested, must not be a computed value",A,,,,2,
-90,HLA-DRB1 (1st allele),"DNA-DRB1, 1st allele. Values according to WHO nomenclature ",A,,,,2,
-91,HLA-DRB1 (2nd allele),"DNA-DRB1, 2nd allele. Values according to WHO nomenclature ",A,,,,2,
-92,HLA-DRB3 (1st allele),"DNA-DRB3, 1st allele. Values according to WHO nomenclature ",A,,,,2,
-93,HLA-DRB3 (2nd allele),"DNA-DRB3, 2nd allele. Values according to WHO nomenclature ",A,,,,2,
-94,HLA-DRB4 (1st allele),"DNA-DRB4, 1st allele. Values according to WHO nomenclature ",A,,,,2,
-95,HLA-DRB4 (2nd allele),"DNA-DRB4, 2nd allele. Values according to WHO nomenclature ",A,,,,2,
-96,HLA-DRB5 (1st allele),"DNA-DRB5, 1st allele. Values according to WHO nomenclature ",A,,,,2,
-97,HLA-DRB5 (2nd allele),"DNA-DRB5, 2nd allele. Values according to WHO nomenclature ",A,,,,2,
-98,Epstein Barr Virus (EBV) Status,,S,,,"N = Both IgG and IgM negative Q = Questionable / UnclearG = IgG positive, IgM negative M = IgG negative, IgM positive B = Both IgG and IgM positiveP = IgG or IgM positive, test did not differentiate H = IgG positive, IgM not testedO = IgG negative, IgM not tested",5,
-99,Email ,"email address, generally for an organisation, can be any format",A,,,,4,
-100,Ethnicity,"Ethnic goupf the donor,CBU, patient",U,,,,2,
-101,Physical Examination Date,Date of donor physical exam,D,,,,4,
-102,Physical Examination Result,Indicates  whether a donor passed their physical examination at workup. A component of donor clearance.,S,,,,4,
-103,Reservation Expiry date,Date reservation of donor or CBU expires,D,,,,4,
-104,Date of sample collection,Blood sample collection date,D,,,,4,
-105,Fax Number,"Fax number, usually of an organisation",N,,,,4,
-106,First name,Given name of an individual ,A,,,,4,
-107,CBU cyropreservation date,Date CBU cyropreserved ,D,,Must be in past,,1,
-108,CBU cyropreservation method,Method of CBU cyropreservation,A,,,,1,
-109,CBU microbial fungal screen,CBU fungal culture result,S,,,"P = Positive N = Negative D = Not done",1,
-110,Transplant physician,Patient's transplant physician,A,,,,4,
-111,GRID,Global registration identification for donors,A,,19,,4,
-112,GVH_REAC,"EMDIS message only, not in WMDA data dictionary",U,,,,7,
-113,Hepatitis B sufrace antigen,Hepatitis B surface antigen result,S,,,"P = Positive N = Negative",5,
-114,HBV NAT ,Hepatitis B nucleic acid amplification technique result,S,,,"P = Positive N = Negative",5,
-115,HCV NAT,Hepatitis C nucleic acid amplification technique result,S,,,"P = Positive N = Negative",5,
-116,Height,Height measured in centimetres,N,,,,4,
-117,Hemoglobinopathy screen,Hemoglobinopathy screening status,S,,,"DN = Screening done, normal results DU = Screening done, unusual  findings NS = No screening doneCD = Can be done at time of release NC = Cannot be doneDT = Thalassemia DD =  Drepanocytosis",1,
-118,Anti-HIV 1/ Anti-HIV 2,Donor HIVantibody test result,S,,,"P = Positive N = NegativeQ = Questionable/Uncertain",5,
-119,HIV-1 NAT,HIV nucleic acid amplification technique result,S,,,"P = Positive N = NegativeQ = Questionable/Uncertain",5,
-120,HIV p24 ,HIV p24 antigen screening test result,S,,,"P = Positive N = Negative",5,
-121,HLA Nomenclature Version,CurrentHLA nomenclature version ,U,,,,2,
-122,Preliminary Search Results,Number of donors potentially matched to a patient's HLA genotype,U,,,,4,
-123,Receiving registry Hub ,Receiving registry,U,,,,4,
-124,Sending registry hub,Sending registry,U,,,,4,
-125,HVG_REAC,"EMDIS message only, not in WMDA data dictionary",U,,,,7,
-126,Cord Blood Unit Identification,CBU identification ,A,,,,1,
-127,Donor Identification ( to be replaced by GRID),Donor Idenitification assigned by donor registry,A,,,,3,
-128,Patient Identification ,Patient identification assigned by patient registry,A,,,,6,
-129,Donor information session,Date of donor information session usually done after donor requested for collection.,D,,,,4,
-130,Donor information ,EMDIS message only currently. Informationabout the donor that is conveyed to the TC at time of verification typing sample appointment.,A,,,,4,
-131,Institution,"Identification of an institution, usually refers to a receiving or sending regsitry.",A,,,,4,
-132,Receiving institution,"Institution receiving a product ( sample, HPC)",A,,,,4,
-133,Invoice institution,"institution responsible for paying, usually requesting TC or registry",A,,,,4,
-134,Institution type,"EMDIS message only, not in WMDA data dictionary. ",A,,,,4,
-135,Killer immunoglobulin- like receptor (KIR) GL string, URI to a GL-String or GL-string for absence/presence for KIR typing results.,A,,,,2,
-136, KIR gene 2DL1,Killer immunoglobulin- like receptor (KIR),A,,,,2,
-137, KIR gene 2DL2,Killer immunoglobulin- like receptor (KIR),A,,,,2,
-138, KIR gene 2DL3,Killer immunoglobulin- like receptor (KIR),A,,,,2,
-139, KIR gene 2DL4,Killer immunoglobulin- like receptor (KIR),A,,,,2,
-140, KIR gene 2DL5A,Killer immunoglobulin- like receptor (KIR),A,,,,2,
-141, KIR gene 2DL5B,Killer immunoglobulin- like receptor (KIR),A,,,,2,
-142,CBU KIR gene 2DP1,Killer immunoglobulin- like receptor (KIR),A,,,,2,
-143,CBU KIR gene 2DS1,Killer immunoglobulin- like receptor (KIR),A,,,,2,
-144,CBU KIR gene 2DS2,Killer immunoglobulin- like receptor (KIR),A,,,,2,
-145,CBU KIR gene 2DS3,Killer immunoglobulin- like receptor (KIR),A,,,,2,
-146,CBU KIR gene 2DS4,Killer immunoglobulin- like receptor (KIR),A,,,,2,
-147,CBU KIR gene 2DS5,Killer immunoglobulin- like receptor (KIR),A,,,,2,
-148,CBU KIR gene 3DL1,Killer immunoglobulin- like receptor (KIR),A,,,,2,
-149,CBU KIR gene 3DL2,Killer immunoglobulin- like receptor (KIR),A,,,,2,
-150,CBU KIR gene 3DL3,Killer immunoglobulin- like receptor (KIR),A,,,,2,
-151,CBU KIR gene 3DP1,Killer immunoglobulin- like receptor (KIR),A,,,,2,
-152,CBU KIR gene 3DS1,Killer immunoglobulin- like receptor (KIR),A,,,,2,
-153,ID on sample label,ID as it's written on a donor sample ( usually a VT sample),A,,,,4,
-154,Last name,Surname of an individual ,A,,,,4,
-155,Local ID of a cord blood unit,The identification of the CBU locally at the cord blood bank,A,,,,1,
-156,Infectious Disease Marker,Indicates the infectious disease marker tested,A,,,,5,
-157,Collection Date,Agreed upon collection date for HPC,D,,,,4,
-158,MARROW_TU_REQ,Relevant? Requested Marrow tubes?,U,,,,7,
-159,Maternal HLA A (1st antigen),"""mesured by serology - serology must have been tested, must not be a computed value",A,,,,2,
-160,Maternal HLA A (2nd antigen),"""mesured by serology - serology must have been tested, must not be a computed value",A,,,,2,
-161,Maternal plasma aliquots,Number of available maternal plasma aliquots,N,,,,1,
-162,Maternal serum aliquots,Number of available maternal serum aliquots,N,,,,1,
-163,Hepatitis B antibodies,Antibodies to Hepatitis B,A,,,,5,
-164,Maternal HLA B(1st antigen),"""mesured by serology - serology must have been tested, must not be a computed value",A,,,,2,
-165,Maternal HLA B(2nd antigen),"""mesured by serology - serology must have been tested, must not be a computed value",A,,,,2,
-166,Maternal HLA C(1st antigen),"""mesured by serology - serology must have been tested, must not be a computed value",A,,,,2,
-167,Maternal HLA C(2nd antigen),"""mesured by serology - serology must have been tested, must not be a computed value",A,,,,2,
-168,Maternal HLA A (1st alelle),"""mesured by serology - serology must have been tested, must not be a computed value",A,,,,2,
-169,Maternal HLA A( 2nd allele),"DNA-A, 2nd allele. Values according to WHO nomenclature ",A,,,,2,
-170,Maternal HLA B(1st allele),"DNA-B, 1st allele. Values according to WHO nomenclature ",A,,,,2,
-171,Maternal HLA B(2nd allele),"DNA-B, 2nd allele. Values according to WHO nomenclature ",A,,,,2,
-172,Maternal HLA C(1st allele),"DNA-C, 1st allele. Values according to WHO nomenclature ",A,,,,2,
-173,Maternal HLA C(2nd allele),"DNA-C, 2nd allele. Values according to WHO nomenclature ",A,,,,2,
-174,Maternal HLA DPA1(1st allele),"DNA-DPA1, 1st allele. Values according to WHO nomenclature ",A,,,,2,
-175,Maternal HLA DPA1 (2nd allele),"DNA-DPA1, 2nd allele. Values according to WHO nomenclature ",A,,,,2,
-176,Maternal HLA DPB1(1st allele),"DNA-DPB1, 1st allele. Values according to WHO nomenclature ",A,,,,2,
-177,Maternal HLA DPB1(2nd allele),"DNA-DPB1, 2nd allele. Values according to WHO nomenclature ",A,,,,2,
-178,Maternal HLA DQB1(1st antigen),"""mesured by serology - serology must have been tested, must not be a computed value",A,,,,2,
-179,Maternal HLA DQB1(2nd antigen),"""mesured by serology - serology must have been tested, must not be a computed value",A,,,,2,
-180,Maternal HLA DQA1(1st allele),"DNA-DQA1, 1st allele. Values according to WHO nomenclature ",A,,,,2,
-181,Maternal HLA DQA1(2nd allele),"DNA-DQA1, 2nd allele. Values according to WHO nomenclature ",A,,,,2,
-182,Maternal HLA DQB1(1st allele),"DNA-DQB1, 1st allele. Values according to WHO nomenclature ",A,,,,2,
-183,Maternal HLA DQB1(2nd allele),"DNA-DQB1, 2nd allele. Values according to WHO nomenclature ",A,,,,2,
-184,Maternal HLA DRB1(1st antigen),"""mesured by serology - serology must have been tested, must not be a computed value",A,,,,2,
-185,Maternal HLA DRB1(2nd antigen),"""mesured by serology - serology must have been tested, must not be a computed value",A,,,,2,
-186,Maternal HLA DRB1 (1st allele),"DNA-DRB1, 1st allele. Values according to WHO nomenclature ",A,,,,2,
-187,Maternal HLA DRB1 (2nd allele),"DNA-DRB1, 2nd allele. Values according to WHO nomenclature ",A,,,,2,
-188,Maternal HLA DRB3(1st allele),"DNA-DRB3, 1st allele. Values according to WHO nomenclature ",A,,,,2,
-189,Maternal HLA DRB3(2nd allele),"DNA-DRB3, 2nd allele. Values according to WHO nomenclature ",A,,,,2,
-190,Maternal HLA DRB4(1st allele),"DNA-DRB4, 1st allele. Values according to WHO nomenclature ",A,,,,2,
-191,Maternal HLA DRB4(2nd allele),"DNA-DRB3, 2nd allele. Values according to WHO nomenclature ",A,,,,2,
-192,Maternal HLA DRB5(1st allele),"DNA-DRB5, 1st allele. Values according to WHO nomenclature ",A,,,,2,
-193,Maternal HLA DRB5(2nd allele),"DNA-DRB5, 2nd allele. Values according to WHO nomenclature ",A,,,,2,
-195,Parvo-B19 PCR, ParvoB19 NAT status,,,,"P = Positive N = Negative",1,
-196,Maternal Plasma available,Quantity of maternal plasma available,N,,In millilitres; valid range 0.0 to 99.9 ml,,1,
-197,Maternal serum available,,S,,,"Y = Yes N = No",1,
-198,Quantity of maternal serum ,Available quantity of maternal serum ,N,,In millilitres; valid range 0.0 to 99.9 ml,,1,
-199,Syphilis Status, Syphilis Serological test result (STS),A,,,,5,
-200,Toxoplasmosis Status,Toxoplasmosis antibodies result,S,,,"N = Both IgG and IgM negative Q = Questionable / UnclearG = IgG positive, IgM negative M = IgG negative, IgM positive B = Both IgG and IgM positiveP = IgG or IgM positive, test did not differentiate H = IgG positive, IgM not testedO = IgG negative, IgM not tested",5,
-201,West Nile Virus Status,West nile virus stats,S,,,"P = Positive N = Negative",5,
-202,P_MATCH_AB,Matching preference for HLA-A and B typed adult donors for a patien'st search,U,,,,4,
-203,P_MATCH_CB,Matching preference for cord blood units for a patient's search,U,,,,4,
-204,MATCH_DATE,"EMDIS message only, not in WMDA data dictionary. ",U,,,,4,
-205,P_MATCH_DR,"Matching preference for HLA-A, B and DR typed adult donors for patient's search",U,,,,4,
-206,P_MAX_DON_AB,"Maximum number of HLA-A, and -B typed donors",U,,,,7,
-207,P_MAX_DON_CB,Maximum number of cord blood units,U,,,,7,
-208,P_MAX_DON_DR,"Maximum number of HLA-A, -B and -DR typed donors",U,,,,7,
-209,MIN_VOL_MARR,"EMDIS message only, not in WMDA data dictionary. Workup request for future implementation",U,,,,4,
-210,MLC_GVH,"EMDIS message only, not in WMDA data dictionary. ",U,,,,7,
-211,MLC_HVG,"EMDIS message only, not in WMDA data dictionary. ",U,,,,7,
-212,Collected number of CBU mononuclear cells ,"Number of mononucleated cells (post processing, prior to cryopreservation)",N,10^7,0.0E0 to 999.9E7,,1,
-213,Mononuclear cells per kilogram,The number of mononuclear cells per patient kilo. Workup request for future implementation in EMDIS.,N,,,,4,
-214,MSG_CODE,"EMDIS message only, not in WMDA data dictionary. ",U,,,,7,
-215,VT Blood Sample Requirments ,Refers to the type of sample and number of tubes requested from donors at Verification typing stage  sent to the TC for HLA compatibility testing,,,,"EDTA, ACD, NO ANTICOAGULANT, HEPARIN, ",4,
-216,Collection sample requirements,Refers to the type of peripheral blood samples and number of tubes requested on day of HPC collection and sent with the HPC product to the TC,,,,"EDTA, ACD, CPD, HEPARIN, NO ANTICOAGULANT",4,
-217,Pre-collection sample requirements,Refers to the type of peripheral blood samples and number of tubes requested usually at the donor's medical examination and sent with the HPC product to the TC,U,,,"EDTA, ACD, CPD, HEPARIN, NO ANTICOAGULANT",4,
-218,Collected Total nucleated Cells (TNC),The  collected total number of nucleated cells in a CBU.,N,10^7, 0.0E0 to 999.9E7,,1,
-219,Total nucleated Cells (TNC) in CBU,The total number of nucleated cells in CBU. Measured at post-processing ( pre-cryopreservation). Cell dose is determined by  TNC per patient kilo ,N,10^7, 0.0E0 to 999.9E7,,1,
-220,Number of nucleated cells per kilo,Total number of nucleated cells per kilo for recipient,N,"10^6, 10^8,",,,4,
-221,Requested cells for research purposes research,Number of nucleated cells for research requested,U,,,,4,
-222,P_NEW_STAT,"EMDIS message only, not in WMDA data dictionary. ?? Is it worth defining the EMDIS patient search status in broader terms ( does it matter outside of EMDIS)",U,,,,4,
-223,Previous HPC donation,Donors who have previously donated either HPC(A) or HPC(M),N,,,,4,
-224,Donor pregnancies,Number of donor pregnancies,N,,,,3,
-225,Donor blood transfusions,Number of previous blood transfusions a donor has had,N,,,,3,
-226,P_OLD_STAT,"EMDIS message only, not in WMDA data dictionary. ?? Is it worth defining the EMDIS patient search status in broader terms ( does it matter outside of EMDIS)",U,,,,7,
-227,ORG_DEN,"EMDIS message only, not in WMDA data dictionary. ",U,,,,7,
-228,Other viable cell aliquots,Additional viable CBU cell aliquots available to be used for testing,A,,,,1,
-229,PARAM,"EMDIS message only, not in WMDA data dictionary. ",U,,,,7,
-230,Patient location identifier,"Physical location of the patient. Two character ISO country code (i.e. US, DE, IT) Relevant outside of emdis?",A,,,,4,
-231,G-CSF Start ,First day donor commences G-CSF injections,D,,,,4,
-232,Contact Person,The listed contact at an organisation usually a registry or transplant centre,A,,,,4,
-233,Contact phone number,The listed  phone number to contact at an organisation usually a registry or transplant centre,N,,,,4,
-234,CBU Plasma,Total quantity of CBU plasma available,N,,,,1,
-235,Donor location identifier,"Physical location of the donor.  Used to denote which registry a donor belongs to. Use four digit ION code, will be embedded in GRID",N,,,,4,
-236,Pre-collection sample date,Date of sample collection,D,,,,4,
-237,Cord Blood Unit processing Date,Date CBU processed,D,,Must be in past,,1,
-238,Cord Blood Unit processing system,The method by which the CBB processed the CBU,S,,,"HES = Hydroxy-Ethyl-StarchDGS = Density Gradient Separation CEN = CentrifugeFIL = Filtration FIC = FICOL PER = PERCOLOTH = Other",1,
-239,Cord Blood Unit processing method ,The type of method by which the CBB processed the CBU,S,,,"MAN = Manual SPX = SepaxOTP = Optipress II AXP = AXPOTH = Other",1,
-240,CBU product modification,Modification of the CBU at time of banking,S,,,"BCE = Buffy Coat Enriched DNE = Density EnrichedPLR = Plasma Reduced (Volume reduction only)PRR = Plasma and RBC ReducedRBR = RBC Reduced (depletion) NOT = Not reducedOTH = Other",1,
-241,Preferred date (collection/shipment) 1,First preferred date for collection / CBU shipment,D,,Must be in the future,,4,
-242,REASON,"EMDIS message only, not in WMDA data dictionary.",U,,,,7,
-243,REASON_CHNG,"EMDIS message only, not in WMDA data dictionary.",U,,,,7,
-244,REASON_CNCL,"EMDIS message only, not in WMDA data dictionary.",U,,,,7,
-245,REC_DATE1,"EMDIS message only, not in WMDA data dictionary.",U,,,,7,
-246,REC_DATE2,"EMDIS message only, not in WMDA data dictionary.",U,,,,7,
-247,Total Nucleated Red Blood cells,Total nucleated red blood cell count in a CBU (post processing and pre-cryopreservation) reflecting the content of the final product that is frozen,N,10^7, 0.0E0 to 999.9E7,,1,
-248,CBU volume reduction,Method of used for volume reduction,S,,,"HES = Hydroxy-Ethyl-StarchDGS = Density Gradient Separation CEN = CentrifugeFIL = Filtration FIC = FICOL PER = PERCOLNOT = Not reduced OTH = OtherUNK = Unknown",1,
-249,REF_CODE,"EMDIS message only, not in WMDA data dictionary.",U,,,,7,
-250,REG_RCV,"EMDIS message only, not in WMDA data dictionary.",U,,,,7,
-251,REG_SND,"EMDIS message only, not in WMDA data dictionary.",U,,,,7,
-252,REMARK,"EMDIS message only, not in WMDA data dictionary.",U,,,,7,
-254,Request date,Date of request,D,,,,4,
-255,REQ_TYPE,"EMDIS message only, not in WMDA data dictionary.",U,,,,7,
-256,RES_TYPE,"EMDIS message only, not in WMDA data dictionary.",U,,,,7,
-257,RESOLUT,"EMDIS message only, not in WMDA data dictionary.",U,,,,7,
-258,CBU confirmatory typing sample,Type of sample used to confirm the HLA typing of a cord blood unit,S,,,"AS = CBU Contiguous Attached Segment WB = Whole Blood SampleRC = Red Cell Fraction (pellet) FP = Blood Spotted Filter Paper ED = Extracted DNA",1,
-259,SEND_PREF,"EMDIS message only, not in WMDA data dictionary.",U,,,,7,
-260,SENT_DATE,"EMDIS message only, not in WMDA data dictionary.",U,,,,7,
-261,CBU serum available,Total volume of CBU serum available,N,,,,1,
-262,Sex,"Biological gender of the patient, donor, CBU",U,,,,3,
-263,CB_STAT_END_DATE,Date until which the current status will be applicable,D,,,,7,
-264,D_STAT_END_DATE,Date until which the current status will be applicable,D,,,,7,
-265,Search Status change,Refers to the change in status of an HPC product which denotes a change availability ,S,,,"Proposed reasons for Status TU: QR = Quarantined;AD = AdministrativeProposed reasons for Status DE: CD = Cord Destroyed or Damaged; MR = Medical reasonsDS = Distributed for infusion;OT = Unavailable for other reasons; XP = ExpiredProposed additional information for AV:NS = No sample available (can't do additional testing, but could ship)",4,
-266,Search Status,Refers to the current search status of an HPC product,S,,,"AV = Available for transplantation purposes TU = Temporarily unavailableRE = ReservedDE = Deleted, permanently unavailable",4,
-267,HLA A-B matched donors,Number of  matched donors typed at only locuses A and B,U,,,,4,
-268,CBU match list,Total number of Cord blood units matched to a patient,U,,,,4,
-269,HLA A-B-DRB1 donors,"Total number of potentially matched donors who are typed at least locus A, B and DRB1",U,,,,4,
-270,Donor Lues status (Treponema pallidum),Treponema pallidum hemagglutination assay result,S,,,"P = Positive N = NegativeQ = Questionable/Uncertain",5,
-271,Transport Medium for HPC(M),Required anticoagulant for transport of HPC(M),U,,,,4,
-272,Transplant Date,Date of HPC product infusion,D,,,,4,
-273,TXT_LINEn,"EMDIS message only, not in WMDA data dictionary.",U,,,,7,
-274,CBU Bag,Type of bag used (bag fractions / split unit),U,,,,1,
-275,Donor Type,Differentiate between stem cell donor or cord blood unit,U,,,,4,
-276,URGENT,"EMDIS message only, not in WMDA data dictionary. ( do we define urgent in relation search, requests etc?)",U,,,,7,
-277,CBU viability,Viability of a CBU,N,Viability of tested CBU cells,,,1,
-278,CBU viability type,Denotes which cells were tested for viability,S,,,"TNCCD34CD45",1,
-279,Viability Date,Date viability was tested,D,,Must be in past,,1,
-280,Viability Method,Method used to calculate the viability,S,,,"7A = 7AADPI = Propidium IodideTB = Trypan BlueOT = Other",1,
-281,Test date,Date testing was performed,D,,,,5,
-282,Result date,Date results reported,D,,,,5,
-283,CBU volume at collection,"CBU collected volume before processing (without additives)",U,,,,1,
-284,CBU volume at cyropreservation,"Total CBU volume frozen (post processing and pre-cryopreservation)",N,,,,1,
-285,Weight,Weight measured in kilograms,N,,,,4,
-286,Product Request,Requesting TC/Registry's Product Preference,S,,,"PRODUCT REQUESTHPC, Marrow ONLYHPC, Apheresis ONLYMNC, ApheresisHPC, Marrow, second option: HPC, ApheresisHPC, Apheresis, second option: HPC, Marrow",4,
-287,Postal Code,Post code of an organisation such as a registry or TC,N,,,,4,

@@ -1,6 +1,7 @@
 from django.db import models
-# from django.utils import timezone
-# import datetime
+
+from ordered_model.models import OrderedModel
+
 
 class DataFamily(models.Model):
     name = models.CharField(max_length=50, unique=True)
@@ -53,6 +54,10 @@ class EmdisMessage(models.Model):
         verbose_name = 'EMDIS message'
         ordering = ['name']
 
+    # @property
+    # def sorted_field_set(self):
+    #     return self.emdisfield_set.order_by('emdissemantics__order')
+
     def __str__(self):
         return self.name
 
@@ -64,7 +69,8 @@ class EmdisField(models.Model):
     field_rule = models.TextField()
     dict_field = models.ForeignKey(DictionaryField,
                                    verbose_name='WMDA Dictionary Field')
-    emdis_messages = models.ManyToManyField(EmdisMessage)
+    emdis_messages = models.ManyToManyField(EmdisMessage,
+                                            through='EmdisSemantics')
 
     class Meta:
         verbose_name = 'EMDIS field'
@@ -72,6 +78,20 @@ class EmdisField(models.Model):
 
     def __str__(self):
         return self.field_code
+
+class EmdisSemantics(OrderedModel):
+    REQ_TYPES = (
+        ('R', 'Required'),
+        ('O', 'Optional'),
+    )
+
+    emdis_field = models.ForeignKey(EmdisField, on_delete=models.CASCADE)
+    emdis_message = models.ForeignKey(EmdisMessage, on_delete=models.CASCADE)
+    required = models.CharField(max_length=1, choices=REQ_TYPES, blank=True)
+    order_with_respect_to = 'emdis_message'
+
+    class Meta:
+        ordering = ('emdis_message', 'order')
 
 
 class BmdwField(models.Model):
