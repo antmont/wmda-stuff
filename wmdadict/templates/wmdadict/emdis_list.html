@@ -40,12 +40,12 @@
                 <tbody>
                     {% for efield in emdis_fields.qs %}
                         <tr>
-                            <td><a href="{% url 'emdis_detail' efield.pk %}">{{ efield.field_code }}</td>
+                            <td><a href="{% url 'wmdadict:emdis_detail' efield.pk %}">{{ efield.field_code }}</td>
                             <td>{{ efield.field_description }}</td>
                             <td><a href="{% url 'dictionary_detail' efield.dict_field.pk %}">{{ efield.dict_field }}</td>
                             <td>
                                 {% for message in efield.emdis_messages.all %}
-                                    <a href="{% url 'emdis_msg_detail' message.pk %}">{{ message }}</a><br />
+                                    <a href="{% url 'wmdadict:emdis_msg_detail' message.pk %}">{{ message }}</a><br />
                                 {% endfor %}
                             </td>
                         </tr>

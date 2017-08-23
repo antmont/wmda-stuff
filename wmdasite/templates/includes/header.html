@@ -16,17 +16,17 @@
     <div class="collapse navbar-collapse" id="main-menu">
       <ul class="nav navbar-nav">
         <li{% if '/dict/' in request.path %} class="active"{% endif %}>
-          <a href="{% url 'dictionary_list' %}">Main Dictionary</a>
+          <a href="{% url 'wmdadict:dictionary_list' %}">Main Dictionary</a>
         </li>
         <li {% if '/emdis/' in request.path %}
             class="active dropdown"
         {% else %}
             class="dropdown"
         {% endif %}>
-          <a href="{% url 'emdis_list' %}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">EMDIS <span class="caret"></span></a>
+          <a href="{% url 'wmdadict:emdis_list' %}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">EMDIS <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="{% url 'emdis_list' %}">EMDIS Fields</a></li>
-            <li><a href="{% url 'emdis_msg_list' %}">EMDIS Messages</a></li>
+            <li><a href="{% url 'wmdadict:emdis_list' %}">EMDIS Fields</a></li>
+            <li><a href="{% url 'wmdadict:emdis_msg_list' %}">EMDIS Messages</a></li>
           </ul>
         </li>
         <li>

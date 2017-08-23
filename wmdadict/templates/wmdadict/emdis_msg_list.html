@@ -49,7 +49,7 @@
                                             <ul class="list-group">
                                                 {% for efield in emsg.emdisfield_set.all %}
                                                     <li class="list-group-item">
-                                                        <a href="{% url 'emdis_detail' efield.pk %}">{{ efield }}</a>
+                                                        <a href="{% url 'wmdadict:emdis_detail' efield.pk %}">{{ efield }}</a>
                                                     </li>
                                                 {% endfor %}
                                             </ul>
