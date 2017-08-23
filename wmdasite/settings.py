@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'ordered_model',
     'markdownx',
+    'django_extensions',
 
     'wmdadict.apps.WmdadictConfig',
 ]
