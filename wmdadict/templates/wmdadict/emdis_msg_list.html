@@ -35,7 +35,7 @@
                 <tbody>
                     {% for emsg in msg_filter.qs %}
                         <tr>
-                            <td><a href="{% url 'emdis_msg_detail' emsg.pk %}">{{ emsg.name }}</td>
+                            <td><a href="{% url 'wmdadict:emdis_msg_detail' emsg.pk %}">{{ emsg.name }}</td>
                             <td>{{ emsg.description }} <br />
                         </td>
                             <td>
