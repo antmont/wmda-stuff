@@ -1,1 +1,3 @@
-id,field_code,dict_field_id
+id,field_identifier,dict_field_id,comment,description,element_type,length,required,type
+1,CREATION_TIME,288,"Without fractional seconds the length is 20, for example: 2016-08-23T13:16:48Z.
+ Additional notes: CREATION_TIME is defined as ""Creation time stamp of the <INVENTORIES>"" that means the time in UTC when the complete and valid file was finally created at the registry. This can be the same as SNAPSHOT_TIME.",Creation time stamp of the inventories (in UTC),InventoryType,minimal 20,Y,dateTime

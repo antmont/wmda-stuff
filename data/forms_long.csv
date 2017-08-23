@@ -1,0 +1,689 @@
+form,id,label
+C10,157,Collection Date
+C10,220,Number of nucleated cells per kilo
+C10,13,First line of address
+C10,14,Second line of address
+C10,15,Third line address
+C10,42,Date of Birth
+C10,51,City Address
+C10,53,Cytomegalovirus (CMV)
+C10,65,Country
+C10,99,Email
+C10,105,Fax Number
+C10,132,Receiving institution
+C10,133,Invoice institution
+C10,287,Postal Code
+C10,131,Institution
+C10,233,Contact phone number
+C10,285,Weight
+C10,5,Blood Group (ABO)
+C10,6,Blood Group (Rhesus)
+C10,127,Donor Identification ( to be replaced by GRID)
+C10,106,First name
+C10,128,Patient Identification
+C10,154,Last name
+C20,42,Date of Birth
+C20,127,Donor Identification ( to be replaced by GRID)
+C20,106,First name
+C20,128,Patient Identification
+C20,154,Last name
+C30,42,Date of Birth
+C30,127,Donor Identification ( to be replaced by GRID)
+C30,106,First name
+C30,128,Patient Identification
+C30,154,Last name
+CB10,66,CBU verification typing date
+CB10,240,CBU product modification
+CB10,258,CBU confirmatory typing sample
+CB10,274,CBU Bag
+CB10,277,CBU viability
+CB10,126,Cord Blood Unit Identification
+CB10,3,HLA A (1st antigen)
+CB10,4,HLA A (2nd antigen)
+CB10,33,HLA-B (1st antigen)
+CB10,34,HLA-B (2nd antigen)
+CB10,43,HLA-C (1st antigen)
+CB10,44,HLA-C (2nd antigen)
+CB10,71,HLA A (1st allele)
+CB10,72,HLA A (2nd allele)
+CB10,74,HLA B (1st allele)
+CB10,75,HLA B (2nd allele)
+CB10,76,HLAC (1st allele)
+CB10,77,HLAC (2nd allele)
+CB10,78,HLA DPA1 (1st allele)
+CB10,79,HLA DPA1 (2nd allele)
+CB10,80,HLA DPB1 (1st allele)
+CB10,81,HLA DPB1 (2nd allele)
+CB10,82,HLA-DQB1 (1st antigen)
+CB10,83,HLA-DQB1 (2nd antigen)
+CB10,84,HLA DQA1 (1st allele)
+CB10,85,HLA DQA1 (2nd allele)
+CB10,86,HLA-DQB1 (1st allele)
+CB10,87,HLA-DQB1 (2nd allele)
+CB10,88,HLA-DRB1 (1st antigen)
+CB10,89,HLA-DRB1 (2nd antigen)
+CB10,90,HLA-DRB1 (1st allele)
+CB10,91,HLA-DRB1 (2nd allele)
+CB10,92,HLA-DRB3 (1st allele)
+CB10,93,HLA-DRB3 (2nd allele)
+CB10,94,HLA-DRB4 (1st allele)
+CB10,95,HLA-DRB4 (2nd allele)
+CB10,96,HLA-DRB5 (1st allele)
+CB10,97,HLA-DRB5 (2nd allele)
+CB10,5,Blood Group (ABO)
+CB10,6,Blood Group (Rhesus)
+CB10,13,First line of address
+CB10,14,Second line of address
+CB10,15,Third line address
+CB10,51,City Address
+CB10,65,Country
+CB10,99,Email
+CB10,105,Fax Number
+CB10,132,Receiving institution
+CB10,133,Invoice institution
+CB10,254,Request date
+CB10,287,Postal Code
+CB10,69,Diagnosis details
+CB10,131,Institution
+CB10,233,Contact phone number
+CB10,285,Weight
+CB10,106,First name
+CB10,128,Patient Identification
+CB10,154,Last name
+CB21,1,Collected CD34+
+CB21,2,Processed CD34+
+CB21,9,CBB Accreditation
+CB21,16,CBU plasma aliquots
+CB21,17,CBU red cell aliquots
+CB21,18,CBU serum aliquots
+CB21,24,Anti-HBc
+CB21,25,HBs Ag
+CB21,26,Anti HCV
+CB21,27,Anti-HIV 1 and Anti-HIV 2
+CB21,28,Anti-HTLV I/II
+CB21,30,Contigous/attached segments
+CB21,35,Microbial Screen(bacteria)
+CB21,36,CBU Bag ID
+CB21,37,Number of CBU bags
+CB21,38,Cord Blood Bank
+CB21,40,Maternal ID
+CB21,48,Total colony forming units (CFU)
+CB21,49,Chagas Screen
+CB21,55,CMV DNA PCR
+CB21,56,CBU Collection Date
+CB21,73,Cord Blood Unit DNA sample
+CB21,98,Epstein Barr Virus (EBV) Status
+CB21,107,CBU cyropreservation date
+CB21,108,CBU cyropreservation method
+CB21,109,CBU microbial fungal screen
+CB21,113,Hepatitis B sufrace antigen
+CB21,114,HBV NAT
+CB21,115,HCV NAT
+CB21,118,Anti-HIV 1/ Anti-HIV 2
+CB21,119,HIV-1 NAT
+CB21,120,HIV p24
+CB21,126,Cord Blood Unit Identification
+CB21,155,Local ID of a cord blood unit
+CB21,156,Infectious Disease Marker
+CB21,159,Maternal HLA A (1st antigen)
+CB21,160,Maternal HLA A (2nd antigen)
+CB21,161,Maternal plasma aliquots
+CB21,162,Maternal serum aliquots
+CB21,164,Maternal HLA B(1st antigen)
+CB21,165,Maternal HLA B(2nd antigen)
+CB21,166,Maternal HLA C(1st antigen)
+CB21,167,Maternal HLA C(2nd antigen)
+CB21,168,Maternal HLA A (1st alelle)
+CB21,169,Maternal HLA A( 2nd allele)
+CB21,170,Maternal HLA B(1st allele)
+CB21,171,Maternal HLA B(2nd allele)
+CB21,172,Maternal HLA C(1st allele)
+CB21,173,Maternal HLA C(2nd allele)
+CB21,174,Maternal HLA DPA1(1st allele)
+CB21,175,Maternal HLA DPA1 (2nd allele)
+CB21,176,Maternal HLA DPB1(1st allele)
+CB21,177,Maternal HLA DPB1(2nd allele)
+CB21,178,Maternal HLA DQB1(1st antigen)
+CB21,179,Maternal HLA DQB1(2nd antigen)
+CB21,180,Maternal HLA DQA1(1st allele)
+CB21,181,Maternal HLA DQA1(2nd allele)
+CB21,182,Maternal HLA DQB1(1st allele)
+CB21,183,Maternal HLA DQB1(2nd allele)
+CB21,184,Maternal HLA DRB1(1st antigen)
+CB21,185,Maternal HLA DRB1(2nd antigen)
+CB21,186,Maternal HLA DRB1 (1st allele)
+CB21,187,Maternal HLA DRB1 (2nd allele)
+CB21,188,Maternal HLA DRB3(1st allele)
+CB21,189,Maternal HLA DRB3(2nd allele)
+CB21,190,Maternal HLA DRB4(1st allele)
+CB21,191,Maternal HLA DRB4(2nd allele)
+CB21,192,Maternal HLA DRB5(1st allele)
+CB21,193,Maternal HLA DRB5(2nd allele)
+CB21,195,Parvo-B19 PCR
+CB21,196,Maternal Plasma available
+CB21,197,Maternal serum available
+CB21,198,Quantity of maternal serum
+CB21,201,West Nile Virus Status
+CB21,219,Total nucleated Cells (TNC) in CBU
+CB21,228,Other viable cell aliquots
+CB21,238,Cord Blood Unit processing system
+CB21,247,Total Nucleated Red Blood cells
+CB21,278,CBU viability type
+CB21,280,Viability Method
+CB21,281,Test date
+CB21,282,Result date
+CB21,283,CBU volume at collection
+CB21,284,CBU volume at cyropreservation
+CB21,66,CBU verification typing date
+CB21,100,Ethnicity
+CB21,240,CBU product modification
+CB21,258,CBU confirmatory typing sample
+CB21,274,CBU Bag
+CB21,277,CBU viability
+CB21,199,Syphilis Status
+CB21,200,Toxoplasmosis Status
+CB21,3,HLA A (1st antigen)
+CB21,4,HLA A (2nd antigen)
+CB21,33,HLA-B (1st antigen)
+CB21,34,HLA-B (2nd antigen)
+CB21,43,HLA-C (1st antigen)
+CB21,44,HLA-C (2nd antigen)
+CB21,71,HLA A (1st allele)
+CB21,72,HLA A (2nd allele)
+CB21,74,HLA B (1st allele)
+CB21,75,HLA B (2nd allele)
+CB21,76,HLAC (1st allele)
+CB21,77,HLAC (2nd allele)
+CB21,78,HLA DPA1 (1st allele)
+CB21,79,HLA DPA1 (2nd allele)
+CB21,80,HLA DPB1 (1st allele)
+CB21,81,HLA DPB1 (2nd allele)
+CB21,82,HLA-DQB1 (1st antigen)
+CB21,83,HLA-DQB1 (2nd antigen)
+CB21,84,HLA DQA1 (1st allele)
+CB21,85,HLA DQA1 (2nd allele)
+CB21,86,HLA-DQB1 (1st allele)
+CB21,87,HLA-DQB1 (2nd allele)
+CB21,88,HLA-DRB1 (1st antigen)
+CB21,89,HLA-DRB1 (2nd antigen)
+CB21,90,HLA-DRB1 (1st allele)
+CB21,91,HLA-DRB1 (2nd allele)
+CB21,92,HLA-DRB3 (1st allele)
+CB21,93,HLA-DRB3 (2nd allele)
+CB21,94,HLA-DRB4 (1st allele)
+CB21,95,HLA-DRB4 (2nd allele)
+CB21,96,HLA-DRB5 (1st allele)
+CB21,97,HLA-DRB5 (2nd allele)
+CB21,5,Blood Group (ABO)
+CB21,6,Blood Group (Rhesus)
+CB21,13,First line of address
+CB21,14,Second line of address
+CB21,15,Third line address
+CB21,51,City Address
+CB21,53,Cytomegalovirus (CMV)
+CB21,65,Country
+CB21,99,Email
+CB21,105,Fax Number
+CB21,132,Receiving institution
+CB21,133,Invoice institution
+CB21,287,Postal Code
+CB21,69,Diagnosis details
+CB21,131,Institution
+CB21,233,Contact phone number
+CB21,106,First name
+CB21,128,Patient Identification
+CB21,154,Last name
+CB30,117,Hemoglobinopathy screen
+CB30,20,Preferred date (collection/shipment) 2
+CB30,21,Preferred date (collection/shipment) 3
+CB30,48,Total colony forming units (CFU)
+CB30,61,Total number of days of conditioning regimen
+CB30,73,Cord Blood Unit DNA sample
+CB30,66,CBU verification typing date
+CB30,126,Cord Blood Unit Identification
+CB30,241,Preferred date (collection/shipment) 1
+CB30,254,Request date
+CB30,5,Blood Group (ABO)
+CB30,6,Blood Group (Rhesus)
+CB30,13,First line of address
+CB30,14,Second line of address
+CB30,15,Third line address
+CB30,51,City Address
+CB30,65,Country
+CB30,99,Email
+CB30,105,Fax Number
+CB30,132,Receiving institution
+CB30,133,Invoice institution
+CB30,287,Postal Code
+CB30,69,Diagnosis details
+CB30,131,Institution
+CB30,233,Contact phone number
+CB30,285,Weight
+CB30,106,First name
+CB30,128,Patient Identification
+CB30,154,Last name
+DF1,223,Previous HPC donation
+DF1,157,Collection Date
+DF1,42,Date of Birth
+DF1,127,Donor Identification ( to be replaced by GRID)
+DF1,154,Last name
+DF2,223,Previous HPC donation
+DF2,42,Date of Birth
+DF2,127,Donor Identification ( to be replaced by GRID)
+DF2,154,Last name
+DF3,223,Previous HPC donation
+DF3,42,Date of Birth
+DF3,127,Donor Identification ( to be replaced by GRID)
+DF3,154,Last name
+F10,20,Preferred date (collection/shipment) 2
+F10,21,Preferred date (collection/shipment) 3
+F10,61,Total number of days of conditioning regimen
+F10,223,Previous HPC donation
+F10,241,Preferred date (collection/shipment) 1
+F10,286,Product Request
+F10,285,Weight
+F10,5,Blood Group (ABO)
+F10,6,Blood Group (Rhesus)
+F10,13,First line of address
+F10,14,Second line of address
+F10,15,Third line address
+F10,51,City Address
+F10,53,Cytomegalovirus (CMV)
+F10,65,Country
+F10,99,Email
+F10,105,Fax Number
+F10,132,Receiving institution
+F10,133,Invoice institution
+F10,254,Request date
+F10,287,Postal Code
+F10,42,Date of Birth
+F10,69,Diagnosis details
+F10,131,Institution
+F10,233,Contact phone number
+F10,127,Donor Identification ( to be replaced by GRID)
+F10,106,First name
+F10,128,Patient Identification
+F10,154,Last name
+F20,272,Transplant Date
+F20,223,Previous HPC donation
+F20,285,Weight
+F20,286,Product Request
+F20,5,Blood Group (ABO)
+F20,6,Blood Group (Rhesus)
+F20,53,Cytomegalovirus (CMV)
+F20,42,Date of Birth
+F20,69,Diagnosis details
+F20,106,First name
+F20,128,Patient Identification
+F20,154,Last name
+F20,127,Donor Identification ( to be replaced by GRID)
+F30,127,Donor Identification ( to be replaced by GRID)
+F30,106,First name
+F30,128,Patient Identification
+F30,154,Last name
+F40,23,Required Anticoagulant
+F40,46,Required CD34+/kg
+F40,47,Required CD3+/kg
+F40,213,Mononuclear cells per kilogram
+F40,216,Collection sample requirements
+F40,217,Pre-collection sample requirements
+F40,220,Number of nucleated cells per kilo
+F40,215,VT Blood Sample Requirments
+F40,241,Preferred date (collection/shipment) 1
+F40,286,Product Request
+F40,13,First line of address
+F40,14,Second line of address
+F40,15,Third line address
+F40,51,City Address
+F40,65,Country
+F40,99,Email
+F40,105,Fax Number
+F40,132,Receiving institution
+F40,133,Invoice institution
+F40,254,Request date
+F40,285,Weight
+F40,287,Postal Code
+F40,131,Institution
+F40,233,Contact phone number
+F40,127,Donor Identification ( to be replaced by GRID)
+F40,106,First name
+F40,128,Patient Identification
+F40,154,Last name
+F50,199,Syphilis Status
+F50,200,Toxoplasmosis Status
+F50,24,Anti-HBc
+F50,25,HBs Ag
+F50,26,Anti HCV
+F50,27,Anti-HIV 1 and Anti-HIV 2
+F50,28,Anti-HTLV I/II
+F50,98,Epstein Barr Virus (EBV) Status
+F50,113,Hepatitis B sufrace antigen
+F50,114,HBV NAT
+F50,115,HCV NAT
+F50,118,Anti-HIV 1/ Anti-HIV 2
+F50,119,HIV-1 NAT
+F50,120,HIV p24
+F50,156,Infectious Disease Marker
+F50,281,Test date
+F50,282,Result date
+F50,53,Cytomegalovirus (CMV)
+F50,127,Donor Identification ( to be replaced by GRID)
+F50,106,First name
+F50,128,Patient Identification
+F50,154,Last name
+F60,54,CMV Test Date
+F60,102,Physical Examination Result
+F60,157,Collection Date
+F60,224,Donor pregnancies
+F60,225,Donor blood transfusions
+F60,231,G-CSF Start
+F60,52,Donor Clearance date
+F60,104,Date of sample collection
+F60,199,Syphilis Status
+F60,200,Toxoplasmosis Status
+F60,24,Anti-HBc
+F60,25,HBs Ag
+F60,26,Anti HCV
+F60,27,Anti-HIV 1 and Anti-HIV 2
+F60,28,Anti-HTLV I/II
+F60,98,Epstein Barr Virus (EBV) Status
+F60,113,Hepatitis B sufrace antigen
+F60,114,HBV NAT
+F60,115,HCV NAT
+F60,118,Anti-HIV 1/ Anti-HIV 2
+F60,119,HIV-1 NAT
+F60,120,HIV p24
+F60,156,Infectious Disease Marker
+F60,281,Test date
+F60,282,Result date
+F60,285,Weight
+F60,42,Date of Birth
+F60,53,Cytomegalovirus (CMV)
+F60,5,Blood Group (ABO)
+F60,6,Blood Group (Rhesus)
+F60,127,Donor Identification ( to be replaced by GRID)
+F60,106,First name
+F60,128,Patient Identification
+F60,154,Last name
+F70,23,Required Anticoagulant
+F70,46,Required CD34+/kg
+F70,47,Required CD3+/kg
+F70,220,Number of nucleated cells per kilo
+F70,231,G-CSF Start
+F70,285,Weight
+F70,42,Date of Birth
+F70,13,First line of address
+F70,14,Second line of address
+F70,15,Third line address
+F70,51,City Address
+F70,65,Country
+F70,99,Email
+F70,105,Fax Number
+F70,132,Receiving institution
+F70,133,Invoice institution
+F70,287,Postal Code
+F70,5,Blood Group (ABO)
+F70,6,Blood Group (Rhesus)
+F70,131,Institution
+F70,233,Contact phone number
+F70,127,Donor Identification ( to be replaced by GRID)
+F70,106,First name
+F70,128,Patient Identification
+F70,154,Last name
+F80,52,Donor Clearance date
+F80,104,Date of sample collection
+F80,54,CMV Test Date
+F80,102,Physical Examination Result
+F80,157,Collection Date
+F80,224,Donor pregnancies
+F80,225,Donor blood transfusions
+F80,199,Syphilis Status
+F80,200,Toxoplasmosis Status
+F80,231,G-CSF Start
+F80,24,Anti-HBc
+F80,25,HBs Ag
+F80,26,Anti HCV
+F80,27,Anti-HIV 1 and Anti-HIV 2
+F80,28,Anti-HTLV I/II
+F80,98,Epstein Barr Virus (EBV) Status
+F80,113,Hepatitis B sufrace antigen
+F80,114,HBV NAT
+F80,115,HCV NAT
+F80,118,Anti-HIV 1/ Anti-HIV 2
+F80,119,HIV-1 NAT
+F80,120,HIV p24
+F80,156,Infectious Disease Marker
+F80,281,Test date
+F80,282,Result date
+F80,285,Weight
+F80,42,Date of Birth
+F80,53,Cytomegalovirus (CMV)
+F80,5,Blood Group (ABO)
+F80,6,Blood Group (Rhesus)
+F80,127,Donor Identification ( to be replaced by GRID)
+F80,106,First name
+F80,128,Patient Identification
+F80,154,Last name
+F90,13,First line of address
+F90,14,Second line of address
+F90,15,Third line address
+F90,51,City Address
+F90,65,Country
+F90,99,Email
+F90,105,Fax Number
+F90,132,Receiving institution
+F90,133,Invoice institution
+F90,287,Postal Code
+F90,131,Institution
+F90,233,Contact phone number
+F90,106,First name
+F90,128,Patient Identification
+F90,154,Last name
+F90,42,Date of Birth
+S10,3,HLA A (1st antigen)
+S10,4,HLA A (2nd antigen)
+S10,5,Blood Group (ABO)
+S10,6,Blood Group (Rhesus)
+S10,33,HLA-B (1st antigen)
+S10,34,HLA-B (2nd antigen)
+S10,42,Date of Birth
+S10,43,HLA-C (1st antigen)
+S10,44,HLA-C (2nd antigen)
+S10,53,Cytomegalovirus (CMV)
+S10,68,Patient Diagnosis date
+S10,69,Diagnosis details
+S10,71,HLA A (1st allele)
+S10,72,HLA A (2nd allele)
+S10,74,HLA B (1st allele)
+S10,75,HLA B (2nd allele)
+S10,76,HLAC (1st allele)
+S10,77,HLAC (2nd allele)
+S10,78,HLA DPA1 (1st allele)
+S10,79,HLA DPA1 (2nd allele)
+S10,80,HLA DPB1 (1st allele)
+S10,81,HLA DPB1 (2nd allele)
+S10,82,HLA-DQB1 (1st antigen)
+S10,83,HLA-DQB1 (2nd antigen)
+S10,84,HLA DQA1 (1st allele)
+S10,85,HLA DQA1 (2nd allele)
+S10,86,HLA-DQB1 (1st allele)
+S10,87,HLA-DQB1 (2nd allele)
+S10,88,HLA-DRB1 (1st antigen)
+S10,89,HLA-DRB1 (2nd antigen)
+S10,90,HLA-DRB1 (1st allele)
+S10,91,HLA-DRB1 (2nd allele)
+S10,92,HLA-DRB3 (1st allele)
+S10,93,HLA-DRB3 (2nd allele)
+S10,94,HLA-DRB4 (1st allele)
+S10,95,HLA-DRB4 (2nd allele)
+S10,96,HLA-DRB5 (1st allele)
+S10,97,HLA-DRB5 (2nd allele)
+S10,100,Ethnicity
+S10,106,First name
+S10,128,Patient Identification
+S10,131,Institution
+S10,154,Last name
+S10,232,Contact Person
+S10,233,Contact phone number
+S10,254,Request date
+S10,285,Weight
+S20,13,First line of address
+S20,14,Second line of address
+S20,15,Third line address
+S20,51,City Address
+S20,65,Country
+S20,99,Email
+S20,105,Fax Number
+S20,127,Donor Identification ( to be replaced by GRID)
+S20,132,Receiving institution
+S20,133,Invoice institution
+S20,287,Postal Code
+S20,3,HLA A (1st antigen)
+S20,4,HLA A (2nd antigen)
+S20,33,HLA-B (1st antigen)
+S20,34,HLA-B (2nd antigen)
+S20,42,Date of Birth
+S20,43,HLA-C (1st antigen)
+S20,44,HLA-C (2nd antigen)
+S20,69,Diagnosis details
+S20,71,HLA A (1st allele)
+S20,72,HLA A (2nd allele)
+S20,74,HLA B (1st allele)
+S20,75,HLA B (2nd allele)
+S20,76,HLAC (1st allele)
+S20,77,HLAC (2nd allele)
+S20,78,HLA DPA1 (1st allele)
+S20,79,HLA DPA1 (2nd allele)
+S20,80,HLA DPB1 (1st allele)
+S20,81,HLA DPB1 (2nd allele)
+S20,82,HLA-DQB1 (1st antigen)
+S20,83,HLA-DQB1 (2nd antigen)
+S20,84,HLA DQA1 (1st allele)
+S20,85,HLA DQA1 (2nd allele)
+S20,86,HLA-DQB1 (1st allele)
+S20,87,HLA-DQB1 (2nd allele)
+S20,88,HLA-DRB1 (1st antigen)
+S20,89,HLA-DRB1 (2nd antigen)
+S20,90,HLA-DRB1 (1st allele)
+S20,91,HLA-DRB1 (2nd allele)
+S20,92,HLA-DRB3 (1st allele)
+S20,93,HLA-DRB3 (2nd allele)
+S20,94,HLA-DRB4 (1st allele)
+S20,95,HLA-DRB4 (2nd allele)
+S20,96,HLA-DRB5 (1st allele)
+S20,97,HLA-DRB5 (2nd allele)
+S20,106,First name
+S20,128,Patient Identification
+S20,131,Institution
+S20,154,Last name
+S20,233,Contact phone number
+S20,254,Request date
+S30,8,Donor still of interest
+S30,127,Donor Identification ( to be replaced by GRID)
+S30,3,HLA A (1st antigen)
+S30,4,HLA A (2nd antigen)
+S30,33,HLA-B (1st antigen)
+S30,34,HLA-B (2nd antigen)
+S30,43,HLA-C (1st antigen)
+S30,44,HLA-C (2nd antigen)
+S30,71,HLA A (1st allele)
+S30,72,HLA A (2nd allele)
+S30,74,HLA B (1st allele)
+S30,75,HLA B (2nd allele)
+S30,76,HLAC (1st allele)
+S30,77,HLAC (2nd allele)
+S30,78,HLA DPA1 (1st allele)
+S30,79,HLA DPA1 (2nd allele)
+S30,80,HLA DPB1 (1st allele)
+S30,81,HLA DPB1 (2nd allele)
+S30,82,HLA-DQB1 (1st antigen)
+S30,83,HLA-DQB1 (2nd antigen)
+S30,84,HLA DQA1 (1st allele)
+S30,85,HLA DQA1 (2nd allele)
+S30,86,HLA-DQB1 (1st allele)
+S30,87,HLA-DQB1 (2nd allele)
+S30,88,HLA-DRB1 (1st antigen)
+S30,89,HLA-DRB1 (2nd antigen)
+S30,90,HLA-DRB1 (1st allele)
+S30,91,HLA-DRB1 (2nd allele)
+S30,92,HLA-DRB3 (1st allele)
+S30,93,HLA-DRB3 (2nd allele)
+S30,94,HLA-DRB4 (1st allele)
+S30,95,HLA-DRB4 (2nd allele)
+S30,96,HLA-DRB5 (1st allele)
+S30,97,HLA-DRB5 (2nd allele)
+S30,106,First name
+S30,128,Patient Identification
+S30,154,Last name
+S40,7,Acceptable sample reception days
+S40,215,VT Blood Sample Requirments
+S40,13,First line of address
+S40,14,Second line of address
+S40,15,Third line address
+S40,51,City Address
+S40,65,Country
+S40,99,Email
+S40,105,Fax Number
+S40,132,Receiving institution
+S40,133,Invoice institution
+S40,287,Postal Code
+S40,69,Diagnosis details
+S40,127,Donor Identification ( to be replaced by GRID)
+S40,131,Institution
+S40,233,Contact phone number
+S40,106,First name
+S40,128,Patient Identification
+S40,154,Last name
+S50,29,Scheduled delivery date
+S50,57,Sample Collection Date
+S50,153,ID on sample label
+S50,5,Blood Group (ABO)
+S50,6,Blood Group (Rhesus)
+S50,53,Cytomegalovirus (CMV)
+S50,42,Date of Birth
+S50,106,First name
+S50,128,Patient Identification
+S50,154,Last name
+S60,8,Donor still of interest
+S60,127,Donor Identification ( to be replaced by GRID)
+S60,106,First name
+S60,128,Patient Identification
+S60,154,Last name
+S70,127,Donor Identification ( to be replaced by GRID)
+T10,13,First line of address
+T10,14,Second line of address
+T10,15,Third line address
+T10,51,City Address
+T10,65,Country
+T10,99,Email
+T10,105,Fax Number
+T10,132,Receiving institution
+T10,133,Invoice institution
+T10,287,Postal Code
+T10,131,Institution
+T10,233,Contact phone number
+T10,106,First name
+T10,128,Patient Identification
+T10,154,Last name
+T20,106,First name
+T20,128,Patient Identification
+T20,154,Last name
+T50,13,First line of address
+T50,14,Second line of address
+T50,15,Third line address
+T50,51,City Address
+T50,65,Country
+T50,99,Email
+T50,105,Fax Number
+T50,132,Receiving institution
+T50,133,Invoice institution
+T50,287,Postal Code
+T50,131,Institution
+T50,233,Contact phone number
+T50,127,Donor Identification ( to be replaced by GRID)
+T50,128,Patient Identification
+TF1,272,Transplant Date
+TF1,42,Date of Birth
+TF1,106,First name
+TF1,128,Patient Identification
+TF1,154,Last name

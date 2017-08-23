@@ -1,6 +1,7 @@
 from django.db import models
 
 from ordered_model.models import OrderedModel
+# from markdownx.models import MarkdownxField
 
 
 class DataFamily(models.Model):
@@ -31,7 +32,7 @@ class DictionaryField(models.Model):
     field_type = models.CharField(max_length=1, choices=FIELD_TYPES)
     units = models.CharField(max_length=200, blank=True)
     range = models.CharField(max_length=200, blank=True)
-    values = models.CharField(max_length=200, blank=True)
+    values = models.TextField(max_length=200, blank=True)
     owner_family = models.ForeignKey(DataFamily,
                                      on_delete=models.CASCADE,
                                      related_name='owns')
@@ -95,7 +96,17 @@ class EmdisSemantics(OrderedModel):
 
 
 class BmdwField(models.Model):
-    field_code = models.CharField(max_length=50, unique=True)
+    BMDW_REQ_TYPES = (
+        ('Y', 'Yes'),
+        ('N', 'No'),
+    )
+    field_identifier = models.CharField(max_length=50, unique=True)
+    element_type = models.CharField(max_length=50, blank=True)
+    required = models.CharField(max_length=1, choices=BMDW_REQ_TYPES, blank=True)
+    description = models.CharField(max_length=200, blank=True)
+    type = models.CharField(max_length=50, blank=True)
+    length = models.CharField(max_length=50, blank=True)
+    comment = models.TextField(blank=True)
     dict_field = models.ForeignKey(DictionaryField,
                                    verbose_name='WMDA Dictionary Field')
 
@@ -103,12 +114,13 @@ class BmdwField(models.Model):
         verbose_name = 'BMDW field'
 
     def __str__(self):
-        return self.field_code
+        return self.field_identifier
 
 
 class WmdaForm(models.Model):
     form_code = models.CharField(max_length=10, unique=True)
-    description = models.CharField(max_length=200)
+    description = models.CharField(max_length=200, blank=True)
+    form_url = models.URLField(max_length=200, blank=True)
     fields = models.ManyToManyField(DictionaryField, through='FormFields')
 
     class Meta:
@@ -117,11 +129,13 @@ class WmdaForm(models.Model):
     def __str__(self):
         return self.form_code
 
-class FormFields(models.Model):
+class FormFields(OrderedModel):
     dict_field = models.ForeignKey(DictionaryField,
                                    verbose_name='WMDA Dictionary Field')
     wmda_form = models.ForeignKey(WmdaForm)
     form_field_name = models.CharField(max_length=200)
+    order_with_respect_to = 'wmda_form'
 
     class Meta:
         verbose_name_plural = 'form fields'
+        ordering = ('wmda_form', 'order')

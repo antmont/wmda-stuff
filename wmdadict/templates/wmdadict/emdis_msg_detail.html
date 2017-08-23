@@ -33,7 +33,13 @@
                                 <tr>
                                     <td>{{ row.emdis_field.field_description }} (<a href="{% url 'dictionary_detail' row.emdis_field.dict_field.pk %}">{{ row.emdis_field.field_code }})</a></td>
                                     <td><a href="{% url 'emdis_detail' row.emdis_field.pk %}">{{ row.emdis_field }}</a></td>
-                                    <td>{{ row.get_required_display }}</td>
+                                    <td>
+                                        {% if row.required == "R" %}
+                                            <strong>{{ row.get_required_display }}</strong>
+                                        {% else %}
+                                            {{ row.get_required_display }}
+                                        {% endif %}
+                                    </td>
                                     <td>{{ row.emdis_field.field_type }}</td>
                                 </tr>
                             {% endfor %}

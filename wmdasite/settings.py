@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django_filters',
     'widget_tweaks',
     'ordered_model',
+    'markdownx',
 
     'wmdadict.apps.WmdadictConfig',
 ]

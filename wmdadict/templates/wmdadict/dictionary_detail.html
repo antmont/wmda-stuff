@@ -11,7 +11,7 @@
                         </tr>
                         <tr>
                             <td>Description (long)</td>
-                            <td>{{ dfield.description_long }}</td>
+                            <td>{{ dfield.description_long|safe }}</td>
                         </tr>
                         <tr>
                             <td>Field type</td>
@@ -32,7 +32,7 @@
                         {% if dfield.field_type == 'S' or dfield.field_type == 'M' %}
                             <tr>
                                 <td>Values</td>
-                                <td>{{ dfield.values }}</td>
+                                <td>{{ dfield.values|safe }}</td>
                             </tr>
                         {% endif %}
                         <tr>

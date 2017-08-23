@@ -1,6 +1,8 @@
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render
 
+from markdownx.utils import markdownify
+
 from .models import DictionaryField, EmdisField, EmdisMessage
 from .filters import DictionaryFilter, EmdisFieldFilter, EmdisMessageFilter
 
@@ -8,13 +10,16 @@ from .filters import DictionaryFilter, EmdisFieldFilter, EmdisMessageFilter
 #     return HttpResponse("Hello, world. You're at the WMDA Dictionary index.")
 
 def dictionary_list(request):
-    field_list = DictionaryField.objects.all()
-    field_filter = DictionaryFilter(request.GET, queryset=field_list)
+    dictionaryfields = DictionaryField.objects.all()
+    field_filter = DictionaryFilter(request.GET, queryset=dictionaryfields)
     return render(request, 'wmdadict/dictionary_list.html', {'dict_fields': field_filter})
 
 def dictionary_detail(request, field_id):
-    dfield = get_object_or_404(DictionaryField, pk=field_id)
-    return render(request, 'wmdadict/dictionary_detail.html', {'dfield': dfield})
+    dictionaryfield = get_object_or_404(DictionaryField, pk=field_id)
+    dictionaryfield.description_long = markdownify(dictionaryfield.description_long)
+    if dictionaryfield.values:
+        dictionaryfield.values = markdownify(dictionaryfield.values)
+    return render(request, 'wmdadict/dictionary_detail.html', {'dfield': dictionaryfield})
 
 def emdis_list(request):
     emdis_fields = EmdisField.objects.all()
@@ -22,8 +27,9 @@ def emdis_list(request):
     return render(request, 'wmdadict/emdis_list.html', {'emdis_fields': field_filter})
 
 def emdis_detail(request, field_id):
-    efield = get_object_or_404(EmdisField, pk=field_id)
-    return render(request, 'wmdadict/emdis_detail.html', {'efield': efield})
+    emdisfield = get_object_or_404(EmdisField, pk=field_id)
+    emdisfield.field_rule = markdownify(emdisfield.field_rule)
+    return render(request, 'wmdadict/emdis_detail.html', {'efield': emdisfield})
 
 def emdis_msg_list(request):
     msg_fields = EmdisMessage.objects.all()

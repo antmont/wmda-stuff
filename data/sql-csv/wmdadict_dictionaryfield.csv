@@ -284,3 +284,4 @@ id,label,description_short,description_long,units,range,values,owner_family_id,f
 285,Weight,Weight measured in kilograms,,,,,4,N
 286,Product Request,Requesting TC/Registry's Product Preference,,,,"PRODUCT REQUESTHPC, Marrow ONLYHPC, Apheresis ONLYMNC, ApheresisHPC, Marrow, second option: HPC, ApheresisHPC, Apheresis, second option: HPC, Marrow",4,S
 287,Postal Code,Post code of an organisation such as a registry or TC,,,,,4,N
+288,Creation Time,Creation time stamp of the inventories,,,,,7,U
