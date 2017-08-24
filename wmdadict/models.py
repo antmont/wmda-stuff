@@ -99,8 +99,9 @@ class BmdwField(models.Model):
     BMDW_REQ_TYPES = (
         ('Y', 'Yes'),
         ('N', 'No'),
+        ('D', 'Dependent'),
     )
-    field_identifier = models.CharField(max_length=50, unique=True)
+    field_identifier = models.CharField(max_length=50)
     element_type = models.CharField(max_length=50, blank=True)
     required = models.CharField(max_length=1, choices=BMDW_REQ_TYPES, blank=True)
     description = models.CharField(max_length=200, blank=True)
@@ -108,7 +109,10 @@ class BmdwField(models.Model):
     length = models.CharField(max_length=50, blank=True)
     comment = models.TextField(blank=True)
     dict_field = models.ForeignKey(DictionaryField,
-                                   verbose_name='WMDA Dictionary Field')
+                                   verbose_name='WMDA Dictionary Field',
+                                   on_delete=models.SET_NULL,
+                                   blank=True,
+                                   null=True,)
 
     class Meta:
         verbose_name = 'BMDW field'

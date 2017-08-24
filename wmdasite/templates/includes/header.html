@@ -29,8 +29,8 @@
             <li><a href="{% url 'wmdadict:emdis_msg_list' %}">EMDIS Messages</a></li>
           </ul>
         </li>
-        <li>
-            <a>BMDW</a>
+        <li{% if '/bmdw/' in request.path %} class="active"{% endif %}>
+          <a href="{% url 'wmdadict:bmdw_list' %}">BMDW</a>
         </li>
         <li>
             <a>WMDA Forms</a>

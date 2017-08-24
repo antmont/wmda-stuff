@@ -1,3 +1,118 @@
-id,field_identifier,dict_field_id,comment,description,element_type,length,required,type
-1,CREATION_TIME,288,"Without fractional seconds the length is 20, for example: 2016-08-23T13:16:48Z.
- Additional notes: CREATION_TIME is defined as ""Creation time stamp of the <INVENTORIES>"" that means the time in UTC when the complete and valid file was finally created at the registry. This can be the same as SNAPSHOT_TIME.",Creation time stamp of the inventories (in UTC),InventoryType,minimal 20,Y,dateTime
+id,field_identifier,dict_field_id,comment,description,element_type,length,type,required
+1,CREATION_TIME,,"Without fractional seconds the length is 20, for example: 2016-08-23T13:16:48Z. Additional notes: CREATION_TIME is defined as ""Creation time stamp of the <INVENTORIES>"" that means the time in UTC when the complete and valid file was finally created at the registry. This can be the same as SNAPSHOT_TIME.",Creation time stamp of the inventories (in UTC),InventoryType,minimal 20,dateTime,Y
+2,LISTING_ORGANIZATION,251,Issuing Organisation Number (ION) allocated by ICBBA. This can be different from the POOL when another organisation is sending the data to BMDW.,Organisation that lists the donor/cbu provided as ION,InventoryType,4,ionType: number between 1000 and 9999,Y
+3,POOL,235,Physical location of the donors/CBUs of the inventory provided as ION.,Physical location of the donors/CBUs of the inventory provided as ION,InventoryType,4,ionType: number between 1000 and 9999,Y
+4,SNAPSHOT_TIME,,"Without fractional seconds the length is 20, for example: 2016-08-23T13:16:48Z Additional notes: SNAPSHOT_TIME in the element <INVENTORY> is defined as ""timestamp of the data snapshot in UTC"" that means the timestamp of the creation of this part of the complete file. This can be the timestamp of the XML export and I guess that in most of the cases it will be identical to the CREATION_TIME.",Timestamp of the 'data snapshot' (in UTC),InventoryType,minimal 20,dateTime,N
+5,CONTENT_TYPE,275,"The content-type is also shown in the fileName. When CONTENT_TYPE is ""D"", the INVENTORY must contain <DONOR>-blocks. When CONTENT_TYPE is ""C"", the INVENTORY must contain <CBU>-blocks.","Type of the inventory items, i.e. donor (""D"") or CBU (""C"")",InventoryType,1,contentTypeType,Y
+6,UPDATE_MODE,,"Only UPDATE_MODE ""FULL"" is currently supported. Always the complete inventory should be send.","Update mode of the inventory, i.e. FULL or DIFF",InventoryType,4,updateModeType,Y
+7,SCHEMA_VERSION,,The schema version is very important as this determines the validation rules that should be applied during the processing of your file.,Version of the applied XML Schema Definition (XSD),InventoryType,,schemaVersionType,Y
+8,ID,127,"Unique identifier of the donor/CBU: If you are an EMDIS member, you can use the same ID as you use for that system (EMDIS hub code + donor identification allocated by the associated donor registry). For non-EMDIS members we recommend to use two digit ISO country code of the associated donor registry + donor identification allocated by the associated donor registry. For example: AU600196166, DEGOE-35487, US087013165, SB45. However, you are also allowed to use just the donor ID allocated by your registry.",Unique identifier of the donor/CBU,ItemBaseType,17,String,Y
+9,GRID,127,ONLY applicable for donors,Global registration identifier of the donor,ItemBaseType,19,String,N
+10,ATTR,31,,Describing attribute of the donor/CBU according to house rules of the sending organization.,ItemBaseType,3,String,N
+11,BIRTH_DATE,41,"Date without timezone information, example 1968-06-28, Date Delimiter = ""-""",Date of birth of the donor/CBU,ItemBaseType,10,bareDateType,Y
+12,SEX,262,"sexType: ""F"",""M"" NOTE: Mandatory for donors, optional for CBUs",Biological gender of the donor/CBU,ItemBaseType,1,sexType,N
+13,ABO,5,"aboType: ""A"",""B"",""O"",""AB""",Blood group (ABO) of the donor/CBU,ItemBaseType,2,aboType,N
+14,RHESUS,6,"rhesusType: ""P"",""N"". NOTE: ""+"" and ""-"" are not supported",Rhesus (Rh) factor of the donor/CBU,ItemBaseType,1,rhesusType,N
+15,ETHN,100,"ethnType: ""AFNA"",""AFSS"", ""ASSW"", ""ASSO"", ""ASCE"", ""ASSE"", ""ASNE"", ""ASOC"", ""CAEU"",•À_""CAER"", ""CANA"", ""CAAU"", ""HICA"", ""HISA"", ""AF"", ""AS"", ""CA"", ""HI"", ""MX"", ""OT"",""UK""",Ethnic group of the donor/CBU,ItemBaseType,4,ethnType,N
+16,CCR5,45,"ccr5Type: ""DD"",""WW"",""DW""",CCR5 status of the donor/CBU,ItemBaseType,2,ccr5Type,N
+17,HLA,,Explained separately at hlaType 2.3,HLA of the donor/cbu,ItemBaseType,-,hlaType,Y
+18,KIR,,Explained separately at•À_kirType 2.4,KIR genotype of the donor/CBU,ItemBaseType,-,kirType,N
+19,IDM,,Explained separately at•À_idmType 2.5,Infectious disease markers (IDM) and other relevant tests of the donor/CBU,ItemBaseType,-,idmType,N
+20,RSV_PAT,128,"The value comprises the EMDIS patient identification, where the patient search centre is an EMDIS member, otherwise the value is empty. For example: AU9654021, DE275342, US2277450. NOTE: This field is not required for status ""RS"" and can be transmitted as empty if privacy concerns exist.",Unique identifier of the patient the donor/CBU is reserved for (STATUS=RS).,ItemBaseType,17,String,N
+21,STATUS,266,"statusType: ""AV"",""TU"",""RS"" (""DE"" is not supported yet,•À_""RE"" not valid for CBUs)",Status of the donor/CBU,ItemBaseType,2,statusType,Y
+22,STAT_END_DATE,264,"Date without timezone information, example 1968-06-28, Date Delimiter = ""-""",Date until which the current status will be applicable,ItemBaseType,10,bareDateType,N
+23,SER,,Each SER element contains two other elements: FIELD1 and FIELD2,HLA values obtained by serological typing methods,HLAType,5,hlaSerFieldsType,D
+24,DNA,,Each DNA element contains two other elements: FIELD1 and FIELD2,HLA values obtained by DNA based typing methods,HLAType,20,hlaDnaFieldsType,D
+25,FIELD1,,Element within the element SER and DNA,HLA value of allele 1,HLAType,5 or 20,-,
+26,FIELD2,,Element within the element SER and DNA,HLA value of allele 2,HLAType,5 or 20,-,
+27,A,71,Both SER and DNA possible; either SER or DNA values required,HLA-A values,HLAType,,hlaLocusType,Y
+28,B,74,Both SER and DNA possible; either SER or DNA values required,HLA-B values,HLAType,,hlaLocusType,Y
+29,C,76,Both SER and DNA possible,HLA-C values,HLAType,,hlaLocusType,N
+30,DRB1,90,Both SER and DNA possible; either SER or DNA values required for CBU,HLA-DRB1 values,HLAType,,hlaLocusType,Y
+31,DRB3,92,Only DNA possible,HLA-DRB3 values,HLAType,,hlaLocusDnaOnlyType,N
+32,DRB4,94,Only DNA possible,HLA-DRB4 values,HLAType,,hlaLocusDnaOnlyType,N
+33,DRB5,96,Only DNA possible,HLA-DRB5 values,HLAType,,hlaLocusDnaOnlyType,N
+34,DQA1,84,Only DNA possible,HLA-DQA1 values,HLAType,,hlaLocusDnaOnlyType,N
+35,DQB1,86,Both SER and DNA possible,HLA-DQB1 values,HLAType,,hlaLocusType,N
+36,DPA1,78,Only DNA possible,HLA-DPA1 values,HLAType,,hlaLocusDnaOnlyType,N
+37,DPB1,80,Only DNA possible,HLA-DPB1 values,HLAType,,hlaLocusDnaOnlyType,N
+38,KIR2DL1,136,"valid values: ""POS"" = presence of KIR gene; ""NEG"" = absence of KIR gene",KIR genotype e.g. KIR gene 2DL1,KirType,3,kirLocusType,N
+39,CMV,53,"idmValueExtType: •À_P•À_,•À_G•À_,•À_M•À_,•À_B•À_,•À_H•À_,•À_O•À_,•À_N•À_ EMDIS data dictionary also has a •À_Q•À_ (questionable / unclear) but that will not be applicable within the BMDW data submission file.",CMV status,IdmType,1,idmValueExtType,N
+40,CMV_NAT,55,"idmValueType: ""P"",""N""",CMV NAT status,IdmType,1,idmValueType,N
+41,CMV_DATE,54,"Date without timezone information, example 1968-06-28, Date Delimiter = ""-""",Date of CMV test,IdmType,10,bareDateTyp,N
+42,HBS_AG,113,"idmValueType: ""P"",""N""",Hepatitis B status (hepatitis B surface antigen),IdmType,1,idmValueType,N
+43,ANTI_HBC,24,"idmValueType: ""P"",""N""",Hepatitis B status (antibody to hepatitis B core antigen),IdmType,1,idmValueType,N
+44,ANTI_HBS,25,"idmValueType: ""P"",""N""",Hepatitis B status (antibody to hepatitis B surface antigen),IdmType,1,idmValueType,N
+45,ANTI_HCV,26,"idmValueType: ""P"",""N""",Hepatitis C status (antibody to hepatitis C virus),IdmType,1,idmValueType,N
+46,ANTI_HIV_12,27,"idmValueType: ""P"",""N""",Anti-HIV 1/2 status,IdmType,1,idmValueType,N
+47,HIV_1_NAT,119,"idmValueType: ""P"",""N""",HIV-1 NAT status,IdmType,1,idmValueType,N
+48,HIV_P24,120,"idmValueType: ""P"",""N""",HIV p24 status,IdmType,1,idmValueType,N
+49,HCV_NAT,115,"idmValueType: ""P"",""N""",HCV NAT status,IdmType,1,idmValueType,N
+50,ANTI_HTLV,28,"idmValueType: ""P"",""N""",Antibody to HTLV I/II,IdmType,1,idmValueType,N
+51,SYPHILIS,199,"idmValueType: ""P"",""N""",Syphilis status,IdmType,1,idmValueType,N
+52,WNV,201,"idmValueType: ""P"",""N""",WNV status,IdmType,1,idmValueType,N
+53,CHAGAS,49,"idmValueType: ""P"",""N""",Chagas status,IdmType,1,idmValueType,N
+54,EBV,98,"idmValueExtType: •À_P•À_,•À_G•À_,•À_M•À_,•À_B•À_,•À_H•À_,•À_O•À_,•À_N•À_ EMDIS data dictionary also has a •À_Q•À_ (questionable / unclear) but that will not be applicable within the BMDW data submission file. Please leave blank for Q.",EBV status,IdmType,1,idmValueExtType,N
+55,TOXO,200,"idmValueExtType: •À_P•À_,•À_G•À_,•À_M•À_,•À_B•À_,•À_H•À_,•À_O•À_,•À_N•À_ EMDIS data dictionary also has a •À_Q•À_ (questionable / unclear) but that will not be applicable within the BMDW data submission file. Please leave blank for Q.",Toxoplasmosis status,IdmType,1,idmValueExtType,N
+56,HBV_NAT,114,"idmValueType: ""P"",""N""",HBV NAT status,IdmType,1,idmValueType,N
+57,PB19_NAT,195,"idmValueType: ""P"",""N""",ParvoB19 NAT status,IdmType,1,idmValueType,N
+58,ALT,19,"Number, no decimals, minimal value is 1",Alanine aminotransferase status in units per litre,IdmType,,Short,N
+59,STAT_REASON,265,"statReasonDonType: ""DO"", ""DD"",""MR"", ""PR"",""TX"", ""MO"", ""UC"", ""TQ"", ""OT"", ""UK""",Additional information relevant to the donor status,DonItemType,2,statReasonDonType,N
+60,CONTACT_DATE,64,"Date without timezone information, example 1968-06-28, Date Delimiter = ""-""","Date of last confirmed contact - defined as the date of an active form of communication (e.g. a query about status, an address update, confirmation of their interest in donating) via any channel (e.g. email, mail, phone, website), post registration, from a donor to the registry. Any communication from the registry to the donor that does not lead to an activity of the donor suggesting his further interest in donation is explicitly excluded (e.g. annual mailing without reaction).",DonItemType,10,bareDateType,N
+61,CHECKUP_DATE,50,"Date without timezone information, example 1968-06-28, Date Delimiter = ""-""","Date of the last medical checkup - defined as the date of a donor health assessment that indicates whether a donor is minimally suitable to be considered for donation, regardless if eligible for only one donation type, and includes questions about current medication and health issues (e.g. completion of a health screening questionnaire at Extended Typing or Verification Typing).•À_ The donor health assessment can be completed by any means (e.g. paper-based, online, phone). This does not require any physical examination of a donor.",DonItemType,10,bareDateType,N
+62,WEIGHT,285,"Number between 1 and 999, no decimals",Weight in kg,DonItemType,,Short,N
+63,HEIGHT,116,"Number between 1 and 999, no decimals",Height in cm,DonItemType,,Short,N
+64,NMBR_TRANS,225,"Number: zero or greater, no decimals",Number of blood transfusions,DonItemType,,Short,N
+65,NMBR_PREG,224,"Number: zero or greater, no decimals",Number of pregnancies,DonItemType,,Short,N
+66,NMBR_MARR,,"Number: zero or greater, no decimals",Number of marrow donations,DonItemType,,Short,N
+67,NMBR_PBSC,223,"Number: zero or greater, no decimals",Number of PBSC donations,DonItemType,,Short,N
+68,COLL_TYPE,58,"collTypeType: ""M"", ""P"",""B""","Collection type, i.e. the willingness of the donor to donate in a specific manner",DonItemType,1,String,N
+69,STAT_REASON,265,"statReasonCbuType: ""QR"",""AD"",""CD"",""DS"",""XP"",""MR"",""MO"",""OT"",""UK""",Additional information relevant to the CBU status,CbuItemType,2,statReasonCbuType,N
+70,LOCAL_ID,155,,Identification of CBU locally at the associated CBB,CbuItemType,17,String,N
+71,BAG_ID,36,,Identification as it appears on the bag. If more than one bag is available then this data attribute is not populated,CbuItemType,17,String,N
+72,BANK_MANUF_ID,,PLEASE NOTE: For the upload to BMDW the fields BANK_MANUF_ID and BANK_DISTRIB_ID should be fulfilled with a new ID for the corresponding cord blood banks and not with the EMDIS IDs. These IDs are important to allow BMDW to identify if the CBU is from an accredited bank which will be displayed within a search report.,Unique identifier of the CBB that manufactured the CBU. ID shown in table in tab Cord blood bank IDs,CbuItemType,10,String,N
+73,BANK_DISTRIB_ID,,•À_PLEASE NOTE: For the upload to BMDW the fields BANK_MANUF_ID and BANK_DISTRIB_ID should be fulfilled with a new ID for the corresponding cord blood banks and not with the EMDIS IDs. These IDs are important to allow BMDW to identify if the CBU is from an accredited bank which will be displayed within a search report.,Unique identifier of the CBB distributing the CBU.•À_ID shown in table in tab Cord blood bank IDs,CbuItemType,10,String,N
+74,COLL_DATE,56,"Date without timezone information, example 1968-06-28, Date Delimiter = ""-""",Date that the CBU was collected,CbuItemType,10,bareDateType,N
+75,PROC_DATE,237,"Date without timezone information, example 1968-06-28, Date Delimiter = ""-""",Date that the processing started,CbuItemType,10,bareDateType,N
+76,PROC_METH,238,"procMethType: ""HES"",""DGS"",""CEN"",""FIL"",""FIC"",""PER"",""OTH"" NOTE: Values ""NOT"" and ""UNK"" are not supported. ""NOT"" can now be found in CB_PROD_MOD = ""NOT"", ""UNK"" has to be transmitted as empty (CB_PROD_MOD = """")",Processing method used,CbuItemType,3,procMethType,N
+77,PROC_METH_TYPE,239,"procMethTypeType: ""MAN"",""SPX"",""OTP"",""AXP"",""OTH""",Processing method type used,CbuItemType,3,procMethTypeType,N
+78,FREEZE_DATE,107,"Date without timezone information, example 1968-06-28, Date Delimiter = ""-""",Date that the CBU was frozen,CbuItemType,10,bareDateType,N
+79,FREEZE_METH,108,"freezeMethType: ""C"",""M""",Freezing method used,CbuItemType,1,freezeMethType,N
+80,PROD_MOD,240,"prodModType: ""BCE"",""DNE"",""PLR"",""PRR"",""RBR"",""NOT"",""OTH""",Product modifications made,CbuItemType,3,prodModType,N
+81,BAG_TYPE,274,"bagTypeType: ""80/20"",""50/50"",""40/60"",""NS""",Type of bag used (bag fractions / split unit),CbuItemType,5,bbagTypeType,N
+82,BAGS,37,"Number between 1 and 99, no decimals",Number of bags for CBU sub units,CbuItemType,,Short,N
+83,BACT_CULT,35,"cultValueType: ""P"",""N"",""D""",Bacterial culture,CbuItemType,1,cultValueType,N
+84,FUNG_CULT,109,"cultValueType: ""P"",""N"",""D""",Fungal culture,CbuItemType,1,cultValueType,N
+85,HEMO_STATUS,117,"hemoStatusType: ""DN"",""DU"",""NS"",""CD"",""NC"",""DT"",""DD""",Hemoglobinopathy screening status,CbuItemType,2,hemoStatusType,N
+86,VOL,283,"Number between 1 and 9999, no decimals",Collected volume before processing (without additives) in ml,CbuItemType,,Short,N
+87,VOL_FRZN,284,"Number between 1 and 9999, no decimals","Total volume frozen (post processing, prior to cryopreservation) in ml",CbuItemType,,Short,N
+88,TNC,218,Number with decimals,Total number of nucleated cells (before processing),CbuItemType,,Float,N
+89,TNC_FRZN,219,Number with decimals,"Total number of nucleated cells (post processing, prior to cryopreservation)",CbuItemType,,Float,N
+90,RED_BC_FRZN,247,"Number with decimals: minimum is 0.0E0, maximum is 999.9E7","Total number of nucleated red blood cells (post processing, prior to cryopreservation)",CbuItemType,,Float,N
+91,MNC_FRZN,212,Number with decimals,"Total Number of mononucleated cells (post processing, prior to cryopreservation)",CbuItemType,,Float,N
+92,CD34PC,1,Number with decimals,Total number of CD34+ cells (before processing),CbuItemType,,Float,N
+93,CD34PC_FRZN,2,Number with decimals,"Total number of CD34+ cells (post processing, prior to cryopreservation)",CbuItemType,,Float,N
+94,CFU_FRZN,48,Number with decimals,"Total count of colony forming units (post processing, prior to cryopreservation)",CbuItemType,,Float,N
+95,VIABILITY,277,"Number between 0 and 100, no decimals",Viability as percentage value,CbuItemType,,Short,N
+96,VIABILITY_DATE,279,"Date without timezone information, example 1968-06-28, Date Delimiter = ""-""",Date that viability was tested,CbuItemType,10,bareDateType,N
+97,VIABILITY_CELLS,278,"viabilityCellsType: ""TNC"",""CD34PC"",""CD45PC"" NOTE: VIABILITY_CELLS = ""CD34PC"" corresponds to CB_VIABILITY_CELLS = ""CD34"" in EMDIScord. VIABILITY_CELLS = ""CD45PC"" corresponds to CB_VIABILITY_CELLS = ""CD45"" in EMDIScord.",Type of cells tested for viability,CbuItemType,6,viabilityCellsType,N
+98,VIABILITY_METHOD,280,"viabilityMethodType: ""7A"",""PI"",""TB"",""OT""",Method used to calculate the viability,CbuItemType,2,viabilityMethodType,N
+99,ATT_SEG,30,"Number between 0 and 99, no decimals",Number of attached segments available,CbuItemType,,Short,N
+100,DNA_SMPL,73,"true,false",DNA samples available?,CbuItemType,,Boolean,N
+101,OTH_SMPL,228,"true,false",Samples other than DNA available?,CbuItemType,,Boolean,N
+102,CT_COMPLETE_DATE,66,"Date without timezone information, example 1968-06-28, Date Delimiter = ""-""",Date of completion of confirmatory typing (CT),CbuItemType,10,bareDateType,N
+103,CT_SMPL_TYPE,215,"ctSmplTypeType: ""AS"",""WB"",""RC"",""FP"",""ED""",Confirmatory typing (CT) sample type,CbuItemType,2,ctSmplTypeType,N
+104,AL_RED_BC,17,"Number between 0 and 99, no decimals",Number of red cell fraction aliquots,CbuItemType,,Short,N
+105,AL_SER,18,"Number between 0 and 99, no decimals",Number of serum aliquots available,CbuItemType,,Short,N
+106,SER_QUANT,261,"Number between 0.0 and 99.9, one decimal",Total quantity of serum available in ml,CbuItemType,,Float,N
+107,AL_PLA,16,"Number between 0 and 99, no decimals",Number of plasma aliquots available,CbuItemType,,Short,N
+108,PLA_QUANT,234,"Number between 0.0 and 99.9, one decimal",Total quantity of plasma available in ml,CbuItemType,,Float,N
+109,MAT,,see further on this webpage matType,Data of the mother of the infant associated with the CBU,CbuItemType,,matType,N
+110,ID,40,,Identification used to identify the maternal donor as assigned by the registry,MatType,15,String,N
+111,ID_BANK,,,Identification used by associated CBU manufacturer to identify maternal detail,MatType,15,String,N
+112,HLA,,see above in section 2.3 hlaType,HLA of the mother of the infant associated with the CBU,MatType,,hlaType,N
+113,IDM,,see above in section 2.5 idmType,Infectious disease markers (IDM) and other relevant tests of the mother of the CBU,MatType,,idmType,N
+114,AL_SER,18,"Number between 0 and 99, no decimals",Number of serum aliquots available,MatType,,short,N
+115,SER_QUANT,261,"Number between 0.0 and 99.9, one decimal",Total quantity of serum available in ml,MatType,,Float,N
+116,AL_PLA,16,"Number between 0 and 99, no decimals",Number of plasma aliquots available,MatType,,Short,N
+117,PLA_QUANT,234,"Number between 0.0 and 99.9, one decimal",Total quantity of plasma available in ml,MatType,,Float,N

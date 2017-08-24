@@ -3,7 +3,7 @@ from django.shortcuts import get_object_or_404, render
 
 from markdownx.utils import markdownify
 
-from .models import DictionaryField, EmdisField, EmdisMessage
+from .models import DictionaryField, EmdisField, EmdisMessage, BmdwField
 from .filters import DictionaryFilter, EmdisFieldFilter, EmdisMessageFilter
 
 # def index(request):
@@ -39,3 +39,7 @@ def emdis_msg_list(request):
 def emdis_msg_detail(request, msg_id):
     emsg = get_object_or_404(EmdisMessage, pk=msg_id)
     return render(request, 'wmdadict/emdis_msg_detail.html', {'emsg': emsg})
+
+def bmdw_list(request):
+    bmdwfields = BmdwField.objects.all()
+    return render(request, 'wmdadict/bmdw_list.html', {'bmdwfields': bmdwfields})
