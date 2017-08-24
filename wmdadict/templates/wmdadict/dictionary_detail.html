@@ -59,6 +59,16 @@
                                 </td>
                             </tr>
                         {% endif %}
+                        {% if dfield.bmdwfield_set.all %}
+                            <tr>
+                                <td>BMDW fields</td>
+                                <td>
+                                    {% for bfield in dfield.bmdwfield_set.all %}
+                                        <a href="{% url 'wmdadict:bmdw_detail' bfield.pk  %}">{{ bfield.field_identifier }}<br />
+                                    {% endfor %}
+                                </td>
+                            </tr>
+                        {% endif %}
                 </tbody>
             </table>
         </div>

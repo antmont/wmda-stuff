@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="text-center">BMDW field: {{ bmdwfield }}</h1>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover table-striped tablesorter">
+                <tbody>
+                        <tr>
+                            <td>Field identifier</td>
+                            <td>{{ bmdwfield.field_identifier }}</td>
+                        </tr>
+                        <tr>
+                            <td>Field description</td>
+                            <td>{{ bmdwfield.description }}</td>
+                        </tr>
+                        <tr>
+                            <td>Element type</td>
+                            <td>{{ bmdwfield.element_type }}</td>
+                        </tr>
+                        <tr>
+                            <td>Field type</td>
+                            <td>{{ bmdwfield.type }}</td>
+                        </tr>
+                        <tr>
+                            <td>Required</td>
+                            <td>{% if bmdwfield.required == "Y" %}
+                                <strong>{{ bmdwfield.get_required_display }}</strong>
+                            {% else %}
+                                {{ bmdwfield.get_required_display }}
+                            {% endif %}</td>
+                        </tr>
+                        <tr>
+                            <td>Length</td>
+                            <td>{{ bmdwfield.length }}</td>
+                        </tr>
+                        <tr>
+                            <td>Comment</td>
+                            <td>{{ bmdwfield.comment|safe }} </td>
+                        </tr>
+                        <tr>
+                            <td>Dictionary field</td>
+                            <td><a href="{% url 'wmdadict:dictionary_detail' bmdwfield.dict_field.pk %}">{{ bmdwfield.dict_field }}</a> ({{ bmdwfield.dict_field.description_short }})
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>EMDIS fields related to dictionary field</td>
+                            <td>
+                                {% for efield in bmdwfield.dict_field.emdisfield_set.all %}
+                                    <a href="{% url 'wmdadict:emdis_detail' efield.pk %}">{{ efield.field_code }}<br />
+                                {% endfor %}
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+        </div>
+{% endblock %}

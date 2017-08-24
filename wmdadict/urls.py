@@ -20,4 +20,6 @@ urlpatterns = [
     url(r'^emdis/message/(?P<msg_id>[0-9]+)/$', views.emdis_msg_detail, name='emdis_msg_detail'),
     # /bmdw/
     url(r'^bmdw/$', views.bmdw_list, name='bmdw_list'),
+    # /bmdw/5/
+    url(r'^bmdw/(?P<field_id>[0-9]+)/$', views.bmdw_detail, name='bmdw_detail'),
 ]

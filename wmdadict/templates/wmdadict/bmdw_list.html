@@ -43,7 +43,7 @@
                         <tbody>
                             {% for bfield in element_type.list %}
                                 <tr>
-                                    <td>{{ bfield.field_identifier }}</td>
+                                    <td><a href="{% url 'wmdadict:bmdw_detail' bfield.pk %}">{{ bfield.field_identifier }}</td>
                                     <td>{{ bfield.description }}</td>
                                     <td>{{ bfield.type }}</td>
                                     <td>

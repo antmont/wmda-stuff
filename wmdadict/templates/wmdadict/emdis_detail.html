@@ -23,8 +23,7 @@
                         </tr>
                         <tr>
                             <td>Dictionary field</td>
-                            <td><a href="{% url 'wmdadict:dictionary_detail' efield.dict_field.pk %}">{{ efield.dict_field }}</a><br />
-                                {{ efield.dict_field.description_short }}
+                            <td><a href="{% url 'wmdadict:dictionary_detail' efield.dict_field.pk %}">{{ efield.dict_field }}</a> ({{ efield.dict_field.description_short }})
                             </td>
                         </tr>
                         <tr>
@@ -32,6 +31,14 @@
                             <td>
                                 {% for message in efield.emdis_messages.all %}
                                     <a href="{% url 'wmdadict:emdis_msg_detail' message.pk %}">{{ message }}</a><br />
+                                {% endfor %}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>BMDW fields related to dictionary field</td>
+                            <td>
+                                {% for bfield in efield.dict_field.bmdwfield_set.all %}
+                                    <a href="{% url 'wmdadict:bmdw_detail' bfield.pk %}">{{ bfield.field_identifier }}<br />
                                 {% endfor %}
                             </td>
                         </tr>

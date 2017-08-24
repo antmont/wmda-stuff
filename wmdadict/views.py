@@ -43,3 +43,8 @@ def emdis_msg_detail(request, msg_id):
 def bmdw_list(request):
     bmdwfields = BmdwField.objects.all()
     return render(request, 'wmdadict/bmdw_list.html', {'bmdwfields': bmdwfields})
+
+def bmdw_detail(request, field_id):
+    bmdwfield = get_object_or_404(BmdwField, pk=field_id)
+    bmdwfield.comment = markdownify(bmdwfield.comment)
+    return render(request, 'wmdadict/bmdw_detail.html', {'bmdwfield': bmdwfield})
