@@ -54,7 +54,7 @@
                                 <td>EMDIS fields</td>
                                 <td>
                                     {% for efield in dfield.emdisfield_set.all %}
-                                        <a href="{% url 'wmdadict:emdis_detail' efield.pk %}">{{ efield.field_code }}<br />
+                                        <a href="{% url 'wmdadict:emdis_detail' efield.pk %}">{{ efield.field_code }}</a><br />
                                     {% endfor %}
                                 </td>
                             </tr>
@@ -64,7 +64,16 @@
                                 <td>BMDW fields</td>
                                 <td>
                                     {% for bfield in dfield.bmdwfield_set.all %}
-                                        <a href="{% url 'wmdadict:bmdw_detail' bfield.pk  %}">{{ bfield.field_identifier }}<br />
+                                        <a href="{% url 'wmdadict:bmdw_detail' bfield.pk  %}">{{ bfield.field_identifier }}</a><br />
+                                    {% endfor %}
+                                </td>
+                            </tr>
+                        {% endif %}
+                        {% if dfield.formfields_set.all %}
+                            <tr>
+                                <td>Forms</td>
+                                <td>{% for ffield in dfield.formfields_set.all %}
+                                        <a href="{% url 'wmdadict:form_detail' ffield.wmda_form.pk %}">{{ ffield.wmda_form }} ({{ ffield.wmda_form.description }})</a><br />
                                     {% endfor %}
                                 </td>
                             </tr>

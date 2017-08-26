@@ -4,9 +4,9 @@ from django.shortcuts import get_object_or_404, render
 from markdownx.utils import markdownify
 
 from .models import DictionaryField, EmdisField, EmdisMessage
-from .models import BmdwField
+from .models import BmdwField, WmdaForm
 from .filters import DictionaryFilter, EmdisFieldFilter, EmdisMessageFilter
-from .filters import BmdwFieldFilter
+from .filters import BmdwFieldFilter, WmdaFormFilter
 
 # def index(request):
 #     return HttpResponse("Hello, world. You're at the WMDA Dictionary index.")
@@ -51,3 +51,12 @@ def bmdw_detail(request, field_id):
     bmdwfield = get_object_or_404(BmdwField, pk=field_id)
     bmdwfield.comment = markdownify(bmdwfield.comment)
     return render(request, 'wmdadict/bmdw_detail.html', {'bmdwfield': bmdwfield})
+
+def form_list(request):
+    wmdaforms = WmdaForm.objects.all()
+    formfilter = WmdaFormFilter(request.GET, queryset=wmdaforms)
+    return render(request, 'wmdadict/form_list.html', {'formfilter': formfilter})
+
+def form_detail(request, field_id):
+    wmdaform = get_object_or_404(WmdaForm, pk=field_id)
+    return render(request, 'wmdadict/form_detail.html', {'wmdaform': wmdaform})

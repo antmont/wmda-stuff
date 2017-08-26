@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% load widget_tweaks %}
+
+{% block content %}
+    <h1 class="text-center"> WMDA Forms </h1>
+    <form method="get">
+        <div class="well well-sm">
+            <h4 style="margin-top: 0">Filter</h4>
+                <div class="row">
+                    <div class="form-group col-sm-4 col-md-4">
+                        {{ formfilter.form.form_code.label_tag }}
+                        {% render_field formfilter.form.form_code class="form-control" %}
+                    </div>
+                    <div class="form-group col-sm-4 col-md-4">
+                        {{ formfilter.form.description.label_tag }}
+                        {% render_field formfilter.form.description class="form-control" %}
+                    </div>
+                    <div class="form-group col-sm-4 col-md-4">
+                        {{ formfilter.form.dict_field.label_tag }}
+                        {% render_field formfilter.form.dict_field class="form-control" %}
+                    </div>
+                    <div class="text-right col-sm-4 col-md-4">
+                        <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-filter"></span> Filter</button>
+                    </div>
+              </div>
+        </div>
+    </form>
+    {% if formfilter %}
+        <div class="table-responsive">
+            <table class="table  table-hover table-striped tablesorter">
+                <thead>
+                    <tr>
+                        <th class="header"> Form Code <i class="icon-sort"></i></th>
+                        <th class="header"> Description <i class="icon-sort"></i></th>
+                        <th class="header"> Link <i class="icon-sort"></i></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for wform in formfilter.qs %}
+                        <tr>
+                            <td><a href="{% url 'wmdadict:form_detail' wform.pk %}">{{ wform.form_code }}</td>
+                            <td>{{ wform.description }} </td>
+                            {% if wform.form_url %}
+                                <td>
+                                    <a href="{{ wform.form_url }}"><span class="glyphicon glyphicon-file"></span></a>
+                                </td>
+                            {% endif %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+        <p>No WMDA forms are available.</p>
+    {% endif %}
+{% endblock %}

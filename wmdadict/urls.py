@@ -22,4 +22,8 @@ urlpatterns = [
     url(r'^bmdw/$', views.bmdw_list, name='bmdw_list'),
     # /bmdw/5/
     url(r'^bmdw/(?P<field_id>[0-9]+)/$', views.bmdw_detail, name='bmdw_detail'),
+    # /form/
+    url(r'^form/$', views.form_list, name='form_list'),
+    # /form/5/
+    url(r'^form/(?P<field_id>[0-9]+)/$', views.form_detail, name='form_detail'),
 ]
