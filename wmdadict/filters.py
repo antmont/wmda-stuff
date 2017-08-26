@@ -1,6 +1,6 @@
 import django_filters
 
-from .models import DictionaryField, EmdisField, EmdisMessage
+from .models import DictionaryField, EmdisField, EmdisMessage, BmdwField
 
 
 class DictionaryFilter(django_filters.FilterSet):
@@ -38,3 +38,22 @@ class EmdisMessageFilter(django_filters.FilterSet):
     class Meta:
         model = EmdisMessage
         fields = ['name', 'description',]
+
+
+class BmdwFieldFilter(django_filters.FilterSet):
+    field_identifier = django_filters.CharFilter(name='field_identifier',
+                                                 lookup_expr='icontains',
+                                                )
+    dict_field = django_filters.CharFilter(name='dict_field__label',
+                                           lookup_expr='icontains')
+    type = django_filters.CharFilter(name='type',
+                                     lookup_expr='icontains')
+    # Out of interest:
+    # the following code gets a nice list of Types in a dropdown but doesn't
+    # return any results.
+    # type = django_filters.ModelChoiceFilter(name='type',
+    #                                         queryset=BmdwField.objects.order_by('type').values_list('type', ).distinct(),)
+
+    class Meta:
+        model = BmdwField
+        fields = ['field_identifier', 'dict_field', 'type',]

@@ -3,8 +3,10 @@ from django.shortcuts import get_object_or_404, render
 
 from markdownx.utils import markdownify
 
-from .models import DictionaryField, EmdisField, EmdisMessage, BmdwField
+from .models import DictionaryField, EmdisField, EmdisMessage
+from .models import BmdwField
 from .filters import DictionaryFilter, EmdisFieldFilter, EmdisMessageFilter
+from .filters import BmdwFieldFilter
 
 # def index(request):
 #     return HttpResponse("Hello, world. You're at the WMDA Dictionary index.")
@@ -42,7 +44,8 @@ def emdis_msg_detail(request, msg_id):
 
 def bmdw_list(request):
     bmdwfields = BmdwField.objects.all()
-    return render(request, 'wmdadict/bmdw_list.html', {'bmdwfields': bmdwfields})
+    bmdwfilter = BmdwFieldFilter(request.GET, queryset=bmdwfields)
+    return render(request, 'wmdadict/bmdw_list.html', {'bmdwfilter': bmdwfilter})
 
 def bmdw_detail(request, field_id):
     bmdwfield = get_object_or_404(BmdwField, pk=field_id)
