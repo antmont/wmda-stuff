@@ -49,6 +49,7 @@ def bmdw_list(request):
 
 def bmdw_detail(request, field_id):
     bmdwfield = get_object_or_404(BmdwField, pk=field_id)
+    bmdwfield.description = markdownify(bmdwfield.description)
     bmdwfield.comment = markdownify(bmdwfield.comment)
     return render(request, 'wmdadict/bmdw_detail.html', {'bmdwfield': bmdwfield})
 

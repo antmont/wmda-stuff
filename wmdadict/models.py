@@ -65,7 +65,7 @@ class EmdisMessage(models.Model):
 
 class EmdisField(models.Model):
     field_code = models.CharField(max_length=50, unique=True)
-    field_description = models.CharField(max_length=200)
+    field_description = models.CharField(max_length=500)
     field_type = models.CharField(max_length=10)
     field_rule = models.TextField()
     dict_field = models.ForeignKey(DictionaryField,
@@ -104,7 +104,7 @@ class BmdwField(models.Model):
     field_identifier = models.CharField(max_length=50)
     element_type = models.CharField(max_length=50, blank=True)
     required = models.CharField(max_length=1, choices=BMDW_REQ_TYPES, blank=True)
-    description = models.CharField(max_length=200, blank=True)
+    description = models.TextField(blank=True)
     type = models.CharField(max_length=50, blank=True)
     length = models.CharField(max_length=50, blank=True)
     comment = models.TextField(blank=True)
