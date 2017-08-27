@@ -66,7 +66,8 @@ class WmdaFormFilter(django_filters.FilterSet):
                                            lookup_expr='icontains')
     dict_field = django_filters.ModelChoiceFilter(
                         name='fields',
-                        queryset=FormFields.objects.all(),)
+                        label='Uses dictionary field',
+                        queryset=DictionaryField.objects.all())
     # emdis_fields = django_filters.ModelChoiceFilter(
     #                     name='emdis_fields',
     #                     queryset=EmdisMessage.emdisfield_set)
