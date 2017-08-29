@@ -8,6 +8,7 @@ django-markdownx==2.0.21
 django-ordered-model==1.4.2
 django-widget-tweaks==1.4.1
 gunicorn==19.7.1
+invoke==0.20.4
 Markdown==2.6.9
 olefile==0.44
 Pillow==4.2.1
