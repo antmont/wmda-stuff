@@ -9,6 +9,5 @@ def deploy(ctx):
     comment = input("Enter commit message: ")
     ctx.run('git commit -m "%s"' % comment)
     ctx.run("git push heroku master")
-    ctx.run("heroku run python manage.py syncdb")
     ctx.run("heroku run python manage.py migrate")
     ctx.run("heroku run python manage.py compress")

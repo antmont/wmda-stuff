@@ -1,4 +1,5 @@
 # wmda-stuff
+[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 
 ## pythonanywhere deployment
 
@@ -37,7 +38,7 @@ pip install -r requirements.txt
     * Ensure `python manange.py collectstatic` has been run
     * Add line to staic files configuration:
         * URL: `/static/`
-        * Directory: `/home/antmont/wmda-stuff/static` 
+        * Directory: `/home/antmont/wmda-stuff/static`
 
 *antmont_pythonanywhere_com_wsgi.py:*
 ``` python
@@ -57,3 +58,20 @@ application = StaticFilesHandler(get_wsgi_application())
 * Reload
 
 /home/antmont/wmda-stuff/static
+
+
+## heroku deployment
+
+Follow [How to Deploy Django Applications on Heroku](https://simpleisbetterthancomplex.com/tutorial/2016/08/09/how-to-deploy-django-applications-on-heroku.html)
+
+```bash
+heroku login
+git push heroku master
+# or
+git push heroku
+# if necessary:
+heroku run python manage.py migrate
+# to upload local database
+heroku pg:reset
+heroku pg:push wmdadict DATABASE_URL --app wmdasite
+```
