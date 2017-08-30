@@ -79,14 +79,9 @@ class EmdisFieldType(models.Model):
 class EmdisField(models.Model):
     field_code = models.CharField(max_length=50, unique=True)
     field_description = models.CharField(max_length=500)
-    field_type = models.CharField(max_length=10)
-    # blank and null only true for migration - delete once complete
     emdis_type = models.ForeignKey(EmdisFieldType,
-                                   verbose_name='field type',
-                                   blank=True,
-                                   null=True,)
-    # blank and only true for migration - delete once complete
-    field_length = models.PositiveIntegerField(null=True,)
+                                   verbose_name='field type',)
+    field_length = models.PositiveIntegerField()
     field_rule = models.TextField()
     dict_field = models.ForeignKey(DictionaryField,
                                    verbose_name='WMDA Dictionary Field')
