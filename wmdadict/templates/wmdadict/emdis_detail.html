@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 
+
 {% block content %}
     <h1 class="text-center">EMDIS field: {{ efield }}</h1>
         <div class="table-responsive">
@@ -15,7 +16,13 @@
                         </tr>
                         <tr>
                             <td>Field type</td>
-                            <td>{{ efield.field_type }}</td>
+                            <td>
+                                <span data-toggle="popover"
+                                      title="{{ efield.emdis_type.title }} {{ efield.field_length }}"
+                                      data-content="{{ efield.emdis_type.description }}">
+                                          {{ efield.emdis_type.title }} {{ efield.field_length }} <i class="glyphicon glyphicon-info-sign"></i>
+                                </span>
+                            </td>
                         </tr>
                         <tr>
                             <td>Field rule</td>
@@ -45,4 +52,12 @@
                 </tbody>
             </table>
         </div>
+{% endblock %}
+
+{% block javascript %}
+<script type="text/javascript">
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+</script>
 {% endblock %}

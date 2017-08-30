@@ -40,7 +40,13 @@
                                             {{ row.get_required_display }}
                                         {% endif %}
                                     </td>
-                                    <td>{{ row.emdis_field.field_type }}</td>
+                                    <td>
+                                        <span data-toggle="popover"
+                                              title="{{ row.emdis_field.emdis_type.title }} {{ row.emdis_field.field_length }}"
+                                              data-content="{{ row.emdis_field.emdis_type.description }}">
+                                                {{ row.emdis_field.emdis_type.letter_code }}{{ row.emdis_field.field_length }} <i class="glyphicon glyphicon-info-sign"></i>
+                                        </span>
+                                    </td>
                                 </tr>
                             {% endfor %}
                         </tbody>
@@ -49,4 +55,12 @@
             {% else %}
                 <p>No EMDIS fields are available.</p>
             {% endif %}
+{% endblock %}
+
+{% block javascript %}
+<script type="text/javascript">
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+</script>
 {% endblock %}

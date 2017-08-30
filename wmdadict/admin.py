@@ -15,6 +15,11 @@ class DictionaryFieldAdmin(admin.ModelAdmin):
     }
 #    filter_horizontal = ('user_families',)
 
+class EmdisFieldTypeAdmin(admin.ModelAdmin):
+    list_display = ('letter_code', 'title',)
+    formfield_overrides = {
+        models.TextField: {'widget': AdminMarkdownxWidget},
+    }
 
 class EmdisFieldAdmin(admin.ModelAdmin):
     list_display = ('field_code', 'field_description',)
@@ -71,10 +76,10 @@ class WmdaFormAdmin(admin.ModelAdmin):
                 urls = inline.get_urls(self) + urls
         return urls
 
-
-admin.site.register(DataFamily)
 admin.site.register(DictionaryField, DictionaryFieldAdmin)
-admin.site.register(EmdisMessage, EmdisMessageAdmin)
 admin.site.register(EmdisField, EmdisFieldAdmin)
+admin.site.register(EmdisMessage, EmdisMessageAdmin)
 admin.site.register(BmdwField, BmdwFieldAdmin)
 admin.site.register(WmdaForm, WmdaFormAdmin)
+admin.site.register(DataFamily)
+admin.site.register(EmdisFieldType, EmdisFieldTypeAdmin)

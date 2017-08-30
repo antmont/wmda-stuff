@@ -63,10 +63,30 @@ class EmdisMessage(models.Model):
         return self.name
 
 
+class EmdisFieldType(models.Model):
+    letter_code = models.CharField(max_length=1, unique=True)
+    title = models.CharField(max_length=50)
+    description = models.TextField(blank=True)
+
+    class Meta:
+        verbose_name = 'EMDIS field type'
+        ordering = ['letter_code',]
+
+    def __str__(self):
+        return self.title
+
+
 class EmdisField(models.Model):
     field_code = models.CharField(max_length=50, unique=True)
     field_description = models.CharField(max_length=500)
     field_type = models.CharField(max_length=10)
+    # blank and null only true for migration - delete once complete
+    emdis_type = models.ForeignKey(EmdisFieldType,
+                                   verbose_name='field type',
+                                   blank=True,
+                                   null=True,)
+    # blank and only true for migration - delete once complete
+    field_length = models.PositiveIntegerField(null=True,)
     field_rule = models.TextField()
     dict_field = models.ForeignKey(DictionaryField,
                                    verbose_name='WMDA Dictionary Field')
