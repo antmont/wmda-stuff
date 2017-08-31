@@ -11,7 +11,7 @@
                         </tr>
                         <tr>
                             <td>Field description</td>
-                            <td>{{ bmdwfield.description }}</td>
+                            <td>{{ bmdwfield.description|safe }}</td>
                         </tr>
                         <tr>
                             <td>Element type</td>
@@ -39,7 +39,10 @@
                         </tr>
                         <tr>
                             <td>Dictionary field</td>
-                            <td><a href="{% url 'wmdadict:dictionary_detail' bmdwfield.dict_field.pk %}">{{ bmdwfield.dict_field }}</a> ({{ bmdwfield.dict_field.description_short }})
+                            <td>
+                                {% if bmdwfield.dict_field %}
+                                    <a href="{% url 'wmdadict:dictionary_detail' bmdwfield.dict_field.pk %}">{{ bmdwfield.dict_field }}</a> ({{ bmdwfield.dict_field.description_short }})
+                                {% endif %}
                             </td>
                         </tr>
                         <tr>

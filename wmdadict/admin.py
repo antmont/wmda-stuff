@@ -55,6 +55,9 @@ class BmdwFieldAdmin(admin.ModelAdmin):
     list_display = ('field_identifier', 'description',)
     search_fields = ('field_identifier', 'description', 'dict_field__label',)
     list_filter = ('element_type',)
+    formfield_overrides = {
+        models.TextField: {'widget': AdminMarkdownxWidget},
+    }
 
 
 class FormFieldsInline(OrderedTabularInline):
