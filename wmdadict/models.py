@@ -34,11 +34,12 @@ class DictionaryField(models.Model):
     range = models.CharField(max_length=200, blank=True)
     values = models.TextField(max_length=200, blank=True)
     owner_family = models.ForeignKey(DataFamily,
-                                     on_delete=models.CASCADE,
+                                     on_delete=models.SET_NULL,
+                                     blank=True,
+                                     null=True,
                                      related_name='owns')
     user_families = models.ManyToManyField(DataFamily,
-                                         blank=True,
-                                         related_name='uses')
+                                           related_name='uses')
 
     class Meta:
         ordering = ['label']
@@ -80,10 +81,16 @@ class EmdisField(models.Model):
     field_code = models.CharField(max_length=50, unique=True)
     field_description = models.CharField(max_length=500)
     emdis_type = models.ForeignKey(EmdisFieldType,
+                                   on_delete=models.SET_NULL,
+                                   blank=True,
+                                   null=True,
                                    verbose_name='field type',)
     field_length = models.PositiveIntegerField()
     field_rule = models.TextField()
     dict_field = models.ForeignKey(DictionaryField,
+                                   on_delete=models.SET_NULL,
+                                   blank=True,
+                                   null=True,
                                    verbose_name='WMDA Dictionary Field')
     emdis_messages = models.ManyToManyField(EmdisMessage,
                                             through='EmdisSemantics')
@@ -101,8 +108,14 @@ class EmdisSemantics(OrderedModel):
         ('O', 'Optional'),
     )
 
-    emdis_field = models.ForeignKey(EmdisField, on_delete=models.CASCADE)
-    emdis_message = models.ForeignKey(EmdisMessage, on_delete=models.CASCADE)
+    emdis_field = models.ForeignKey(EmdisField,
+                                    on_delete=models.SET_NULL,
+                                    blank=True,
+                                    null=True,)
+    emdis_message = models.ForeignKey(EmdisMessage,
+                                      on_delete=models.SET_NULL,
+                                      blank=True,
+                                      null=True,)
     required = models.CharField(max_length=1, choices=REQ_TYPES, blank=True)
     order_with_respect_to = 'emdis_message'
 
@@ -140,7 +153,8 @@ class WmdaForm(models.Model):
     form_code = models.CharField(max_length=10, unique=True)
     description = models.CharField(max_length=200, blank=True)
     form_url = models.URLField(max_length=200, blank=True)
-    fields = models.ManyToManyField(DictionaryField, through='FormFields')
+    fields = models.ManyToManyField(DictionaryField,
+                                    through='FormFields')
 
     class Meta:
         verbose_name = 'WMDA form'
@@ -150,8 +164,14 @@ class WmdaForm(models.Model):
 
 class FormFields(OrderedModel):
     dict_field = models.ForeignKey(DictionaryField,
+                                   on_delete=models.SET_NULL,
+                                   blank=True,
+                                   null=True,
                                    verbose_name='WMDA Dictionary Field')
-    wmda_form = models.ForeignKey(WmdaForm)
+    wmda_form = models.ForeignKey(WmdaForm,
+                                  on_delete=models.SET_NULL,
+                                  blank=True,
+                                  null=True,)
     form_field_name = models.CharField(max_length=200)
     order_with_respect_to = 'wmda_form'
 
