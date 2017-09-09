@@ -31,7 +31,7 @@
                         <tbody>
                             {% for row in emsg.emdissemantics_set.all %}
                                 <tr>
-                                    <td>{{ row.emdis_field.field_description }} (<a href="{% url 'wmdadict:dictionary_detail' row.emdis_field.dict_field.pk %}">{{ row.emdis_field.field_code }})</a></td>
+                                    <td>{{ row.emdis_field.field_description }} (<a href="{% url 'wmdadict:dictionary_detail' row.emdis_field.dict_field.pk %}">{{ row.emdis_field.dict_field }})</a></td>
                                     <td><a href="{% url 'wmdadict:emdis_detail' row.emdis_field.pk %}">{{ row.emdis_field }}</a></td>
                                     <td>
                                         {% if row.required == "R" %}
