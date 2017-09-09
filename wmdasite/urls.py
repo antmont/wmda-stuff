@@ -26,7 +26,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
 ]
 
-if settings.DEBUG:
+if settings.LOCAL_DEBUG:
     import debug_toolbar
     urlpatterns = [
         url(r'^__debug__/', include(debug_toolbar.urls)),

@@ -31,6 +31,8 @@ SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
+# Local debug installs additional debug tools such as debug_toolbar
+LOCAL_DEBUG = config('LOCAL', default=False, cast=bool)
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
@@ -57,7 +59,7 @@ INSTALLED_APPS = [
     'wmdadict.apps.WmdadictConfig',
 ]
 
-if DEBUG:
+if LOCAL_DEBUG:
     INSTALLED_APPS += [
         'debug_toolbar',
         'django_extensions',
@@ -75,7 +77,7 @@ MIDDLEWARE = [
 ]
 
 # DebugToolbarMiddleware beeds to be near the top of middleware
-if DEBUG:
+if LOCAL_DEBUG:
     MIDDLEWARE = [
         'debug_toolbar.middleware.DebugToolbarMiddleware',
     ] + MIDDLEWARE
