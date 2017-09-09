@@ -48,7 +48,6 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
 
-    'debug_toolbar',
     'djangobower',
     'django_filters',
     'widget_tweaks',
@@ -58,6 +57,11 @@ INSTALLED_APPS = [
 
     'wmdadict.apps.WmdadictConfig',
 ]
+
+if DEBUG:
+    INSTALLED_APPS += [
+        'debug_toolbar',
+    ]
 
 MIDDLEWARE = [
     'debug_toolbar.middleware.DebugToolbarMiddleware',
