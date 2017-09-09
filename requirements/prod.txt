@@ -1,0 +1,2 @@
+# Requirements file for production environment
+-r common.txt
