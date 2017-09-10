@@ -64,6 +64,14 @@ application = StaticFilesHandler(get_wsgi_application())
 
 Follow [How to Deploy Django Applications on Heroku](https://simpleisbetterthancomplex.com/tutorial/2016/08/09/how-to-deploy-django-applications-on-heroku.html)
 
+Setup buildpacks for node (bower, bootstrap) and Pyhon (Django):
+
+```bash
+heroku buildpacks:set heroku/python --app wmdasite-staging
+heroku buildpacks:add --index 1 heroku/nodejs --app wmdasite-staging
+heroku buildpacks --app wmdasite-staging
+```
+
 ```bash
 heroku login
 git push heroku master
