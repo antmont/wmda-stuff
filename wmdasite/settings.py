@@ -32,7 +32,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 # Local debug installs additional debug tools such as debug_toolbar
-LOCAL_DEBUG = config('LOCAL', default=False, cast=bool)
+LOCAL_DEBUG = config('LOCAL_DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
@@ -50,7 +50,6 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
 
-    'djangobower',
     'django_filters',
     'widget_tweaks',
     'ordered_model',
@@ -178,14 +177,7 @@ STATICFILES_DIRS = [
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
-BOWER_COMPONENTS_ROOT = os.path.join(PROJECT_ROOT, 'components')
-
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'djangobower.finders.BowerFinder',
-)
-
-BOWER_INSTALLED_APPS = (
-    'bootstrap',
 )
