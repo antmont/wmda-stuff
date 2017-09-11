@@ -1,0 +1,22 @@
+{
+  "name": "wmdasite",
+  "version": "0.0.0",
+  "homepage": "https://github.com/antmont/wmda-stuff",
+  "authors": [
+    "Anthony Montague",
+    "Jenna Schurmeier",
+    "Australian Bone Marrow Donor Registry"
+  ],
+  "license": "BSD",
+  "private": false,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3"
+  }
+}

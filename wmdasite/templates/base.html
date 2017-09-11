@@ -6,8 +6,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{% block title %}WMDA Dictionary - Base{% endblock %}</title>
-        <link rel="stylesheet" href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}">
-        <link rel="stylesheet" href="{% static 'bootstrap/dist/css/bootstrap-theme.min.css' %}">
+        <link rel="stylesheet" href="{% static 'bower_components/bootstrap/dist/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'bower_components/bootstrap/dist/css/bootstrap-theme.min.css' %}">
         <style type="text/css">
             .page-header {
                 margin-top: 0;
@@ -20,8 +20,8 @@
             {% block content %}
             {% endblock %}
         </div>
-        <script type="text/javascript" src="{% static 'jquery/dist/jquery.js' %}"></script>
-        <script type="text/javascript" src="{% static 'bootstrap/dist/js/bootstrap.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'bower_components/jquery/dist/jquery.js' %}"></script>
+        <script type="text/javascript" src="{% static 'bower_components/bootstrap/dist/js/bootstrap.min.js' %}"></script>
         {% block javascript %}
         {% endblock %}
     </body>

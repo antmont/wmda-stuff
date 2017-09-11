@@ -31,6 +31,8 @@ SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
+# Local debug installs additional debug tools such as debug_toolbar
+LOCAL_DEBUG = config('LOCAL_DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
@@ -48,19 +50,21 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
 
-    'debug_toolbar',
-    'djangobower',
     'django_filters',
     'widget_tweaks',
     'ordered_model',
     'markdownx',
-    'django_extensions',
 
     'wmdadict.apps.WmdadictConfig',
 ]
 
+if LOCAL_DEBUG:
+    INSTALLED_APPS += [
+        'debug_toolbar',
+        'django_extensions',
+    ]
+
 MIDDLEWARE = [
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -70,6 +74,14 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+# DebugToolbarMiddleware beeds to be near the top of middleware
+if LOCAL_DEBUG:
+    MIDDLEWARE = [
+        'debug_toolbar.middleware.DebugToolbarMiddleware',
+    ] + MIDDLEWARE
+
+
 
 ROOT_URLCONF = 'wmdasite.urls'
 
@@ -165,14 +177,7 @@ STATICFILES_DIRS = [
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
-BOWER_COMPONENTS_ROOT = os.path.join(PROJECT_ROOT, 'components')
-
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'djangobower.finders.BowerFinder',
-)
-
-BOWER_INSTALLED_APPS = (
-    'bootstrap',
 )
