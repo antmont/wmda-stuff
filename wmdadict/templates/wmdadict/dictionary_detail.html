@@ -15,21 +15,21 @@
                         </tr>
                         <tr>
                             <td>Field type</td>
-                            <td>{{ dfield.get_field_type_display }}</td>
+                            <td>{{ dfield.field_type }}</td>
                         </tr>
-                        {% if dfield.field_type == 'N' %}
+                        {% if dfield.field_type == 'Numeric' %}
                             <tr>
                                 <td>Units</td>
                                 <td>{{ dfield.units }}</td>
                             </tr>
                         {% endif %}
-                        {% if dfield.field_type == 'N' or dfield.field_type == 'D' %}
+                        {% if dfield.field_type == 'Numeric' or dfield.field_type == 'Date' %}
                             <tr>
                                 <td>Range</td>
                                 <td>{{ dfield.range }}</td>
                             </tr>
                         {% endif %}
-                        {% if dfield.field_type == 'S' or dfield.field_type == 'M' %}
+                        {% if dfield.field_type == 'List Single' or dfield.field_type == 'List Multiple' %}
                             <tr>
                                 <td>Values</td>
                                 <td>{{ dfield.values|safe }}</td>

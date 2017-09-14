@@ -1,5 +1,8 @@
 from django.contrib import admin
 from django.contrib.admin import AdminSite
+from django.contrib.auth.admin import UserAdmin, GroupAdmin
+from django.contrib.auth.models import User, Group
+
 
 from ordered_model.admin import OrderedTabularInline
 from markdownx.widgets import AdminMarkdownxWidget
@@ -12,10 +15,9 @@ class WMDAAdminSite(AdminSite):
 
 
 class DictionaryFieldAdmin(admin.ModelAdmin):
-    list_display = ('label', 'description_short', 'owner_family',
-                    'field_type_new',)
+    list_display = ('label', 'description_short',)
     search_fields = ('label', 'description_short', 'description_long',)
-    list_filter = ('owner_family', 'user_families',)
+    list_filter = ('owner_family', 'user_families', 'field_type',)
     formfield_overrides = {
         models.TextField: {'widget': AdminMarkdownxWidget},
     }
@@ -24,12 +26,18 @@ class DictionaryFieldAdmin(admin.ModelAdmin):
 
 class FieldTypeAdmin(admin.ModelAdmin):
     list_display = ('letter_code', 'title',)
+    formfield_overrides = {
+        models.TextField: {'widget': AdminMarkdownxWidget},
+    }
+
 
 
 class EmdisFieldAdmin(admin.ModelAdmin):
     list_display = ('field_code', 'field_description',)
     search_fields = ('field_code', 'field_description', 'dict_field__label',)
-    list_filter = ('emdis_messages', 'dict_field__owner_family',)
+    list_filter = ('emdis_messages',
+                   'emdis_type',
+                   'dict_field__owner_family',)
     filter_horizontal = ('emdis_messages',)
     formfield_overrides = {
         models.TextField: {'widget': AdminMarkdownxWidget},
@@ -38,7 +46,7 @@ class EmdisFieldAdmin(admin.ModelAdmin):
 
 class EmdisSemanticsInline(OrderedTabularInline):
     model = EmdisSemantics
-    fields = ('emdis_message', 'emdis_field', 'required_new', 'move_up_down_links',)
+    fields = ('emdis_message', 'emdis_field', 'required', 'order', 'move_up_down_links',)
     readonly_fields = ('order', 'move_up_down_links',)
     extra = 1
     ordering = ('order',)
@@ -57,9 +65,9 @@ class EmdisMessageAdmin(admin.ModelAdmin):
 
 
 class BmdwFieldAdmin(admin.ModelAdmin):
-    list_display = ('field_identifier', 'description', 'type', 'type_new',)
+    list_display = ('field_identifier', 'description', )
     search_fields = ('field_identifier', 'description', 'dict_field__label',)
-    list_filter = ('element_type',)
+    list_filter = ('element_type', 'type',)
     formfield_overrides = {
         models.TextField: {'widget': AdminMarkdownxWidget},
     }
@@ -67,7 +75,11 @@ class BmdwFieldAdmin(admin.ModelAdmin):
 
 class FormFieldsInline(OrderedTabularInline):
     model = FormFields
-    fields = ('dict_field', 'wmda_form', 'form_field_name', 'move_up_down_links',)
+    fields = ('dict_field',
+              'wmda_form',
+              'form_field_name',
+              'form_field_current_name',
+              'move_up_down_links',)
     readonly_fields = ('order', 'move_up_down_links',)
     extra = 1
     ordering = ('order',)
@@ -84,7 +96,7 @@ class WmdaFormAdmin(admin.ModelAdmin):
                 urls = inline.get_urls(self) + urls
         return urls
 
-wmda_admin_site = WMDAAdminSite(name='wmdaadmin')
+wmda_admin_site = WMDAAdminSite(name='admin')
 wmda_admin_site.register(DictionaryField, DictionaryFieldAdmin)
 wmda_admin_site.register(EmdisField, EmdisFieldAdmin)
 wmda_admin_site.register(EmdisMessage, EmdisMessageAdmin)
@@ -92,7 +104,9 @@ wmda_admin_site.register(BmdwField, BmdwFieldAdmin)
 wmda_admin_site.register(WmdaForm, WmdaFormAdmin)
 wmda_admin_site.register(DataFamily)
 wmda_admin_site.register(EmdisFieldType, FieldTypeAdmin)
-wmda_admin_site.register(DictionaryFieldType, FieldTypeAdmin)
+wmda_admin_site.register(DictionaryFieldType)
 wmda_admin_site.register(RequiredFieldType)
 wmda_admin_site.register(BmdwElementType)
 wmda_admin_site.register(BmdwFieldType)
+wmda_admin_site.register(User, UserAdmin)
+wmda_admin_site.register(Group, GroupAdmin)

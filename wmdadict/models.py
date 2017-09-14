@@ -14,18 +14,16 @@ class DataFamily(models.Model):
     class Meta:
         verbose_name_plural = 'data families'
 
-
     def __str__(self):
         return self.name
 
 
 class DictionaryFieldType(models.Model):
-    letter_code = models.CharField(max_length=1, unique=True)
     title = models.CharField(max_length=50)
     description = models.TextField(blank=True)
 
     class Meta:
-        ordering = ['letter_code',]
+        ordering = ['title',]
 
     def __str__(self):
         return self.title
@@ -99,7 +97,7 @@ class DictionaryField(models.Model):
     description_short = models.CharField('Short Description', max_length=200)
     description_long = models.TextField('Long Description', blank=True)
     field_type_old = models.CharField(max_length=1, choices=FIELD_TYPES)
-    field_type_new = models.ForeignKey(DictionaryFieldType,
+    field_type = models.ForeignKey(DictionaryFieldType,
                                    on_delete=models.SET_NULL,
                                    blank=True,
                                    null=True)
@@ -126,6 +124,8 @@ class DictionaryField(models.Model):
 class EmdisMessage(models.Model):
     name = models.CharField(max_length=50, unique=True)
     description = models.CharField(max_length=200)
+    pre_text = models.TextField(max_length=1000, blank=True)
+    post_text = models.TextField(max_length=1000, blank=True)
 
     class Meta:
         verbose_name = 'EMDIS message'
@@ -179,17 +179,15 @@ class EmdisSemantics(OrderedModel):
                                       on_delete=models.SET_NULL,
                                       blank=True,
                                       null=True,)
-    required = models.CharField(max_length=1, choices=REQ_TYPES, blank=True)
-    required_new = models.ForeignKey(RequiredFieldType,
-                                    on_delete=models.SET_NULL,
-                                    blank=True,
-                                    null=True,)
-    pre_text = models.TextField(max_length=1000, blank=True)
-    post_text = models.TextField(max_length=1000, blank=True)
+    required_old = models.CharField(max_length=1, choices=REQ_TYPES, blank=True)
+    required = models.ForeignKey(RequiredFieldType,
+                                 on_delete=models.SET_NULL,
+                                 blank=True,
+                                 null=True,)
 
     order_with_respect_to = 'emdis_message'
 
-    class Meta:
+    class Meta(OrderedModel.Meta):
         ordering = ('emdis_message', 'order')
 
 
@@ -200,22 +198,22 @@ class BmdwField(models.Model):
         ('D', 'Dependent'),
     )
     field_identifier = models.CharField(max_length=50)
-    element_type = models.CharField(max_length=50, blank=True)
-    element_type_new = models.ForeignKey(BmdwElementType,
+    element_type_old = models.CharField(max_length=50, blank=True)
+    element_type = models.ForeignKey(BmdwElementType,
                                          on_delete=models.SET_NULL,
                                          blank=True,
                                          null=True,)
-    required = models.CharField(max_length=1, choices=BMDW_REQ_TYPES, blank=True)
-    required_new = models.ForeignKey(RequiredFieldType,
+    required_old = models.CharField(max_length=1, choices=BMDW_REQ_TYPES, blank=True)
+    required = models.ForeignKey(RequiredFieldType,
                                     on_delete=models.SET_NULL,
                                     blank=True,
                                     null=True,)
     description = models.TextField(blank=True)
-    type = models.CharField(max_length=50, blank=True)
-    type_new = models.ForeignKey(BmdwFieldType,
-                                 on_delete=models.SET_NULL,
-                                 blank=True,
-                                 null=True,)
+    type_old = models.CharField(max_length=50, blank=True)
+    type = models.ForeignKey(BmdwFieldType,
+                             on_delete=models.SET_NULL,
+                             blank=True,
+                             null=True,)
     length = models.CharField(max_length=50, blank=True)
     comment = models.TextField(blank=True)
     dict_field = models.ForeignKey(DictionaryField,
@@ -256,6 +254,7 @@ class FormFields(OrderedModel):
                                   blank=True,
                                   null=True,)
     form_field_name = models.CharField(max_length=200)
+    form_field_current_name = models.CharField(max_length=200, blank=True)
     order_with_respect_to = 'wmda_form'
 
     class Meta:
