@@ -56,3 +56,10 @@ heroku run python manage.py migrate
 heroku pg:reset
 heroku pg:push wmdadict DATABASE_URL --app wmdasite
 ```
+
+### Copy production database to development
+Drop the local wmdadict database - easier to do with pgAdmin as psql command
+line does not display helpful error messages
+```bash
+PGUSER=wmdauser PGPASSWORD=vanrood heroku pg:pull DATABASE_URL wmdadict --app wmdasite
+```

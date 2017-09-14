@@ -3,6 +3,9 @@ from django.db import models
 from ordered_model.models import OrderedModel
 # from markdownx.models import MarkdownxField
 
+#
+# Helper models
+#
 
 class DataFamily(models.Model):
     name = models.CharField(max_length=50, unique=True)
@@ -15,6 +18,72 @@ class DataFamily(models.Model):
     def __str__(self):
         return self.name
 
+
+class DictionaryFieldType(models.Model):
+    letter_code = models.CharField(max_length=1, unique=True)
+    title = models.CharField(max_length=50)
+    description = models.TextField(blank=True)
+
+    class Meta:
+        ordering = ['letter_code',]
+
+    def __str__(self):
+        return self.title
+
+
+class EmdisFieldType(models.Model):
+    letter_code = models.CharField(max_length=1, unique=True)
+    title = models.CharField(max_length=50)
+    description = models.TextField(blank=True)
+
+    class Meta:
+        verbose_name = 'EMDIS field type'
+        ordering = ['letter_code',]
+
+    def __str__(self):
+        return self.title
+
+
+class RequiredFieldType(models.Model):
+    letter_code = models.CharField(max_length=1, unique=True)
+    emdis_label = models.CharField(max_length=30)
+    bmdw_label = models.CharField(max_length=30)
+    description = models.TextField(blank=True)
+
+    class Meta:
+        ordering = ['letter_code',]
+
+    def __str__(self):
+        return '/'.join([self.emdis_label, self.bmdw_label,])
+
+
+class BmdwElementType(models.Model):
+    title = models.CharField(max_length=50)
+    description = models.TextField(blank=True)
+
+    class Meta:
+        verbose_name = 'BMDW element type'
+        ordering = ['title',]
+
+    def __str__(self):
+        return self.title
+
+
+class BmdwFieldType(models.Model):
+    title = models.CharField(max_length=50)
+    description = models.TextField(blank=True)
+
+    class Meta:
+        verbose_name = 'BMDW field type'
+        ordering = ['title',]
+
+    def __str__(self):
+        return self.title
+
+
+#
+# Primary Data Dictionary models
+#
 
 class DictionaryField(models.Model):
     FIELD_TYPES = (
@@ -29,7 +98,11 @@ class DictionaryField(models.Model):
     label = models.CharField(max_length=200, unique=True)
     description_short = models.CharField('Short Description', max_length=200)
     description_long = models.TextField('Long Description', blank=True)
-    field_type = models.CharField(max_length=1, choices=FIELD_TYPES)
+    field_type_old = models.CharField(max_length=1, choices=FIELD_TYPES)
+    field_type_new = models.ForeignKey(DictionaryFieldType,
+                                   on_delete=models.SET_NULL,
+                                   blank=True,
+                                   null=True)
     units = models.CharField(max_length=200, blank=True)
     range = models.CharField(max_length=200, blank=True)
     values = models.TextField(max_length=200, blank=True)
@@ -39,6 +112,8 @@ class DictionaryField(models.Model):
                                      null=True,
                                      related_name='owns')
     user_families = models.ManyToManyField(DataFamily,
+                                           blank=True,
+                                           null=True,
                                            related_name='uses')
 
     class Meta:
@@ -62,19 +137,6 @@ class EmdisMessage(models.Model):
 
     def __str__(self):
         return self.name
-
-
-class EmdisFieldType(models.Model):
-    letter_code = models.CharField(max_length=1, unique=True)
-    title = models.CharField(max_length=50)
-    description = models.TextField(blank=True)
-
-    class Meta:
-        verbose_name = 'EMDIS field type'
-        ordering = ['letter_code',]
-
-    def __str__(self):
-        return self.title
 
 
 class EmdisField(models.Model):
@@ -102,6 +164,7 @@ class EmdisField(models.Model):
     def __str__(self):
         return self.field_code
 
+
 class EmdisSemantics(OrderedModel):
     REQ_TYPES = (
         ('R', 'Required'),
@@ -117,6 +180,13 @@ class EmdisSemantics(OrderedModel):
                                       blank=True,
                                       null=True,)
     required = models.CharField(max_length=1, choices=REQ_TYPES, blank=True)
+    required_new = models.ForeignKey(RequiredFieldType,
+                                    on_delete=models.SET_NULL,
+                                    blank=True,
+                                    null=True,)
+    pre_text = models.TextField(max_length=1000, blank=True)
+    post_text = models.TextField(max_length=1000, blank=True)
+
     order_with_respect_to = 'emdis_message'
 
     class Meta:
@@ -131,9 +201,21 @@ class BmdwField(models.Model):
     )
     field_identifier = models.CharField(max_length=50)
     element_type = models.CharField(max_length=50, blank=True)
+    element_type_new = models.ForeignKey(BmdwElementType,
+                                         on_delete=models.SET_NULL,
+                                         blank=True,
+                                         null=True,)
     required = models.CharField(max_length=1, choices=BMDW_REQ_TYPES, blank=True)
+    required_new = models.ForeignKey(RequiredFieldType,
+                                    on_delete=models.SET_NULL,
+                                    blank=True,
+                                    null=True,)
     description = models.TextField(blank=True)
     type = models.CharField(max_length=50, blank=True)
+    type_new = models.ForeignKey(BmdwFieldType,
+                                 on_delete=models.SET_NULL,
+                                 blank=True,
+                                 null=True,)
     length = models.CharField(max_length=50, blank=True)
     comment = models.TextField(blank=True)
     dict_field = models.ForeignKey(DictionaryField,
@@ -161,6 +243,7 @@ class WmdaForm(models.Model):
 
     def __str__(self):
         return self.form_code
+
 
 class FormFields(OrderedModel):
     dict_field = models.ForeignKey(DictionaryField,

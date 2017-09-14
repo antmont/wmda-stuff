@@ -18,12 +18,15 @@ from django.conf import settings
 from django.contrib import admin
 from django.views.generic import TemplateView
 
+from wmdadict.admin import wmda_admin_site
+
 
 urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='home.html'), name='home'),
     url(r'', include('wmdadict.urls')),
     url(r'^markdownx/', include('markdownx.urls')),
     url(r'^admin/', admin.site.urls),
+    url(r'^wmdaadmin/', wmda_admin_site.urls),
 ]
 
 if settings.LOCAL_DEBUG:

@@ -8,7 +8,7 @@ class DictionaryFilter(django_filters.FilterSet):
 
     class Meta:
         model = DictionaryField
-        fields = ['field_type', 'owner_family',]
+        fields = ['field_type_new', 'owner_family',]
 
 
 class EmdisFieldFilter(django_filters.FilterSet):
