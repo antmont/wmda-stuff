@@ -18,10 +18,10 @@ class DictionaryFieldAdmin(admin.ModelAdmin):
     list_display = ('label', 'description_short',)
     search_fields = ('label', 'description_short', 'description_long',)
     list_filter = ('owner_family', 'user_families', 'field_type',)
+    exclude = ()
     formfield_overrides = {
         models.TextField: {'widget': AdminMarkdownxWidget},
     }
-#    filter_horizontal = ('user_families',)
 
 
 class FieldTypeAdmin(admin.ModelAdmin):

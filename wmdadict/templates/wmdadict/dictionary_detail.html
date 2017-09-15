@@ -15,21 +15,27 @@
                         </tr>
                         <tr>
                             <td>Field type</td>
-                            <td>{{ dfield.field_type }}</td>
+                            <td>
+                                <span data-toggle="popover"
+                                      title="{{ dfield.field_type.title }}"
+                                      data-content="{{ dfield.field_type.description }}">
+                                          {{ dfield.field_type.title }} <i class="glyphicon glyphicon-info-sign"></i>
+                                </span>
+                            </td?
                         </tr>
-                        {% if dfield.field_type == 'Numeric' %}
+                        {% if dfield.field_type.has_units %}
                             <tr>
                                 <td>Units</td>
                                 <td>{{ dfield.units }}</td>
                             </tr>
                         {% endif %}
-                        {% if dfield.field_type == 'Numeric' or dfield.field_type == 'Date' %}
+                        {% if dfield.field_type.has_range %}
                             <tr>
                                 <td>Range</td>
                                 <td>{{ dfield.range }}</td>
                             </tr>
                         {% endif %}
-                        {% if dfield.field_type == 'List Single' or dfield.field_type == 'List Multiple' %}
+                        {% if dfield.field_type.has_values %}
                             <tr>
                                 <td>Values</td>
                                 <td>{{ dfield.values|safe }}</td>
@@ -81,4 +87,12 @@
                 </tbody>
             </table>
         </div>
+{% endblock %}
+
+{% block javascript %}
+<script type="text/javascript">
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+</script>
 {% endblock %}

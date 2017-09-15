@@ -21,6 +21,9 @@ class DataFamily(models.Model):
 class DictionaryFieldType(models.Model):
     title = models.CharField(max_length=50)
     description = models.TextField(blank=True)
+    has_units = models.BooleanField()
+    has_range = models.BooleanField()
+    has_values = models.BooleanField()
 
     class Meta:
         ordering = ['title',]
