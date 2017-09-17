@@ -46,14 +46,10 @@ class EmdisFieldType(models.Model):
 
 
 class RequiredFieldType(models.Model):
-    letter_code = models.CharField(max_length=1, unique=True)
     emdis_label = models.CharField(max_length=30)
     bmdw_label = models.CharField(max_length=30)
     description = models.TextField(blank=True)
     display_strong = models.BooleanField()
-
-    class Meta:
-        ordering = ['letter_code',]
 
     def __str__(self):
         return '/'.join([self.emdis_label, self.bmdw_label,])
@@ -88,35 +84,20 @@ class BmdwFieldType(models.Model):
 #
 
 class DictionaryField(models.Model):
-    FIELD_TYPES = (
-        ('N', 'Numeric'),
-        ('A', 'Alphanumeric'),
-        ('S', 'List Single'),
-        ('M', 'List Multiple'),
-        ('D', 'Date'),
-        ('F', 'Free Form'),
-        ('U', 'Undecided'),
-    )
     label = models.CharField(max_length=200, unique=True)
     description_short = models.CharField('Short Description', max_length=200)
     description_long = models.TextField('Long Description', blank=True)
-    field_type_old = models.CharField(max_length=1, choices=FIELD_TYPES)
     field_type = models.ForeignKey(DictionaryFieldType,
-                                   on_delete=models.SET_NULL,
-                                   blank=True,
-                                   null=True)
+                                   on_delete=models.PROTECT,)
     units = models.CharField(max_length=200, blank=True)
     range = models.CharField(max_length=200, blank=True)
     values = models.TextField(max_length=200, blank=True)
     owner_family = models.ForeignKey(DataFamily,
-                                     on_delete=models.SET_NULL,
-                                     blank=True,
-                                     null=True,
-                                     related_name='owns')
+                                     on_delete=models.PROTECT,
+                                     related_name='owns',)
     user_families = models.ManyToManyField(DataFamily,
                                            blank=True,
-                                           null=True,
-                                           related_name='uses')
+                                           related_name='uses',)
 
     class Meta:
         ordering = ['label']
@@ -147,16 +128,12 @@ class EmdisField(models.Model):
     field_code = models.CharField(max_length=50, unique=True)
     field_description = models.CharField(max_length=500)
     emdis_type = models.ForeignKey(EmdisFieldType,
-                                   on_delete=models.SET_NULL,
-                                   blank=True,
-                                   null=True,
+                                   on_delete=models.PROTECT,
                                    verbose_name='field type',)
     field_length = models.PositiveIntegerField()
     field_rule = models.TextField()
     dict_field = models.ForeignKey(DictionaryField,
-                                   on_delete=models.SET_NULL,
-                                   blank=True,
-                                   null=True,
+                                   on_delete=models.PROTECT,
                                    verbose_name='WMDA Dictionary Field')
     emdis_messages = models.ManyToManyField(EmdisMessage,
                                             through='EmdisSemantics')
@@ -170,24 +147,12 @@ class EmdisField(models.Model):
 
 
 class EmdisSemantics(OrderedModel):
-    REQ_TYPES = (
-        ('R', 'Required'),
-        ('O', 'Optional'),
-    )
-
     emdis_field = models.ForeignKey(EmdisField,
-                                    on_delete=models.SET_NULL,
-                                    blank=True,
-                                    null=True,)
+                                    on_delete=models.PROTECT,)
     emdis_message = models.ForeignKey(EmdisMessage,
-                                      on_delete=models.SET_NULL,
-                                      blank=True,
-                                      null=True,)
-    required_old = models.CharField(max_length=1, choices=REQ_TYPES, blank=True)
+                                      on_delete=models.PROTECT,)
     required = models.ForeignKey(RequiredFieldType,
-                                 on_delete=models.SET_NULL,
-                                 blank=True,
-                                 null=True,)
+                                 on_delete=models.PROTECT,)
 
     order_with_respect_to = 'emdis_message'
 
@@ -196,35 +161,19 @@ class EmdisSemantics(OrderedModel):
 
 
 class BmdwField(models.Model):
-    BMDW_REQ_TYPES = (
-        ('Y', 'Yes'),
-        ('N', 'No'),
-        ('D', 'Dependent'),
-    )
     field_identifier = models.CharField(max_length=50)
-    element_type_old = models.CharField(max_length=50, blank=True)
     element_type = models.ForeignKey(BmdwElementType,
-                                         on_delete=models.SET_NULL,
-                                         blank=True,
-                                         null=True,)
-    required_old = models.CharField(max_length=1, choices=BMDW_REQ_TYPES, blank=True)
+                                         on_delete=models.PROTECT,)
     required = models.ForeignKey(RequiredFieldType,
-                                    on_delete=models.SET_NULL,
-                                    blank=True,
-                                    null=True,)
+                                 on_delete=models.PROTECT,)
     description = models.TextField(blank=True)
-    type_old = models.CharField(max_length=50, blank=True)
     type = models.ForeignKey(BmdwFieldType,
-                             on_delete=models.SET_NULL,
-                             blank=True,
-                             null=True,)
+                             on_delete=models.PROTECT,)
     length = models.CharField(max_length=50, blank=True)
     comment = models.TextField(blank=True)
     dict_field = models.ForeignKey(DictionaryField,
                                    verbose_name='WMDA Dictionary Field',
-                                   on_delete=models.SET_NULL,
-                                   blank=True,
-                                   null=True,)
+                                   on_delete=models.PROTECT,)
 
     class Meta:
         verbose_name = 'BMDW field'
@@ -250,14 +199,10 @@ class WmdaForm(models.Model):
 
 class FormFields(OrderedModel):
     dict_field = models.ForeignKey(DictionaryField,
-                                   on_delete=models.SET_NULL,
-                                   blank=True,
-                                   null=True,
+                                   on_delete=models.PROTECT,
                                    verbose_name='WMDA Dictionary Field')
     wmda_form = models.ForeignKey(WmdaForm,
-                                  on_delete=models.SET_NULL,
-                                  blank=True,
-                                  null=True,)
+                                  on_delete=models.PROTECT,)
     form_field_name = models.CharField(max_length=200)
     form_field_current_name = models.CharField(max_length=200, blank=True)
     order_with_respect_to = 'wmda_form'
