@@ -41,7 +41,13 @@
                         <tr>
                             <td><a href="{% url 'wmdadict:dictionary_detail' dfield.pk %}">{{ dfield.label }}</td>
                             <td>{{ dfield.description_short }}</td>
-                            <td>{{ dfield.owner_family }}</td>
+                            <td>
+                                <span data-toggle="popover"
+                                      title="{{ dfield.owner_family.name }}"
+                                      data-content="Contact: {{ dfield.owner_family.contact }}">
+                                          {{ dfield.owner_family }} <i class="glyphicon glyphicon-info-sign"></i>
+                                </span>
+                            </td>
                         </tr>
                     {% endfor %}
                 </tbody>
@@ -50,4 +56,12 @@
     {% else %}
         <p>No dictionary fields are available.</p>
     {% endif %}
+{% endblock %}
+
+{% block javascript %}
+<script type="text/javascript">
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+</script>
 {% endblock %}

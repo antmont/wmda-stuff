@@ -8,7 +8,7 @@
     "Australian Bone Marrow Donor Registry"
   ],
   "license": "BSD",
-  "private": false,
+  "private": true,
   "ignore": [
     "**/.*",
     "node_modules",

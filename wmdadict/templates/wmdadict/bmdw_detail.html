@@ -15,19 +15,33 @@
                         </tr>
                         <tr>
                             <td>Element type</td>
-                            <td>{{ bmdwfield.element_type }}</td>
+                            <td>
+                                <span data-toggle="popover"
+                                      title="{{ bmdwfield.element_type.title }}"
+                                      data-content="{{ bmdwfield.element_type.description }}">
+                                        {{ bmdwfield.element_type }} <i class="glyphicon glyphicon-info-sign"> </i>
+                                </span>
+                            </td>
                         </tr>
                         <tr>
                             <td>Field type</td>
-                            <td>{{ bmdwfield.type }}</td>
+                            <td>
+                                <span data-toggle="popover"
+                                      title="{{ bmdwfield.type.title }}"
+                                      data-content="{{ bmdwfield.type.description }}">
+                                        {{ bmdwfield.type }} <i class="glyphicon glyphicon-info-sign"> </i>
+                                </span>
+                            </td>
                         </tr>
                         <tr>
                             <td>Required</td>
-                            <td>{% if bmdwfield.required == "Y" %}
-                                <strong>{{ bmdwfield.get_required_display }}</strong>
-                            {% else %}
-                                {{ bmdwfield.get_required_display }}
-                            {% endif %}</td>
+                            <td>
+                                {% if bmdwfield.required.display_strong %}
+                                    <strong>{{ bmdwfield.required.bmdw_label }}</strong>
+                                {% else %}
+                                    {{ bmdwfield.required.bmdw_label }}
+                                {% endif %}
+                            </td>
                         </tr>
                         <tr>
                             <td>Length</td>

@@ -15,8 +15,21 @@
                         </tr>
                 </tbody>
             </table>
+        </div>
+
+        {% if emsg.pre_text %}
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <tbody>
+                            <tr>
+                                <td>{{ emsg.pre_text|safe }}</td>
+                            </tr>
+                    </tbody>
+                </table>
             </div>
-            <h4>EMDIS Fields</h4>
+        {% endif %}
+
+        <h4>EMDIS Fields</h4>
             {% if emsg.emdisfield_set %}
                 <div class="table-responsive">
                     <table class="table table-hover table-striped tablesorter">
@@ -34,15 +47,15 @@
                                     <td>{{ row.emdis_field.field_description }} (<a href="{% url 'wmdadict:dictionary_detail' row.emdis_field.dict_field.pk %}">{{ row.emdis_field.dict_field }})</a></td>
                                     <td><a href="{% url 'wmdadict:emdis_detail' row.emdis_field.pk %}">{{ row.emdis_field }}</a></td>
                                     <td>
-                                        {% if row.required == "R" %}
-                                            <strong>{{ row.get_required_display }}</strong>
+                                        {% if row.required.display_strong %}
+                                            <strong>{{ row.required.emdis_label }}</strong>
                                         {% else %}
-                                            {{ row.get_required_display }}
+                                            {{ row.required.emdis_label }}
                                         {% endif %}
                                     </td>
                                     <td>
                                         <span data-toggle="popover"
-                                              title="{{ row.emdis_field.emdis_type.title }} {{ row.emdis_field.field_length }}"
+                                              title="{{ row.emdis_field.emdis_type.title }}"
                                               data-content="{{ row.emdis_field.emdis_type.description }}">
                                                 {{ row.emdis_field.emdis_type.letter_code }}{{ row.emdis_field.field_length }} <i class="glyphicon glyphicon-info-sign"> </i>
                                         </span>
@@ -52,6 +65,19 @@
                         </tbody>
                     </table>
                 </div>
+
+                {% if emsg.post_text %}
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <tbody>
+                                    <tr>
+                                        <td>{{ emsg.post_text|safe }}</td>
+                                    </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                {% endif %}
+
             {% else %}
                 <p>No EMDIS fields are available.</p>
             {% endif %}

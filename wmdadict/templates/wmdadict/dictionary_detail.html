@@ -15,21 +15,27 @@
                         </tr>
                         <tr>
                             <td>Field type</td>
-                            <td>{{ dfield.get_field_type_display }}</td>
+                            <td>
+                                <span data-toggle="popover"
+                                      title="{{ dfield.field_type.title }}"
+                                      data-content="{{ dfield.field_type.description }}">
+                                          {{ dfield.field_type.title }} <i class="glyphicon glyphicon-info-sign"></i>
+                                </span>
+                            </td>
                         </tr>
-                        {% if dfield.field_type == 'N' %}
+                        {% if dfield.field_type.has_units %}
                             <tr>
                                 <td>Units</td>
                                 <td>{{ dfield.units }}</td>
                             </tr>
                         {% endif %}
-                        {% if dfield.field_type == 'N' or dfield.field_type == 'D' %}
+                        {% if dfield.field_type.has_range %}
                             <tr>
                                 <td>Range</td>
                                 <td>{{ dfield.range }}</td>
                             </tr>
                         {% endif %}
-                        {% if dfield.field_type == 'S' or dfield.field_type == 'M' %}
+                        {% if dfield.field_type.has_values %}
                             <tr>
                                 <td>Values</td>
                                 <td>{{ dfield.values|safe }}</td>
@@ -37,7 +43,13 @@
                         {% endif %}
                         <tr>
                             <td>Data family owner</td>
-                            <td>{{ dfield.owner_family }}</td>
+                            <td>
+                                <span data-toggle="popover"
+                                      title="{{ dfield.owner_family.name }}"
+                                      data-content="Contact: {{ dfield.owner_family.contact }}">
+                                          {{ dfield.owner_family }} <i class="glyphicon glyphicon-info-sign"></i>
+                                </span>
+                            </td>
                         </tr>
                         {% if dfield.user_families.all %}
                             <tr>
@@ -81,4 +93,12 @@
                 </tbody>
             </table>
         </div>
+{% endblock %}
+
+{% block javascript %}
+<script type="text/javascript">
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+</script>
 {% endblock %}
