@@ -46,15 +46,19 @@ heroku buildpacks --app wmdasite-staging
 ```
 
 ```bash
-heroku login
-git push heroku master
+#heroku login
+#git push heroku master
 # or
-git push heroku
+#git push heroku
 # if necessary:
-heroku run python manage.py migrate
+export WMDA_APP=wmdasite
+or
+export WMDA_APP=wmdasite-staging
+
+heroku run python manage.py migrate --app $WMDA_APP
 # to upload local database
-heroku pg:reset
-heroku pg:push wmdadict DATABASE_URL --app wmdasite
+heroku pg:reset --app $WMDA_APP
+heroku pg:push wmdadict DATABASE_URL --app $WMDA_APP
 ```
 
 ### Copy production database to development
