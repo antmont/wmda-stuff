@@ -50,6 +50,7 @@ class RequiredFieldType(models.Model):
     emdis_label = models.CharField(max_length=30)
     bmdw_label = models.CharField(max_length=30)
     description = models.TextField(blank=True)
+    display_strong = models.BooleanField()
 
     class Meta:
         ordering = ['letter_code',]
@@ -127,8 +128,8 @@ class DictionaryField(models.Model):
 class EmdisMessage(models.Model):
     name = models.CharField(max_length=50, unique=True)
     description = models.CharField(max_length=200)
-    pre_text = models.TextField(max_length=1000, blank=True)
-    post_text = models.TextField(max_length=1000, blank=True)
+    pre_text = models.TextField(max_length=10000, blank=True)
+    post_text = models.TextField(max_length=10000, blank=True)
 
     class Meta:
         verbose_name = 'EMDIS message'
@@ -227,6 +228,7 @@ class BmdwField(models.Model):
 
     class Meta:
         verbose_name = 'BMDW field'
+        ordering = ('element_type', 'field_identifier',)
 
     def __str__(self):
         return self.field_identifier

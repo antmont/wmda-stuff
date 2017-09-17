@@ -21,7 +21,7 @@
                                       data-content="{{ dfield.field_type.description }}">
                                           {{ dfield.field_type.title }} <i class="glyphicon glyphicon-info-sign"></i>
                                 </span>
-                            </td?
+                            </td>
                         </tr>
                         {% if dfield.field_type.has_units %}
                             <tr>
@@ -43,7 +43,13 @@
                         {% endif %}
                         <tr>
                             <td>Data family owner</td>
-                            <td>{{ dfield.owner_family }}</td>
+                            <td>
+                                <span data-toggle="popover"
+                                      title="{{ dfield.owner_family.name }}"
+                                      data-content="Contact: {{ dfield.owner_family.contact }}">
+                                          {{ dfield.owner_family }} <i class="glyphicon glyphicon-info-sign"></i>
+                                </span>
+                            </td>
                         </tr>
                         {% if dfield.user_families.all %}
                             <tr>

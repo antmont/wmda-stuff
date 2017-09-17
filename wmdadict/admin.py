@@ -55,6 +55,9 @@ class EmdisSemanticsInline(OrderedTabularInline):
 class EmdisMessageAdmin(admin.ModelAdmin):
     list_display = ('name', 'description',)
     inlines = (EmdisSemanticsInline, )
+    formfield_overrides = {
+        models.TextField: {'widget': AdminMarkdownxWidget},
+    }
 
     def get_urls(self):
         urls = super(EmdisMessageAdmin, self).get_urls()

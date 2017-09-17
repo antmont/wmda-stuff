@@ -40,6 +40,10 @@ def emdis_msg_list(request):
 
 def emdis_msg_detail(request, msg_id):
     emsg = get_object_or_404(EmdisMessage, pk=msg_id)
+    if emsg.pre_text:
+        emsg.pre_text = markdownify(emsg.pre_text)
+    if emsg.post_text:
+            emsg.post_text = markdownify(emsg.post_text)
     return render(request, 'wmdadict/emdis_msg_detail.html', {'emsg': emsg})
 
 def bmdw_list(request):
