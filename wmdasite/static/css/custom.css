@@ -1,4 +1,23 @@
+/* Default bootstrap uses larger blockquote, we want same as normal text */
 blockquote {
     font-size: 14px;
     lne-height: 1.42857143;
+}
+
+/* Change cursor for clicable chevrons in collapse heading */
+.clickable{
+    cursor: pointer;
+}
+
+/* Fix chevron display for collapsable heading */
+.panel-heading span {
+	margin-top: -20px;
+	font-size: 15px;
+}
+
+/* Create custom class that is used to set collapsable blocks to collapsed
+   initially */
+.initial-hidden {
+    display: none;
+    padding : 5px;
 }

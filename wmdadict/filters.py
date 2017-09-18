@@ -46,8 +46,6 @@ class BmdwFieldFilter(django_filters.FilterSet):
                                                 )
     dict_field = django_filters.CharFilter(name='dict_field__label',
                                            lookup_expr='icontains')
-    type = django_filters.CharFilter(name='type',
-                                     lookup_expr='icontains')
     # Out of interest:
     # the following code gets a nice list of Types in a dropdown but doesn't
     # return any results.

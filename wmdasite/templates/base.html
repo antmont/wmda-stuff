@@ -18,11 +18,7 @@
         </div>
         <script type="text/javascript" src="{% static 'bower_components/jquery/dist/jquery.js' %}"></script>
         <script type="text/javascript" src="{% static 'bower_components/bootstrap/dist/js/bootstrap.min.js' %}"></script>
-        <script type="text/javascript">
-            $(document).ready(function(){
-                $('[data-toggle="popover"]').popover();
-            });
-        </script>
+        <script type="text/javascript" src="{% static 'js/custom.js'%}"></script>
         {% block javascript %}
         {% endblock %}
     </body>

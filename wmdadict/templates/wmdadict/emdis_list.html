@@ -5,9 +5,22 @@
 {% block content %}
     <h1 class="text-center"> EMDIS Data Dictionary </h1>
     <form method="get">
-        <div class="well well-sm">
-            <h4 style="margin-top: 0">Filter</h4>
-            <div class="row">
+        <div class="panel-group">
+            {% if filter_context.filter_active %}
+                <div class="panel panel-warning">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Filter Active</h3>
+                        <span class="pull-right clickable panel-collapsed"><i class="glyphicon glyphicon-chevron-up"></i></span>
+                    </div>
+                    <div class="panel-body">
+            {% else %}
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Filter</h3>
+                        <span class="pull-right clickable panel-collapsed"><i class="glyphicon glyphicon-chevron-down"></i></span>
+                    </div>
+                    <div class="panel-body initial-hidden">
+            {% endif %}
                 <div class="form-group col-sm-3 col-md-3">
                     {{ emdis_fields.form.field_code.label_tag }}
                     {% render_field emdis_fields.form.field_code class="form-control" %}
