@@ -26,9 +26,6 @@ class DictionaryFieldAdmin(admin.ModelAdmin):
 
 class FieldTypeAdmin(admin.ModelAdmin):
     list_display = ('letter_code', 'title',)
-    formfield_overrides = {
-        models.TextField: {'widget': AdminMarkdownxWidget},
-    }
 
 
 
