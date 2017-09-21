@@ -10,10 +10,28 @@ Development requires:
 * bower
 * graphviz (for generating schema only)
 * postgresql
+* heroku
 
 If using mac os, all can be installed by homebrew
 ```bash
-brew install python3 git bower graphviz postgresql
+brew install python3 git bower graphviz postgresql heroku
+# Might require:
+brew install graphviz --with-bindings
+brew services start postgresql
+heroku login
+psql postgres
+```
+
+In psql
+```sql
+\du
+-- For each user without a password
+\password USERNAME
+CREATE ROLE wmdauser WITH LOGIN PASSWORD 'vanrood';
+ALTER ROLE wmdauser CREATEDB;
+CREATE DATABASE wmdadict WITH OWNER wmdauser;
+GRANT ALL PRIVILEGES ON DATABASE wmdadict TO wmdauser;
+\q
 ```
 
 Required python and Django packages are defined in
@@ -40,9 +58,13 @@ Follow [How to Deploy Django Applications on Heroku](https://simpleisbetterthanc
 Setup buildpacks for node (bower, bootstrap) and Python (Django):
 
 ```bash
-heroku buildpacks:set heroku/python --app wmdasite-staging
-heroku buildpacks:add --index 1 heroku/nodejs --app wmdasite-staging
-heroku buildpacks --app wmdasite-staging
+export WMDA_APP=wmdasite
+# or
+export WMDA_APP=wmdasite-staging
+
+heroku buildpacks:set heroku/python --app $WMDA_APP
+heroku buildpacks:add --index 1 heroku/nodejs --app $WMDA_APP
+heroku buildpacks --app $WMDA_APP
 ```
 
 ```bash
@@ -52,7 +74,7 @@ heroku buildpacks --app wmdasite-staging
 #git push heroku
 # if necessary:
 export WMDA_APP=wmdasite
-or
+# or
 export WMDA_APP=wmdasite-staging
 
 heroku run python manage.py migrate --app $WMDA_APP
@@ -61,9 +83,13 @@ heroku pg:reset --app $WMDA_APP
 heroku pg:push wmdadict DATABASE_URL --app $WMDA_APP
 ```
 
-### Copy production database to development
-Drop the local wmdadict database - easier to do with pgAdmin as psql command
-line does not display helpful error messages
+### Copy production database to local development
+
 ```bash
-PGUSER=wmdauser PGPASSWORD=vanrood heroku pg:pull DATABASE_URL wmdadict --app wmdasite
+export WMDA_APP=wmdasite
+# or
+export WMDA_APP=wmdasite-staging
+
+dropdb wmdadict
+PGUSER=wmdauser PGPASSWORD=DB_PASSWORD heroku pg:pull DATABASE_URL wmdadict --app $WMDA_APP
 ```
