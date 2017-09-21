@@ -8,18 +8,18 @@
         <div class="panel-group">
             {% if filter_context.filter_active %}
                 <div class="panel panel-warning">
-                    <div class="panel-heading">
+                    <div class="panel-heading" data-toggle="collapse" data-target="#filter-collapse">
                         <h3 class="panel-title">Filter Active</h3>
-                        <span class="pull-right clickable panel-collapsed"><i class="glyphicon glyphicon-chevron-up"></i></span>
+                        <span id="filter-label" class="pull-right"><i class="glyphicon glyphicon-chevron-down"></i></span>
                     </div>
-                    <div class="panel-body">
+                    <div id="filter-collapse" class="panel-body collapse in">
             {% else %}
                 <div class="panel panel-primary">
-                    <div class="panel-heading">
+                    <div class="panel-heading" data-toggle="collapse" data-target="#filter-collapse">
                         <h3 class="panel-title">Filter</h3>
-                        <span class="pull-right clickable panel-collapsed"><i class="glyphicon glyphicon-chevron-down"></i></span>
+                        <span id="filter-label" class="pull-right"><i class="glyphicon glyphicon-chevron-down"></i></span>
                     </div>
-                    <div class="panel-body initial-hidden">
+                    <div id="filter-collapse" class="panel-body collapse">
             {% endif %}
                 <div class="form-group col-sm-3 col-md-3">
                     {{ emdis_fields.form.field_code.label_tag }}
@@ -40,6 +40,7 @@
         </div>
     </form>
     {% if emdis_fields %}
+        <br />
         <div class="table-responsive">
             <table class="table table-hover table-striped tablesorter">
                 <thead>
