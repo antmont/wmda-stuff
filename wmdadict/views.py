@@ -28,7 +28,11 @@ def dictionary_detail(request, field_id):
     dictionaryfield.description_long = markdownify(dictionaryfield.description_long)
     if dictionaryfield.values:
         dictionaryfield.values = markdownify(dictionaryfield.values)
-    return render(request, 'wmdadict/dictionary_detail.html', {'dfield': dictionaryfield})
+    forms = dictionaryfield.formfields_set.all().distinct('wmda_form')
+    return render(request,
+                  'wmdadict/dictionary_detail.html',
+                  {'dfield': dictionaryfield,
+                   'forms': forms})
 
 def emdis_list(request):
     emdis_fields = EmdisField.objects.all()

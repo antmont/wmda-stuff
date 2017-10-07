@@ -81,10 +81,10 @@
                                 </td>
                             </tr>
                         {% endif %}
-                        {% if dfield.formfields_set.all %}
+                        {% if forms %}
                             <tr>
                                 <td>Forms</td>
-                                <td>{% for ffield in dfield.formfields_set.all %}
+                                <td>{% for ffield in forms %}
                                         <a href="{% url 'wmdadict:form_detail' ffield.wmda_form.pk %}">{{ ffield.wmda_form }} ({{ ffield.wmda_form.description }})</a><br />
                                     {% endfor %}
                                 </td>
