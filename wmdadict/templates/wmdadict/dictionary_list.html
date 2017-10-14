@@ -2,6 +2,12 @@
 
 {% load widget_tweaks %}
 
+{% block breadcrumbs %}
+    {{ block.super }}
+    <li class="active">WMDA Dictionary</a></li>
+{% endblock %}
+
+
 {% block content %}
     <h1 class="text-center"> WMDA Data Dictionary </h1>
     <form method="get">

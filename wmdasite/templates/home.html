@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 
+{% block breadcrumbs %}
+    <li class="active"><i class='glyphicon glyphicon-home'></i> Home</li>
+{% endblock %}
+
 {% block content %}
+    {{ block.super }}
   <h1 class="page-header">WMDA Dictionary - Proof of Concept</h1>
   <p class="lead">Click on the <a href="{% url 'wmdadict:dictionary_list' %}">Main Dictionary</a> menu to explore the WMDA Dictionary.</p>
   <p class="lead">Click on the <a href="{% url 'wmdadict:emdis_list' %}">EMDIS</a> menu to explore EMDIS fields and messages.</p>

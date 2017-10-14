@@ -1,5 +1,12 @@
 {% extends 'base.html' %}
 
+{% block breadcrumbs %}
+    {{ block.super }}
+    <li><a href="{% url 'wmdadict:emdis_msg_list' %}">EMDIS Messages</a></li>
+    <li class="active">{{ emsg }}</li>
+{% endblock %}
+
+
 {% block content %}
     <h1 class="text-center">EMDIS message: {{ emsg }}</h1>
         <div class="table-responsive">

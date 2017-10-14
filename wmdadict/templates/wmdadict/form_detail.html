@@ -1,5 +1,12 @@
 {% extends 'base.html' %}
 
+{% block breadcrumbs %}
+    {{ block.super }}
+    <li><a href="{% url 'wmdadict:form_list' %}">WMDA Forms</a></li>
+    <li class="active">{{ wmdaform }}</li>
+{% endblock %}
+
+
 {% block content %}
     <h1 class="text-center">WMDA form: {{ wmdaform }}</h1>
         <div class="table-responsive">
