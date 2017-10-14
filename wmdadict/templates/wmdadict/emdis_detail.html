@@ -1,5 +1,11 @@
 {% extends 'base.html' %}
 
+{% block breadcrumbs %}
+    {{ block.super }}
+    <li><a href="{% url 'wmdadict:emdis_list' %}">EMDIS Fields</a></li>
+    <li class="active">{{ efield }}</li>
+{% endblock %}
+
 
 {% block content %}
     <h1 class="text-center">EMDIS field: {{ efield }}</h1>
@@ -20,7 +26,7 @@
                                 <span data-toggle="popover"
                                       title="{{ efield.emdis_type.title }}"
                                       data-content="{{ efield.emdis_type.description }}">
-                                          {{ efield.emdis_type.title }} <i class="glyphicon glyphicon-info-sign"></i> <em>Length: {{ efield.field_length }}</em> 
+                                          {{ efield.emdis_type.title }} <i class="glyphicon glyphicon-info-sign"></i> <em>Length: {{ efield.field_length }}</em>
                                 </span>
                             </td>
                         </tr>

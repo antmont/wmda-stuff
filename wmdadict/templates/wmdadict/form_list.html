@@ -2,6 +2,12 @@
 
 {% load widget_tweaks %}
 
+{% block breadcrumbs %}
+    {{ block.super }}
+    <li class="active">WMDA Forms</a></li>
+{% endblock %}
+
+
 {% block content %}
     <h1 class="text-center"> WMDA Forms </h1>
     <form method="get">
