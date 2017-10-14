@@ -2,6 +2,12 @@
 
 {% load widget_tweaks %}
 
+{% block breadcrumbs %}
+    {{ block.super }}
+    <li class="active">EMDIS Messages</a></li>
+{% endblock %}
+
+
 {% block content %}
     <h1 class="text-center"> EMDIS Messages </h1>
     <form method="get">

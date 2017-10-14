@@ -1,5 +1,12 @@
 {% extends 'base.html' %}
 
+{% block breadcrumbs %}
+    {{ block.super }}
+    <li><a href="{% url 'wmdadict:dictionary_list' %}">WMDA Dictionary</a></li>
+    <li class="active">{{ dfield }}</li>
+{% endblock %}
+
+
 {% block content %}
     <h1 class="text-center">WMDA Dictionary field: {{ dfield }}</h1>
         <div class="table-responsive">
@@ -81,10 +88,10 @@
                                 </td>
                             </tr>
                         {% endif %}
-                        {% if dfield.formfields_set.all %}
+                        {% if forms %}
                             <tr>
                                 <td>Forms</td>
-                                <td>{% for ffield in dfield.formfields_set.all %}
+                                <td>{% for ffield in forms %}
                                         <a href="{% url 'wmdadict:form_detail' ffield.wmda_form.pk %}">{{ ffield.wmda_form }} ({{ ffield.wmda_form.description }})</a><br />
                                     {% endfor %}
                                 </td>

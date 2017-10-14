@@ -9,7 +9,8 @@ from ordered_model.models import OrderedModel
 
 class DataFamily(models.Model):
     name = models.CharField(max_length=50, unique=True)
-    contact = models.CharField(max_length=50, blank=True)
+    contact = models.CharField(max_length=50, blank=True,
+            help_text="Formatting and newlines will not be displayed.")
 
     class Meta:
         verbose_name_plural = 'data families'
@@ -35,7 +36,8 @@ class DictionaryFieldType(models.Model):
 class EmdisFieldType(models.Model):
     letter_code = models.CharField(max_length=1, unique=True)
     title = models.CharField(max_length=50)
-    description = models.TextField(blank=True)
+    description = models.TextField(blank=True,
+        help_text="Formatting and newlines will not be displayed.")
 
     class Meta:
         verbose_name = 'EMDIS field type'
@@ -57,7 +59,8 @@ class RequiredFieldType(models.Model):
 
 class BmdwElementType(models.Model):
     title = models.CharField(max_length=50)
-    description = models.TextField(blank=True)
+    description = models.TextField(blank=True,
+        help_text="Formatting and newlines will not be displayed.")
 
     class Meta:
         verbose_name = 'BMDW element type'
@@ -69,7 +72,8 @@ class BmdwElementType(models.Model):
 
 class BmdwFieldType(models.Model):
     title = models.CharField(max_length=50)
-    description = models.TextField(blank=True)
+    description = models.TextField(blank=True,
+        help_text="Formatting and newlines will not be displayed.")
 
     class Meta:
         verbose_name = 'BMDW field type'
