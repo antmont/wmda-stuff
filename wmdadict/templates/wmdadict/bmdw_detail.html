@@ -1,7 +1,5 @@
 {% extends 'base.html' %}
 
-{% load django_bootstrap_breadcrumbs %}
-
 {% block breadcrumbs %}
     {{ block.super }}
     <li><a href="{% url 'wmdadict:bmdw_list' %}">BMDW</a></li>
