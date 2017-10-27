@@ -14,6 +14,9 @@ class WMDAAdminSite(AdminSite):
     site_title = 'WMDA Dict Admin'
 
 
+class DataFamilyAdmin(admin.ModelAdmin):
+    list_display = ('name', 'contact',)
+    
 class DictionaryFieldAdmin(admin.ModelAdmin):
     list_display = ('label', 'description_short',)
     search_fields = ('label', 'description_short', 'description_long',)
@@ -102,7 +105,7 @@ wmda_admin_site.register(EmdisField, EmdisFieldAdmin)
 wmda_admin_site.register(EmdisMessage, EmdisMessageAdmin)
 wmda_admin_site.register(BmdwField, BmdwFieldAdmin)
 wmda_admin_site.register(WmdaForm, WmdaFormAdmin)
-wmda_admin_site.register(DataFamily)
+wmda_admin_site.register(DataFamily, DataFamilyAdmin)
 wmda_admin_site.register(EmdisFieldType, FieldTypeAdmin)
 wmda_admin_site.register(DictionaryFieldType)
 wmda_admin_site.register(RequiredFieldType)
