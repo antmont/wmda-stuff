@@ -95,7 +95,7 @@ class DictionaryField(models.Model):
                                    on_delete=models.PROTECT,)
     units = models.CharField(max_length=200, blank=True)
     range = models.CharField(max_length=200, blank=True)
-    values = models.TextField(max_length=200, blank=True)
+    values = models.TextField(max_length=1000, blank=True)
     owner_family = models.ForeignKey(DataFamily,
                                      on_delete=models.PROTECT,
                                      related_name='owns',)
