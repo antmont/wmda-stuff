@@ -1,10 +1,13 @@
 # wmdadict
+
 # A data dictionary for the World Marrow Donor Association
+
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 
 ## Development Quick-start
 Development requires:
-* python3
+ 
+* python
 * git
 * node
 * bower
@@ -13,7 +16,8 @@ Development requires:
 * heroku
 
 If using mac os, all can be installed by homebrew
-```bash
+
+```sh
 brew install python3 git bower graphviz postgresql heroku
 # Might require:
 brew install graphviz --with-bindings
@@ -22,28 +26,60 @@ heroku login
 psql postgres
 ```
 
-In psql
-```sql
-\du
--- For each user without a password
-\password USERNAME
-CREATE ROLE wmdauser WITH LOGIN PASSWORD 'vanrood';
-ALTER ROLE wmdauser CREATEDB;
-CREATE DATABASE wmdadict WITH OWNER wmdauser;
-GRANT ALL PRIVILEGES ON DATABASE wmdadict TO wmdauser;
-\q
+Setup python and clone code.
+
+Ensure `.profile` or similar contains something like:
+
+```sh
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/develop
+source /usr/local/bin/virtualenvwrapper.sh
+```
+Clone repository
+
+```sh
+cd $PROJECT_HOME
+git clone https://github.com/antmont/wmda-stuff.git
+```
+Create `.env` file by copying `.env.example` and editing to reflect needed settings.
+
+Create virtual environment and link to directory:
+
+```sh
+mkvirtualenv -a $PROJECT_HOME/wmda-stuff --python /usr/local/bin/python3 wmdasite
 ```
 
 Required python and Django packages are defined in
 `requirements/common.txt` and `requirements/dev.txt`
 Install with (in virtualenv):
-```bash
+
+```sh
 pip install -r requirements/dev.txt
 ```
+
 Required node.js packages are defined in `bower.json`
 Install with:
+
 ```bash
 bower install
+```
+Create databases and users
+
+```sh
+psql postgres
+```
+
+In psql:
+
+```sql
+\du
+-- For each user without a password
+\password <username>
+CREATE ROLE wmdauser WITH LOGIN PASSWORD '<secret-password>';
+ALTER ROLE wmdauser CREATEDB;
+CREATE DATABASE wmdadict WITH OWNER wmdauser;
+GRANT ALL PRIVILEGES ON DATABASE wmdadict TO wmdauser;
+\q
 ```
 
 ### Generate schema diagram
