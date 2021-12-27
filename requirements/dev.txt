@@ -2,6 +2,6 @@
 # But imports the common ones too
 -r common.txt
 pygraphviz==1.3.1
-django-debug-toolbar==1.8
+django-debug-toolbar==1.11.1
 django-extensions==1.9.0
 Werkzeug==0.15.3
